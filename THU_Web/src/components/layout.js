@@ -18,6 +18,17 @@ const Layout = ({ children }) => {
       <Header/>
       <Navigation/>
         <main>{children}</main>
+        <div id="social">
+            <div>
+                <Link to="">Facebook</Link>
+            </div>
+            <div>
+                <Link to="">Instagram</Link>
+            </div>
+            <div>
+                <Link to="">Pinterest</Link>
+            </div>
+        </div>
         <footer>
             <div id="footer-lists">
                 <div class="list">

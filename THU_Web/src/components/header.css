@@ -3,14 +3,10 @@
     --grey:#bba69d;
 }
 
-h1, h2, h3, h4, h5, ul {
+* {
+    font-family: 'Exo', sans-serif;
     padding:0;
     border:0;
-    margin:0;
-}
-
-body {
-    font-family: 'Exo', sans-serif;
     margin:0;
 }
 
@@ -53,6 +49,45 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color:var(--orange);
+}
+
+.dropdown {
+    background: var(--grey);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 0.6rem;
+    display: none;
+}
+
+nav ul li:hover > ul,
+.dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+    display:block;
+}
+
+.dropdown li {
+	clear: both;
+    width: 100%;
+}
+
+#social {
+    background-color:var(--grey);
+    padding: 20px;
+    display:flex;
+    justify-content: center;
+}
+
+#social div {
+    width: 100px;
+}
+
+#social div a {
+    text-decoration:none;
+    color:var(--orange);
+    font-weight:1000;
 }
 
 footer {

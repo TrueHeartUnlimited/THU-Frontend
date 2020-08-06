@@ -3,8 +3,45 @@
     --grey:#bba69d;
 }
 
+.container {
+    max-width:1024px;
+    margin:0 auto;
+}
+
+.center {
+    text-align: center;
+}
+
 #carousel {
     background-color:var(--grey);
     height:500px;
     width:100%;
+}
+
+#home-intro {
+    padding:50px 0;
+}
+
+#home-intro h2 {
+    font-weight:300;
+    font-size:30px;
+}
+
+#home-intro p {
+    padding-top:20px;
+    line-height: 1.5rem;
+}
+
+#call-to-action {
+    background-color:var(--orange);
+    color:white;
+    padding:50px;
+    opacity:0.8;
+}
+
+#call-to-action div {
+    margin:0 auto;
+    width:25%;
+    font-size:22px;
+    font-weight:500;
 }

@@ -20,7 +20,12 @@ export function Navigation() {
         <nav>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/about_us/">About</Link></li>
+                <li><Link to="/about_us/">About</Link>
+                    <ul class="dropdown">
+                        <li><Link to="/about_us/">About Us</Link></li>
+                        <li><Link to="/about_kangaroo/">About Kangaroo Leather</Link></li>
+                    </ul>
+                </li>
                 <li><Link to="/shop/">Shop</Link></li>
                 <li><Link to="/contact/">Contact</Link></li>
             </ul>
