@@ -1,0 +1,10 @@
+:root {
+    --orange:#d1582b;
+    --grey:#bba69d;
+}
+
+#carousel {
+    background-color:var(--grey);
+    height:500px;
+    width:100%;
+}

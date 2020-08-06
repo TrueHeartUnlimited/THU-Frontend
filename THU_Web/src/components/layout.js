@@ -7,39 +7,55 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import { Header, Navigation } from "./header"
+//import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Header/>
+      <Navigation/>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <div id="footer-lists">
+                <div class="list">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><Link to="/">Our Company</Link></li>
+                        <li><Link to="/">Custom Pieces</Link></li>
+                        <li><Link to="/">Bulk Custom Items</Link></li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <h3>About</h3>
+                    <ul>
+                        <li><Link to="/">Our Company</Link></li>
+                        <li><Link to="/">Sustainability</Link></li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><Link to="/">Privacy Policy</Link></li>
+                        <li><Link to="/">Terms and Conditions</Link></li>
+                        <li><Link to="/">Return and Exchange Policy</Link></li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>0402 904 970</li>
+                        <li>tpngueyn1312@gmail.com</li>
+                        <li>37 Judge Street Petrie Terrace, QLD</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="copy">
+                © TRUE HEART UNLIMITED {new Date().getFullYear()} | ABN 27 459 675 260
+            </div>
         </footer>
-      </div>
     </>
   )
 }
