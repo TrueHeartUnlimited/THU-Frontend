@@ -20,7 +20,7 @@
     background-color:var(--orange);
     color:white;
     padding:50px;
-    opacity:0.8;
+    /*opacity:0.8;*/
 }
 
 .body {
@@ -30,7 +30,7 @@
 }
 
 .large-body {
-    font-size:20px;
+    font-size:18px;
 }
 
 .separator {
@@ -84,6 +84,26 @@
     height:200px;
     margin-right:50px;
     text-align:center !important;
+}
+
+#kangaroo-video {
+    background-color:lightgray;
+    height:300px;
+    margin:20px;
+}
+
+#features {
+    background-color:lightgray;
+    text-align:left;
+}
+
+.feature {
+    width:30%;
+    padding:10px;
+}
+
+#features h3 {
+    padding:10px 0;
 }
 
 #contact-us > div {
