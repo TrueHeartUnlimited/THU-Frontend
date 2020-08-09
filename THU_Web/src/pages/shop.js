@@ -1,10 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { faChevronDown, faPlus } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const Product = props => (
+    <div class="product">
+        <div class="product-info">
+            <h3>{props.name}</h3>
+            <p class="price">{props.price}</p>
+            <Link to="/">View <FontAwesomeIcon icon={ faPlus }/> Details</Link>
+        </div>
+    </div>
+)
 
 const SecondPage = () => (
   <Layout>
@@ -20,7 +30,11 @@ const SecondPage = () => (
                 <li>Sort By <FontAwesomeIcon icon={ faChevronDown }/></li>
             </ul>
         </div>
-        <div class="flex shop-row">
+        <div class="flex row">
+            <Product
+                name="Handbag"
+                price="320"
+            />
         </div>
     </div>
   </Layout>

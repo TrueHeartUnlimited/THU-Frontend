@@ -14,11 +14,11 @@ const SecondPage = () => (
         <div class="center">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt vel sem in placerat. Fusce consectetur ultricies tempus. In et purus felis. Curabitur pellentesque mollis porttitor. Nulla sed elit eu quam porttitor porta. Nam dignissim, urna semper rhoncus facilisis, ipsum turpis ornare lacus, aliquam egestas sem nibh vel dolor.</p>
         </div>
-        <div class="flex separator">
-            <div class="half-width">
+        <div class="flex separator" id="contact-info">
+            <div class="half-width" id="message">
                 <h2>Send Us a Message</h2>
                 <form>
-                    <div class="flex">
+                    <div class="flex"  id="message-info">
                         <div>
                             <p>Your Name<span class="red">*</span></p>
                             <input type="text" name="name" class="half-width" required/>
@@ -29,12 +29,14 @@ const SecondPage = () => (
                         </div>
                     </div>
                     <p>Message<span class="red">*</span></p>
-                    <input type="text" name="message" required/>
+                    <textarea name="message" required></textarea>
                 </form>
             </div>
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
+                    <div id="map">
+                    </div>
                 </div>
                 <div class="separator location-info">
                     <h2>Business Hours</h2>
