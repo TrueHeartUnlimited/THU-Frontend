@@ -8,6 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCaretRight, faPhoneAlt, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
+import { faFacebook, faInstagramSquare, faPinterest } from "@fortawesome/free-brands-svg-icons"
 
 import { Header, Navigation } from "./header"
 //import "./layout.css"
@@ -18,15 +21,15 @@ const Layout = ({ children }) => {
       <Header/>
       <Navigation/>
         <main>{children}</main>
-        <div id="social">
+        <div class="flex" id="social">
             <div>
-                <Link to="">Facebook</Link>
+                <Link to=""><FontAwesomeIcon icon={ faFacebook }/></Link>
             </div>
             <div>
-                <Link to="">Instagram</Link>
+                <Link to=""><FontAwesomeIcon icon={ faInstagramSquare }/></Link>
             </div>
             <div>
-                <Link to="">Pinterest</Link>
+                <Link to=""><FontAwesomeIcon icon={ faPinterest }/></Link>
             </div>
         </div>
         <footer>
@@ -34,32 +37,32 @@ const Layout = ({ children }) => {
                 <div class="list">
                     <h3>Product</h3>
                     <ul>
-                        <li><Link to="/">Our Company</Link></li>
-                        <li><Link to="/">Custom Pieces</Link></li>
-                        <li><Link to="/">Bulk Custom Items</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/about_us/">Our Company</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Custom Pieces</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Bulk Custom Items</Link></li>
                     </ul>
                 </div>
                 <div class="list">
                     <h3>About</h3>
                     <ul>
-                        <li><Link to="/">Our Company</Link></li>
-                        <li><Link to="/">Sustainability</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/about_us/">Our Company</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/about_kangaroo/">Sustainability</Link></li>
                     </ul>
                 </div>
                 <div class="list">
                     <h3>Legal</h3>
                     <ul>
-                        <li><Link to="/">Privacy Policy</Link></li>
-                        <li><Link to="/">Terms and Conditions</Link></li>
-                        <li><Link to="/">Return and Exchange Policy</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Privacy Policy</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Terms and Conditions</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Return and Exchange Policy</Link></li>
                     </ul>
                 </div>
                 <div class="list">
                     <h3>Contact</h3>
                     <ul>
-                        <li>0402 904 970</li>
-                        <li>tpngueyn1312@gmail.com</li>
-                        <li>37 Judge Street Petrie Terrace, QLD</li>
+                        <li><FontAwesomeIcon icon={ faPhoneAlt }/>0402 904 970</li>
+                        <li><FontAwesomeIcon icon={ faEnvelope }/>tpngueyn1312@gmail.com</li>
+                        <li><FontAwesomeIcon icon={ faMapMarkerAlt }/>37 Judge Street Petrie Terrace, QLD</li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 import "./header.css"
 
@@ -20,7 +22,7 @@ export function Navigation() {
         <nav>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/about_us/">About</Link>
+                <li><Link to="/about_us/">About <FontAwesomeIcon icon={ faChevronDown }/></Link>
                     <ul class="dropdown">
                         <li><Link to="/about_us/">About Us</Link></li>
                         <li><Link to="/about_kangaroo/">About Kangaroo Leather</Link></li>
