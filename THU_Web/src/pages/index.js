@@ -11,7 +11,7 @@ const Product = props => (
     <figure class="effect-chico">
 		<img src="https://tympanus.net/Development/HoverEffectIdeas/img/15.jpg" alt="img15"/>
 		<figcaption>
-			<h2>{props.name}</h2>
+			<h3>{props.name}</h3>
             <p class="price">${props.price}</p>
 			<Link to="/product/">View Details</Link>
 		</figcaption>
