@@ -162,7 +162,7 @@
 .grid {
 	overflow: hidden;
 	margin: 0;
-	padding: 3em 0 0 0;
+	padding-bottom: 3em;
 	width: 100%;
 	list-style: none;
 	text-align: center;
@@ -335,44 +335,40 @@ figure.effect-chico:hover p {
 
 .tab-content {
     border:1px solid var(--grey);
+    border-top: 0;
 }
 
-.nav-tabs li {
+.tab-list {
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+}
+
+.tab-list-item {
     display:inline-block;
-    border:1px solid var(--grey);
-    padding:20px 0;
+    list-style: none;
+    margin-bottom:-1px;
+    padding:0.5rem 0.75rem;
 }
 
-.nav-tabs a {
-    color:var(--orange);
-    padding:20px;
+.tab-list-active {
+    background-color: white;
+    border: solid #ccc;
+    border-width: 1px 1px 0 1px;
 }
 
-.nav-tabs a:hover {
-    text-decoration:unerline;
-}
-
-.tab-pane {
-    display:none;
-}
-
-.active {
-    display:block;
-}
-
-#productInfo table {
+table {
     width:100%;
     padding:10px;
     font-size:14px;
     border-collapse:collapse;
 }
 
-#productInfo th, td {
+table th, td {
   text-align: left;
   padding: 8px;
 }
 
-#productInfo tr:nth-child(even) {
+table tr:nth-child(even) {
     background-color:#f2f2f2;
 }
 

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons"
 import { faStar as fasStar, faStarHalfAlt, faImage } from "@fortawesome/free-solid-svg-icons"
 
+import Tabs from "../components/tabs.js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -40,12 +41,8 @@ const SecondPage = () => (
             </div>
         </div>
         <div id="product-table">
-            <ul class="nav-tabs">
-                <li class="active"><Link to="#productInfo">Information</Link></li>
-                <li><Link to="#reviews">Reviews</Link></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="productInfo">
+            <Tabs class="tab-content">
+                <div class="tab-pane active" label="productInfo">
                     <table>
                         <tbody>
                             <tr>
@@ -67,7 +64,7 @@ const SecondPage = () => (
                         </tbody>
                     </table>
                 </div>
-                <div class="tab-pane" id="reviews">
+                <div class="tab-pane" label="reviews" id="reviews">
                     <div class="review">
                         <div class="name-rating">
                             <p>Jane Doe</p>
@@ -84,7 +81,7 @@ const SecondPage = () => (
                         </div>
                     </div>
                 </div>
-            </div>
+            </Tabs>
         </div>
     </div>
   </Layout>
