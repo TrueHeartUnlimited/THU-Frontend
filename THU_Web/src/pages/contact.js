@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -14,11 +13,11 @@ const SecondPage = () => (
         <div class="center">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt vel sem in placerat. Fusce consectetur ultricies tempus. In et purus felis. Curabitur pellentesque mollis porttitor. Nulla sed elit eu quam porttitor porta. Nam dignissim, urna semper rhoncus facilisis, ipsum turpis ornare lacus, aliquam egestas sem nibh vel dolor.</p>
         </div>
-        <div class="flex separator" id="contact-info">
+        <div class="flex separator space_between">
             <div class="half-width" id="message">
                 <h2>Send Us a Message</h2>
                 <form>
-                    <div class="flex"  id="message-info">
+                    <div class="flex space_between">
                         <div>
                             <p>Your Name<span class="red">*</span></p>
                             <input type="text" name="name" class="half-width" required/>

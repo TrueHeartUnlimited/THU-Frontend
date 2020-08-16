@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
@@ -63,4 +63,4 @@ export const query = graphql`
     }
 `;
 
-export default Product;
+export default Product;*/

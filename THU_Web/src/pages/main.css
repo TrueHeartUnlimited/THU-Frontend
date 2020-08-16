@@ -1,3 +1,6 @@
+/* ---------------------------------------------- /*
+ * Global
+/* ---------------------------------------------- */
 :root {
     --orange:#d1582b;
     --grey:#bba69d;
@@ -16,7 +19,7 @@
     padding:30px 200px !important;
 }
 
-.header, #call-to-action {
+.header, #call-to-action, .product-header {
     background-color:var(--orange);
     color:white;
     padding:50px;
@@ -41,29 +44,24 @@
     display:flex;
 }
 
+.space_between {
+    justify-content: space-between;
+}
+
+/* ---------------------------------------------- /*
+ * Home
+/* ---------------------------------------------- */
+
 #carousel {
     background-color:var(--grey);
     height:500px;
     width:100%;
-    justify-content: space-between;
     align-items: center;
     font-size:50px;
 }
 
 #carousel svg {
     padding:20px;
-}
-
-.row {
-    justify-content: space-between;
-}
-
-.product {
-    margin:20px;
-    width:300px;
-    height:200px;
-    background-color:lightgray;
-    text-align:center;
 }
 
 #home-intro {
@@ -87,8 +85,25 @@
     font-weight:500;
 }
 
+#call-to-action a {
+    background-color:plum;
+    padding:15px 40px;
+    border-radius: 4px;
+    margin-left:50px;
+    font-size:16px;
+}
+
+#call-to-action a:hover {
+    background-color:var(--grey);
+}
+
+/* ---------------------------------------------- /*
+ * About
+/* ---------------------------------------------- */
+
 .about-body {
     width:70%;
+    line-height: 1.5em;
 }
 
 .about-body h2 {
@@ -101,11 +116,15 @@
     padding:20px 100px;
     border-top: 5px solid var(--orange) !important;
     height:200px;
-    margin-right:50px;
+    margin-left:50px;
     text-align:center !important;
     border-radius: 4px;
     border:1px solid var(--orange);
 }
+
+/* ---------------------------------------------- /*
+ * About Kangaroo
+/* ---------------------------------------------- */
 
 #kangaroo-video {
     background-color:lightgray;
@@ -127,12 +146,249 @@
     padding:10px 0;
 }
 
-#contact-us > div {
+/* ---------------------------------------------- /*
+ * Shop
+/* ---------------------------------------------- */
+
+#filter ul {
+    list-style: none;
+}
+
+#filter ul li {
+    display:inline-block;
     padding:20px;
 }
 
-#contact-info, #message-info {
-    justify-content: space-between;
+.grid {
+	overflow: hidden;
+	margin: 0;
+	padding: 3em 0 0 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	overflow: hidden;
+	margin: -0.135em;
+	width: 300px;
+	height: 200px;
+	background: #d1582b;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* Individual effects */
+
+/*---------------*/
+/***** Chico *****/
+/*---------------*/
+
+figure.effect-chico img {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(1.12);
+	transform: scale(1.12);
+}
+
+figure.effect-chico:hover img {
+	opacity: 0.5;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+figure.effect-chico figcaption::before {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	border: 1px solid #fff;
+	content: '';
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+figure.effect-chico figcaption::before,
+figure.effect-chico p {
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-chico h2 {
+}
+
+figure.effect-chico p {
+	margin: 0 auto;
+	max-width: 200px;
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+figure.effect-chico:hover figcaption::before,
+figure.effect-chico:hover p {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/* ---------------------------------------------- /*
+ * Product
+/* ---------------------------------------------- */
+
+.product-header {
+    padding:20px;
+}
+
+#product {
+    padding:20px 0;
+}
+
+#product-image {
+    width:410px;
+    height:310px;
+    border:1px solid var(--grey);
+    text-align:center;
+    font-size:100px;
+    color:dimgray;
+}
+
+#product-info {
+    width:55%;
+}
+
+#product-info h2 {
+    font-size:30px;
+    font-weight:bold;
+}
+
+#product-info div {
+    padding-bottom:20px;
+}
+
+#product-name-rating p {
+    display:inline-block;
+}
+
+.rating {
+    color:var(--orange);
+    padding-left:20px;
+}
+
+.tab-content {
+    border:1px solid var(--grey);
+}
+
+.nav-tabs li {
+    display:inline-block;
+    border:1px solid var(--grey);
+    padding:20px 0;
+}
+
+.nav-tabs a {
+    color:var(--orange);
+    padding:20px;
+}
+
+.nav-tabs a:hover {
+    text-decoration:unerline;
+}
+
+.tab-pane {
+    display:none;
+}
+
+.active {
+    display:block;
+}
+
+#productInfo table {
+    width:100%;
+    padding:10px;
+    font-size:14px;
+    border-collapse:collapse;
+}
+
+#productInfo th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+#productInfo tr:nth-child(even) {
+    background-color:#f2f2f2;
+}
+
+/* ---------------------------------------------- /*
+ * Contact
+/* ---------------------------------------------- */
+
+#contact-us > div {
+    padding:20px;
 }
 
 form p {
@@ -140,7 +396,7 @@ form p {
 }
 
 #message-info div {
-    width:45%;
+    width:50%;
 }
 
 #message {

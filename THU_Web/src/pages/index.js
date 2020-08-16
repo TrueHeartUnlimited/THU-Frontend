@@ -4,39 +4,42 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleLeft, faAngleRight, faPlus } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import "./main.css"
 
 const Product = props => (
-    <div class="product">
-        <div class="product-info">
-            <h3>{props.name}</h3>
-            <p class="price">{props.price}</p>
-            <Link to="/">View <FontAwesomeIcon icon={ faPlus }/> Details</Link>
-        </div>
-    </div>
+    <figure class="effect-chico">
+		<img src="https://tympanus.net/Development/HoverEffectIdeas/img/15.jpg" alt="img15"/>
+		<figcaption>
+			<h2>{props.name}</h2>
+            <p class="price">${props.price}</p>
+			<Link to="/product/">View Details</Link>
+		</figcaption>
+	</figure>
 )
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div class="flex" id="carousel">
+    <div class="flex space_between" id="carousel">
         <FontAwesomeIcon icon={ faAngleLeft }/>
         <h2>2020 Collection</h2>
         <FontAwesomeIcon icon={ faAngleRight }/>
     </div>
     <div class="container center" id="home-intro">
-        <h2>Lorem Ipsum Dolor Sit Amet</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt vel sem in placerat. Fusce consectetur ultricies tempus. In et purus felis. Curabitur pellentesque mollis porttitor. Nulla sed elit eu quam porttitor porta. Nam dignissim, urna semper rhoncus facilisis, ipsum turpis ornare lacus, aliquam egestas sem nibh vel dolor.</p>
+        <h2>Kangaroo leather is a beautiful and strong natural material</h2>
+        <p>True Heart Unlimited manufatures all-Australian products through all stages of the sourcing, design and production process. The designs are stylish and original. The leather is sourced from one of Australia's few remaining tanneries, which specialisese in kangaroo. The goal of True Heart Unlimited is to turn kangaroo leather into a range of practical yet creative designs that can make Australians proud of their kangaroos.</p>
     </div>
     <div id="call-to-action">
         <div>
-            Like what you see
+            <p>
+                Like what you see
+                <Link to="/shop/">Shop Now</Link>
+            </p>
         </div>
     </div>
     <div class="container" id="featured">
-        <div class="flex row">
+        <div class="flex space_between grid">
             <Product
                 name="Handbag"
                 price="320"
@@ -50,7 +53,7 @@ const IndexPage = () => (
                 price="320"
             />
         </div>
-        <div class="flex row">
+        <div class="flex space_between grid">
             <Product
                 name="Handbag"
                 price="320"
