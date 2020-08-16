@@ -42,7 +42,7 @@ const SecondPage = () => (
         </div>
         <div id="product-table">
             <Tabs class="tab-content">
-                <div class="tab-pane active" label="productInfo">
+                <div class="tab-pane active" label="Product Information">
                     <table>
                         <tbody>
                             <tr>
@@ -64,7 +64,7 @@ const SecondPage = () => (
                         </tbody>
                     </table>
                 </div>
-                <div class="tab-pane" label="reviews" id="reviews">
+                <div class="tab-pane" label="Reviews" id="reviews">
                     <div class="review">
                         <div class="name-rating">
                             <p>Jane Doe</p>
