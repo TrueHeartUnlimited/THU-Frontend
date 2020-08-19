@@ -40,27 +40,20 @@ Products.propTypes = {
 export const data = graphql `
 
     {
-        allNodeProduct(sort: {fields: created, order: DESC}) {
-            nodes {
-                id
-                title
-                field_price
-                field_product_image {
-                    alt
+        nodeHomePage {
+            body {
+              processed
+            }
+            title
+            field_main_images {
+              alt
+            }
+            relationships {
+              field_main_images {
+                localFile {
+                  publicURL
                 }
-                relationships {
-                    field_product_image {
-                        localFile {
-                            publicURL
-                        }
-                    }
-                    field_colour {
-                        name
-                    }
-                }
-                path {
-                    alias
-                }
+              }
             }
         }
     }

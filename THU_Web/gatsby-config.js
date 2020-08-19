@@ -30,6 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
+        preview: true,
         baseUrl: `http://admin.trueheart.com.au/`,
         apiBase: `jsonapi`,
         //can add basic auth
