@@ -4,6 +4,7 @@
 :root {
     --orange:#d1582b;
     --grey:#bba69d;
+    --lightgrey:#efeae8;
 }
 
 .container {
@@ -91,10 +92,17 @@
     border-radius: 4px;
     margin-left:50px;
     font-size:16px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 #call-to-action a:hover {
     background-color:var(--grey);
+}
+
+#featured {
+    padding-top:3em;
 }
 
 /* ---------------------------------------------- /*
@@ -356,7 +364,7 @@ figure.effect-chico:hover p {
     border-width: 3px 1px 0 1px;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
-    background-color: #EFEAE8;
+    background-color:var(--lightgrey);
     margin-right:1px;
 }
 
@@ -382,7 +390,28 @@ table th, td {
 }
 
 table tr:nth-child(even) {
-    background-color:#EFEAE8;
+    background-color:var(--lightgrey);
+}
+
+.review {
+    padding:1em;
+}
+
+.name-rating {
+    width:40%;
+}
+
+.name-rating p {
+    font-size:18px;
+}
+
+.name-rating .rating {
+    padding:0;
+}
+
+.review-message {
+    background-color: var(--lightgrey);
+    padding:1em;
 }
 
 /* ---------------------------------------------- /*

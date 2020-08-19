@@ -65,7 +65,7 @@ const SecondPage = () => (
                     </table>
                 </div>
                 <div class="tab-pane" label="Reviews" id="reviews">
-                    <div class="review">
+                    <div class="review flex space_between">
                         <div class="name-rating">
                             <p>Jane Doe</p>
                             <p class="rating">
@@ -77,7 +77,7 @@ const SecondPage = () => (
                             </p>
                         </div>
                         <div class="review-message">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.</p>
                         </div>
                     </div>
                 </div>
