@@ -14,7 +14,7 @@ const Product = ({data}) => {
         <Layout>
             <h1>{post.title}</h1>
             <img
-                src={post.relationships.field_product_image[0].localFile.publicURL}
+                src={post.relationships.field_product_image.localFile.publicURL}
                 alt={post.field_product_image.alt}
             />
             <div dangerouslySetInnerHTML={{__html: post.body.processed}}
