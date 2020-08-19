@@ -1,3 +1,7 @@
+/* ---------------------------------------------- /*
+ * Global
+/* ---------------------------------------------- */
+
 :root {
     --orange:#d1582b;
     --grey:#bba69d;
@@ -8,10 +12,15 @@
     padding:0;
     border:0;
     margin:0;
+    line-height: 1.4em;
 }
 
 h1, h2, h3 {
     font-weight:300;
+}
+
+p {
+    font-size:14px;
 }
 
 header, nav {
@@ -33,6 +42,10 @@ header h1 a {
 .lower_case {
     font-size:24px;
 }
+
+/* ---------------------------------------------- /*
+ * Navigation
+/* ---------------------------------------------- */
 
 nav ul {
     list-style:none;
@@ -82,6 +95,10 @@ nav ul li:hover > ul,
     width: 100%;
     padding:10px 0;
 }
+
+/* ---------------------------------------------- /*
+ * Footer
+/* ---------------------------------------------- */
 
 #social {
     background-color:var(--grey);

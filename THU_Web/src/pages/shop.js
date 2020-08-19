@@ -7,13 +7,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Product = props => (
-    <div class="product">
-        <div class="product-info">
-            <h3>{props.name}</h3>
-            <p class="price">{props.price}</p>
-            <Link to="/">View <FontAwesomeIcon icon={ faPlus }/> Details</Link>
-        </div>
-    </div>
+    <figure class="effect-chico">
+		<img src="https://tympanus.net/Development/HoverEffectIdeas/img/15.jpg" alt="img15"/>
+		<figcaption>
+			<h3>{props.name}</h3>
+            <p class="price">${props.price}</p>
+			<Link to="/product/">View Details</Link>
+		</figcaption>
+	</figure>
 )
 
 const SecondPage = () => (
@@ -30,7 +31,43 @@ const SecondPage = () => (
                 <li>Sort By <FontAwesomeIcon icon={ faChevronDown }/></li>
             </ul>
         </div>
-        <div class="flex row">
+        <div class="flex space_between grid">
+            <Product
+                name="Handbag"
+                price="320"
+            />
+            <Product
+                name="Handbag"
+                price="320"
+            />
+            <Product
+                name="Handbag"
+                price="320"
+            />
+        </div>
+        <div class="flex space_between grid">
+            <Product
+                name="Handbag"
+                price="320"
+            />
+            <Product
+                name="Handbag"
+                price="320"
+            />
+            <Product
+                name="Handbag"
+                price="320"
+            />
+        </div>
+        <div class="flex space_between grid">
+            <Product
+                name="Handbag"
+                price="320"
+            />
+            <Product
+                name="Handbag"
+                price="320"
+            />
             <Product
                 name="Handbag"
                 price="320"
