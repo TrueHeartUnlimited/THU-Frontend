@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleLeft, faAngleRight, faPlus } from "@fortawesome/free-solid-svg-icons"
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import PropTypes from "prop-types";
 
 import Layout from "../components/layout"
