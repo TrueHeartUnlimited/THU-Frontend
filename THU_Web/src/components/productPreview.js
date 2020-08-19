@@ -4,14 +4,14 @@ import { Link } from "gatsby";
 
 //colour doesnt need to be displayed but will be needed for sort options
 const ProductPreview =({ title, path, coverimage, imagepreview, coveralt, previewalt, price, colour }) => (
-    <div>
-        <h2>{title}</h2>
-        <Link to={path}>
-            <img src={coverimage} alt={coveralt} />
-        </Link>
-        <h4>{price}</h4>
-        <img src={imagepreview} alt={previewalt}/>
-    </div>
+    <figure class="effect-chico">
+		<img src={coverimage} alt={coveralt}/>
+		<figcaption>
+			<h3>{title}</h3>
+            <p class="price">${price}</p>
+			<Link to={path}>View Details</Link>
+		</figcaption>
+	</figure>
 );
 
 ProductPreview.propTypes = {

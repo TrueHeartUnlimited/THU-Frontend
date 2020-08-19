@@ -5,6 +5,8 @@ import { faChevronDown, faPlus } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import product from "../components/productPreview";
+
 
 const Product = props => (
     <figure class="effect-chico">
@@ -16,6 +18,7 @@ const Product = props => (
 		</figcaption>
 	</figure>
 )
+
 
 const SecondPage = () => (
   <Layout>
