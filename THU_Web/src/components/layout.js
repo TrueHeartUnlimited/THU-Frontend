@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
                     <h3>Product</h3>
                     <ul>
                         <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/about_us/">Our Company</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Custom Pieces</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Bulk Custom Items</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/custom/">Custom Pieces</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/bulk_custom/">Bulk Custom Items</Link></li>
                     </ul>
                 </div>
                 <div class="list">
@@ -52,9 +52,9 @@ const Layout = ({ children }) => {
                 <div class="list">
                     <h3>Legal</h3>
                     <ul>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Privacy Policy</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Terms and Conditions</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/">Return and Exchange Policy</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/policy/">Privacy Policy</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/policy/">Terms and Conditions</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/policy/">Return and Exchange Policy</Link></li>
                     </ul>
                 </div>
                 <div class="list">
