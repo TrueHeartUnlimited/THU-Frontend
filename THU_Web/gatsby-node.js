@@ -17,7 +17,7 @@ exports.createPages = async({ actions, graphql}) => {
                     id
                     title
                     path {
-                    alias
+                        alias
                     }
                 }
             }

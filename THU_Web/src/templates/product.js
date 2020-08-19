@@ -1,11 +1,8 @@
-/*import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-
-//post.relationships.field_product_image.localFile.publicURL
-//'/static/1134a3571a054aa5a72be5beca5577c7/AdeleClutchpurpleandpink.jpg'
 
 const Product = ({data}) => {
     const post = data.nodeProduct;
@@ -14,7 +11,7 @@ const Product = ({data}) => {
         <Layout>
             <h1>{post.title}</h1>
             <img
-                src={post.relationships.field_product_image.localFile.publicURL}
+                src={post.relationships.field_product_image[0].localFile.publicURL}
                 alt={post.field_product_image.alt}
             />
             <div dangerouslySetInnerHTML={{__html: post.body.processed}}
@@ -23,7 +20,7 @@ const Product = ({data}) => {
             <p>{post.field_strap_size}</p>
             <p>{post.field_price}</p>
             <p>{post.field_material}</p>
-            <p>{post.relationships.field_colour[1].name}</p>
+            <p>{post.relationships.field_colour[0].name}</p>
         </Layout>
     );
 };
@@ -63,4 +60,4 @@ export const query = graphql`
     }
 `;
 
-export default Product;*/
+export default Product;
