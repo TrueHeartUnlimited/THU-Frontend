@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown, faFileInvoice, faFileInvoiceDollar, faShoppingBag, faCalculator } from "@fortawesome/free-solid-svg-icons"
+import { faChevronDown, faFileInvoiceDollar, faShoppingBag, faCalculator } from "@fortawesome/free-solid-svg-icons"
 
 import "./header.css"
 
@@ -30,7 +30,7 @@ export function Navigation() {
                 </li>
                 <li><Link to="/shop/">Shop</Link></li>
                 <li><Link to="/contact/">Contact</Link></li>
-                <li><Link to="/invoice/"><FontAwesomeIcon icon={ faShoppingBag }/></Link></li>
+                <li><Link to="/invoice/"><FontAwesomeIcon icon={ faFileInvoiceDollar } id="invoice-icon"/> Invoice</Link></li>
             </ul>
         </nav>
     )

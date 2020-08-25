@@ -34,9 +34,57 @@ const SecondPage = () => (
                     <p>This handbag is fully lined in kangaroo leather with an internal zip pocket. It comes with two interchangeable straps in different length.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus.</p>
                 </div>
-                <div id="product-colour">
-                    <p>Colour:</p>
-                    <Link to="/">Custom Colour</Link>
+                <div class="flex space_between" id="product-customisation">
+                    <div class="customisation">
+                        <p>Colour: Blue</p>
+                        <p><Link to="/">Custom Colour</Link></p>
+                        <div class="flex" id="swatches">
+                            <Link to="">
+                                <dl class="swatch-dl">
+                                    <dt class="swatch-dt selected">
+                                        <span class="swatch-color blue-swatch">
+                                            <span class="swatch-color"></span>
+                                        </span>
+                                    </dt>
+                                    <dd class="text-color">
+                                        <div class="color-alt">
+                                            <span class="text-color">Blue</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </Link>
+
+                            <Link to="">
+                                <dl class="swatch-dl">
+                                    <dt class="swatch-dt">
+                                        <span class="swatch-color orange-swatch">
+                                            <span class="swatch-color"></span>
+                                        </span>
+                                    </dt>
+                                    <dd class="text-color">
+                                        <div class="color-alt">
+                                            <span class="text-color">Orange</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </Link>
+                        </div>
+                    </div>
+                    <div class="customisation">
+                        <p>Straps:</p>
+                        <div class="flex space_between">
+                            <ul>
+                                <li><Link to="">Length 1</Link></li>
+                                <li><Link to="">Length 2</Link></li>
+                                <li><Link to="">Length 3</Link></li>
+                            </ul>
+                            <ul>
+                                <li><Link to="">Width 1</Link></li>
+                                <li><Link to="">Width 2</Link></li>
+                                <li><Link to="">Width 3</Link></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

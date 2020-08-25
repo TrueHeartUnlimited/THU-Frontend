@@ -10,7 +10,7 @@ const SecondPage = () => (
         <h1>Contact Us</h1>
     </div>
     <div class="container" id="contact-us">
-        <div class="center">
+        <div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt vel sem in placerat. Fusce consectetur ultricies tempus. In et purus felis. Curabitur pellentesque mollis porttitor. Nulla sed elit eu quam porttitor porta. Nam dignissim, urna semper rhoncus facilisis, ipsum turpis ornare lacus, aliquam egestas sem nibh vel dolor.</p>
         </div>
         <div class="flex separator space_between">

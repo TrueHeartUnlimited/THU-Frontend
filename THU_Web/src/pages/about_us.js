@@ -23,12 +23,9 @@ const SecondPage = ({data}) => {
                         <h2>Who We Are</h2>
                         <div dangerouslySetInnerHTML={{__html: info.field_who_we_are.processed}}/>
                     </div>
-                    <div id="behind-scenes">
-                        <h3>Behind the scenes</h3>
-                    </div>
                 </div>
                 <div class="body separator">
-                    <div class="date flex">
+                    <div class="date flex space_between">
                         <div class="thumb">
                         </div>
                         <div class="history-info">
@@ -36,7 +33,7 @@ const SecondPage = ({data}) => {
                             <p>Launched the business at a friend's house in Bulimba, Brisbane.</p>
                         </div>
                     </div>
-                    <div class="date flex">
+                    <div class="date flex space_between">
                         <div class="thumb">
                         </div>
                         <div class="history-info">
@@ -44,7 +41,7 @@ const SecondPage = ({data}) => {
                             <p>I have been designing and making all the handbags myself, from A to Z.</p>
                         </div>
                     </div>
-                    <div class="date flex">
+                    <div class="date flex space_between">
                         <div class="thumb">
                         </div>
                         <div class="history-info">
@@ -52,7 +49,7 @@ const SecondPage = ({data}) => {
                             <p>A very dear friend of mine in Sydney found Jim Tsoutsouras, in Roselands, Sydney. Jim is the owner of Cleon Designs, he has been in the leather industry for 30 years. Jim had a leather factory in Marrickville but cloed that down due to high overheads, costs of rent and staff. He now operates from the garage of his home and is one of the few leather manufacturers left in Australia. He manufactures for the overseas markets and also sells online.</p>
                         </div>
                     </div>
-                    <div class="date flex">
+                    <div class="date flex space_between">
                         <div class="thumb">
                         </div>
                         <div class="history-info">
