@@ -81,6 +81,7 @@ nav ul li a:hover {
     margin-top: 0.5rem;
     display: none;
     width:235px;
+    z-index:4;
 }
 
 nav ul li:hover > ul,

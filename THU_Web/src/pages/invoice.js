@@ -29,9 +29,9 @@ const SecondPage = () => (
         <h1>Calculator</h1>
     </div>
     <div class="container">
-        <div id="calc-table">
+        <div class="invoice-box" id="calc-table">
             <form>
-                <table>
+                <table id="product-table">
                     <tr>
                         <th class="remove"></th>
                         <th class="product" colspan="2">Product</th>
@@ -41,22 +41,78 @@ const SecondPage = () => (
                         <th class="total">Total</th>
                     </tr>
                     <Product
-                        name="Handbag"
+                        name="Petra Handbag"
+                        color="Red & Black"
+                        price="600"
+                    />
+                    <Product
+                        name="Leila Handbag"
                         color="Blue"
                         price="320"
                     />
                     <Product
-                        name="Handbag"
-                        color="Orange"
-                        price="320"
+                        name="Paddy Compendium"
+                        color="Brown"
+                        price="250"
                     />
-                    <Product
-                        name="Handbag"
-                        color="Pink"
-                        price="320"
-                    />
+                    <tr>
+                        <td colspan="6">
+                            <input type="submit" value="Update Invoice"/>
+                        </td>
+                    </tr>
                 </table>
             </form>
+        </div>
+        <div class="flex space_between">
+            <div class="invoice-box half-width" id="calc-ship">
+                <h3>Calculate Shipping</h3>
+                <p>This calculates shipping in Australia for international countries please get in contact for shipping prices.</p>
+                <form>
+                    <div>
+                        <p>Suburb/Town</p>
+                        <input type="text" name="suburb"/>
+                    </div>
+                    <div class="flex space_between">
+                        <div>
+                            <p>State</p>
+                            <select name="state">
+                                <option value="QLD">QLD</option>
+                                <option value="NSW">NSW</option>
+                                <option value="VIC">VIC</option>
+                                <option value="ACT">ACT</option>
+                                <option value="TAS">TAS</option>
+                                <option value="NT">NT</option>
+                                <option value="SA">SA</option>
+                                <option value="WA">WA</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p>Postcode</p>
+                            <input type="number" name="postcode" class="half-width"/>
+                        </div>
+                        <div>
+                            <input type="submit" value="Update Totals"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="invoice-box half-width" id="total-table">
+                <h3>Totals</h3>
+                <table>
+                    <tr>
+                        <th>Invoice Subtotal</th>
+                        <td>$1,170.00</td>
+                    </tr>
+                    <tr>
+                        <th>Shipping</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Order Total</th>
+                        <td id="invoice-total"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
   </Layout>

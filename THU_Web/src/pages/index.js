@@ -47,30 +47,30 @@ const IndexPage = ({data}) => {
         <div class="container" id="featured">
             <div class="flex space_between grid">
                 <Product
-                    name="Handbag"
-                    price="320"
+                    name="Adelina Handbag"
+                    price="250"
                 />
                 <Product
-                    name="Handbag"
-                    price="320"
+                    name="Anais Belt"
+                    price="100"
                 />
                 <Product
-                    name="Handbag"
+                    name="Leila Handbag"
                     price="320"
                 />
             </div>
             <div class="flex space_between grid">
                 <Product
-                    name="Handbag"
-                    price="320"
+                    name="Adele Clutch"
+                    price="120"
                 />
                 <Product
-                    name="Handbag"
-                    price="320"
+                    name="Alaia Clutch"
+                    price="120"
                 />
                 <Product
-                    name="Handbag"
-                    price="320"
+                    name="Petra Handbag"
+                    price="600"
                 />
             </div>
         </div>
