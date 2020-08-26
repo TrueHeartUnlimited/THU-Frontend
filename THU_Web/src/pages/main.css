@@ -174,6 +174,44 @@
     padding:20px;
 }
 
+.seperator {
+    display:inline-block;
+    top: 50%;
+    transform: translateY(30%);
+    height: 2em;
+    border-right: 1px solid var(--grey);
+}
+
+.shop-dropdown {
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition:all 0.5s ease;
+    margin-top:0.5rem;
+    display:none;
+    width:150px;
+    z-index:4;
+    transform:translateX(-20px);
+    border:solid var(--grey);
+    border-width:0 1px 1px 1px;
+}
+
+#filter ul li:hover > ul,
+.stop-dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+    display:block;
+    z-index:4;
+}
+
+.shop-dropdown li {
+	clear: both;
+    width: 100%;
+    padding:10px 20px !important;
+    display:block !important;
+}
+
 .grid {
 	overflow: hidden;
 	margin: 0;

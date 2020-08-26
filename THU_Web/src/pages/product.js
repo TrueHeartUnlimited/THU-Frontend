@@ -70,21 +70,6 @@ const SecondPage = () => (
                             </Link>
                         </div>
                     </div>
-                    <div class="customisation">
-                        <p>Straps:</p>
-                        <div class="flex space_between">
-                            <ul>
-                                <li><Link to="">Length 1</Link></li>
-                                <li><Link to="">Length 2</Link></li>
-                                <li><Link to="">Length 3</Link></li>
-                            </ul>
-                            <ul>
-                                <li><Link to="">Width 1</Link></li>
-                                <li><Link to="">Width 2</Link></li>
-                                <li><Link to="">Width 3</Link></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
