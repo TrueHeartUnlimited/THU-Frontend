@@ -24,7 +24,7 @@
     background-color:var(--orange);
     color:white;
     padding:50px;
-    /*opacity:0.8;*/
+    opacity:0.8;
 }
 
 .body {
@@ -202,7 +202,6 @@
     visibility: visible;
     opacity: 1;
     display:block;
-    z-index:4;
 }
 
 .shop-dropdown li {
@@ -495,19 +494,19 @@ figure.effect-chico:hover p {
     border-top:3px solid var(--orange);
 }
 
-table {
+#product-details {
     width:100%;
     padding:10px;
     font-size:14px;
     border-collapse:collapse;
 }
 
-table th, td {
+#product-details th, td {
   text-align: left;
   padding: 8px;
 }
 
-table tr:nth-child(even) {
+#product-details tr:nth-child(even) {
     background-color:var(--lightgrey);
 }
 
@@ -536,12 +535,32 @@ table tr:nth-child(even) {
  * Invoice
 /* ---------------------------------------------- */
 
+.invoice-box {
+    border: solid var(--grey);
+    border-width: 3px 1px 0 1px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-top:3px solid var(--orange);
+}
+
+.invoice-box h3 {
+    color:var(--orange);
+}
+
 #calc-table {
     margin:1.5em 0;
 }
 
-#calc-table th, td {
-    text-align:center;
+#product-table {
+    width:100%;
+    padding:10px;
+    font-size:14px;
+    border-collapse:collapse;
+}
+
+#product-table th, #product-table td {
+    padding: 8px;
+    border-bottom:1px solid var(--grey);
 }
 
 .remove {
@@ -574,6 +593,7 @@ table tr:nth-child(even) {
 
 .color, .quantity, .unit, .total {
     width:15%;
+    text-align:center;
 }
 
 .quantity-change {

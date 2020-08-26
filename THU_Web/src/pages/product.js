@@ -19,7 +19,7 @@ const SecondPage = () => (
             </div>
             <div id="product-info">
                 <div id="product-name-rating">
-                    <h2>Handbag</h2>
+                    <h2>Leila Handbag</h2>
                     <p>2 Reviews</p>
                     <p class="rating">
                         <FontAwesomeIcon icon={ fasStar }/>
@@ -76,7 +76,7 @@ const SecondPage = () => (
         <div id="product-table">
             <Tabs class="tab-content">
                 <div class="tab-pane active" label="Product Information">
-                    <table>
+                    <table id="product-details">
                         <tbody>
                             <tr>
                                 <th>Size:</th>
@@ -105,7 +105,22 @@ const SecondPage = () => (
                                 <FontAwesomeIcon icon={ fasStar }/>
                                 <FontAwesomeIcon icon={ fasStar }/>
                                 <FontAwesomeIcon icon={ fasStar }/>
-                                <FontAwesomeIcon icon={ faStarHalfAlt }/>
+                                <FontAwesomeIcon icon={ fasStar }/>
+                                <FontAwesomeIcon icon={ fasStar }/>
+                            </p>
+                        </div>
+                        <div class="review-message">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.</p>
+                        </div>
+                    </div>
+                    <div class="review flex space_between">
+                        <div class="name-rating">
+                            <p>Jane Doe</p>
+                            <p class="rating">
+                                <FontAwesomeIcon icon={ fasStar }/>
+                                <FontAwesomeIcon icon={ fasStar }/>
+                                <FontAwesomeIcon icon={ farStar }/>
+                                <FontAwesomeIcon icon={ farStar }/>
                                 <FontAwesomeIcon icon={ farStar }/>
                             </p>
                         </div>
