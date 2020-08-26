@@ -11,6 +11,7 @@ const ProductPreview =({ title, path, coverimage, imagepreview, coveralt, previe
             <p class="price">${price}</p>
 			<Link to={path}>View Details</Link>
 		</figcaption>
+        <img src={imagepreview} alt={previewalt}/>
 	</figure>
 );
 

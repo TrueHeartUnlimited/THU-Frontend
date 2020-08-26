@@ -37,7 +37,7 @@ Products.propTypes = {
     data: PropTypes.object.isRequired,
 };
 
-/*export const data = graphql `
+export const data = graphql `
 
     {
         allNodeProduct(sort: {fields: created, order: DESC}) {
@@ -64,6 +64,6 @@ Products.propTypes = {
             }
         }
     }
-`;*/
+`;
 
 export default Products;
