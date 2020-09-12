@@ -67,7 +67,8 @@ const Layout = ({ children }) => {
                 </div>
             </div>
             <div id="copy">
-                © TRUE HEART UNLIMITED {new Date().getFullYear()} | ABN 27 459 675 260
+                <p>© TRUE HEART UNLIMITED {new Date().getFullYear()} | Powered by <Link href="" id="contentfull">Contentful</Link></p>
+                <p>ABN 27 459 675 260</p>
             </div>
         </footer>
     </>
