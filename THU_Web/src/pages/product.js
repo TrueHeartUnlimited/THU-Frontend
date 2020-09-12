@@ -75,6 +75,59 @@ const SecondPage = () => (
         </div>
         <div id="product-table">
             <Tabs class="tab-content">
+                <div class="tab-pane active" label="Customisation">
+                    <table class="product-table">
+                        <tbody>
+                            <tr>
+                            <th>Colour:</th>
+                                <td>
+                                    <div class="flex" id="swatches">
+                                        <Link to="">
+                                            <dl class="swatch-dl">
+                                                <dt class="swatch-dt selected">
+                                                    <span class="swatch-color blue-swatch">
+                                                        <span class="swatch-color"></span>
+                                                    </span>
+                                                </dt>
+                                                <dd class="text-color">
+                                                    <div class="color-alt">
+                                                        <span class="text-color">Blue</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </Link>
+
+                                        <Link to="">
+                                            <dl class="swatch-dl">
+                                                <dt class="swatch-dt">
+                                                    <span class="swatch-color orange-swatch">
+                                                        <span class="swatch-color"></span>
+                                                    </span>
+                                                </dt>
+                                                <dd class="text-color">
+                                                    <div class="color-alt">
+                                                        <span class="text-color">Orange</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </Link>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Strap Length:</th>
+                                <td>
+                                    <ul>
+                                        <li>Length 1</li>
+                                        <li>Length 2</li>
+                                        <li>Length 3</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
+                </div>
                 <div class="tab-pane active" label="Product Information">
                     <table id="product-details">
                         <tbody>

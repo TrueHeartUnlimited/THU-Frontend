@@ -40,7 +40,7 @@ const IndexPage = ({data}) => {
             <div>
                 <p>
                     Like what you see
-                    <Link to="/shop/">Shop Now</Link>
+                    <Link to="/shop/" class="btn">Shop Now</Link>
                 </p>
             </div>
         </div>

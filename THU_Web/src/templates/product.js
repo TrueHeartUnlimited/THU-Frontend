@@ -19,7 +19,7 @@ const Product = ({data}) => {
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">
-                        <img 
+                        <img
                             src={post.relationships.field_product_image[0].localFile.publicURL}
                             alt={post.field_product_image[0].alt}
                             width="100%"
@@ -60,7 +60,7 @@ const Product = ({data}) => {
                                             </dd>
                                         </dl>
                                     </Link>
-        
+
                                     <Link to="">
                                         <dl class="swatch-dl">
                                             <dt class="swatch-dt">

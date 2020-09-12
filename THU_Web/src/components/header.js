@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown, faFileInvoiceDollar, faShoppingBag, faCalculator } from "@fortawesome/free-solid-svg-icons"
+import { faChevronDown, faFileInvoiceDollar } from "@fortawesome/free-solid-svg-icons"
 
 import "./header.css"
 

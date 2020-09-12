@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCaretRight, faPhoneAlt, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
-import { faFacebook, faInstagramSquare, faPinterest } from "@fortawesome/free-brands-svg-icons"
+import { faFacebookSquare, faInstagramSquare, faPinterestSquare } from "@fortawesome/free-brands-svg-icons"
 
 import { Header, Navigation } from "./header"
 //import "./layout.css"
@@ -23,13 +23,13 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <div class="flex" id="social">
             <div>
-                <Link to=""><FontAwesomeIcon icon={ faFacebook }/></Link>
+                <Link to=""><FontAwesomeIcon icon={ faFacebookSquare }/></Link>
             </div>
             <div>
                 <Link to=""><FontAwesomeIcon icon={ faInstagramSquare }/></Link>
             </div>
             <div>
-                <Link to=""><FontAwesomeIcon icon={ faPinterest }/></Link>
+                <Link to=""><FontAwesomeIcon icon={ faPinterestSquare }/></Link>
             </div>
         </div>
         <footer>

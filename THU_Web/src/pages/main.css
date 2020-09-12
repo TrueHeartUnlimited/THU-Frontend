@@ -49,6 +49,13 @@
     justify-content: space-between;
 }
 
+.btn {
+    background-color:plum;
+    border-radius: 10px;
+    color:white;
+    border:1px solid #d07bd0;
+}
+
 /* ---------------------------------------------- /*
  * Home
 /* ---------------------------------------------- */
@@ -87,14 +94,10 @@
 }
 
 #call-to-action a {
-    background-color:plum;
-    padding:15px 40px;
-    border-radius: 4px;
     margin-left:50px;
-    font-size:16px;
-    color:white;
     text-decoration:none;
-    font-weight:bold;
+    padding:15px 40px;
+    font-size:16px;
 }
 
 #call-to-action a:hover {
@@ -494,19 +497,19 @@ figure.effect-chico:hover p {
     border-top:3px solid var(--orange);
 }
 
-#product-details {
+.product-table {
     width:100%;
     padding:10px;
     font-size:14px;
     border-collapse:collapse;
 }
 
-#product-details th, td {
+.product-table th, td {
   text-align: left;
   padding: 8px;
 }
 
-#product-details tr:nth-child(even) {
+.product-table tr:nth-child(even) {
     background-color:var(--lightgrey);
 }
 
@@ -536,31 +539,41 @@ figure.effect-chico:hover p {
 /* ---------------------------------------------- */
 
 .invoice-box {
-    border: solid var(--grey);
-    border-width: 3px 1px 0 1px;
-    border-top-left-radius:10px;
-    border-top-right-radius:10px;
+    border: 1px solid var(--grey);
+    border-radius:10px;
     border-top:3px solid var(--orange);
+    margin:1.5em 0;
 }
 
 .invoice-box h3 {
     color:var(--orange);
 }
 
-#calc-table {
-    margin:1.5em 0;
+.submit {
+    padding:6px 12px;
 }
 
-#product-table {
+.invoice-container {
+    margin:10px 20px;
+}
+
+.invoice-half {
+    width:45%;
+}
+
+.invoice-box table {
     width:100%;
     padding:10px;
     font-size:14px;
     border-collapse:collapse;
 }
 
-#product-table th, #product-table td {
+.invoice-box th, .invoice-box td {
     padding: 8px;
-    border-bottom:1px solid var(--grey);
+}
+
+.invoice-box td {
+    border-top:1px solid var(--grey);
 }
 
 .remove {
@@ -608,6 +621,23 @@ figure.effect-chico:hover p {
     width:45px;
     height:35px;
     text-align:center;
+}
+
+.shipping-input {
+    border:1px solid var(--grey);
+    border-radius:4px;
+    padding:4px;
+    width:90%;
+    margin:4px 0;
+}
+
+.table-submit {
+    float:right;
+}
+
+#total-table th, #total-table td {
+    text-align:left;
+    border-top:1px solid var(--grey);
 }
 
 /* ---------------------------------------------- /*
