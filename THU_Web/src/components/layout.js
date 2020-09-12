@@ -4,6 +4,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
+/*
+Conentful monochrome logo svg -> <a href=“https://www.contentful.com/” rel=“nofollow” target=“_blank”><img src=“https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg” style=“max-width:100px;width:100%;” alt=“Powered by Contentful” /></a>
+*/
 
 import React from "react"
 import PropTypes from "prop-types"

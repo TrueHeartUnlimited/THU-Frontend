@@ -5,11 +5,12 @@
  */
 
 // You can delete this file if you're not using it
+
 const path = require('path');
 const { faMapPin } = require('@fortawesome/free-solid-svg-icons');
 const { any } = require('prop-types');
 
-exports.createPages = async({ actions, graphql}) => {
+/* exports.createPages = async({ actions, graphql}) => {
     const { createPage } = actions;
 
     const products = await graphql(`
@@ -35,4 +36,4 @@ exports.createPages = async({ actions, graphql}) => {
             },
         })
     );
-}
+} */
