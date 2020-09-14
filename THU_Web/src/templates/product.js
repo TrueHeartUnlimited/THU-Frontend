@@ -19,6 +19,7 @@ const Product = ({ data }) => {
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">
+                        {data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
                     </div>
                     <div id="product-info">
                         <div id="product-name-rating">

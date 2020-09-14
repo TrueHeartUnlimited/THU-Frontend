@@ -4,9 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-/*
-Conentful monochrome logo svg -> 
-*/
+
 
 import React from "react"
 import PropTypes from "prop-types"
