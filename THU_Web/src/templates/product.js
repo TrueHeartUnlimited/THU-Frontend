@@ -3,31 +3,26 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons"
-import { faStar as fasStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons"
+import { faStar as fasStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons" 
+import Img from "gatsby-image"
 
 import Tabs from "../components/tabs.js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Product = ({data}) => {
-    const post = data.nodeProduct;
+const Product = ({ data }) => {
 
     return(
         <Layout>
-            <SEO title="(Product Name)" />
+            <SEO title="testing"/> 
             <div class="product-header"></div>
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">
-                        <img
-                            src={post.relationships.field_product_image[0].localFile.publicURL}
-                            alt={post.field_product_image[0].alt}
-                            width="100%"
-                        />
                     </div>
                     <div id="product-info">
                         <div id="product-name-rating">
-                            <h2>Handbag</h2>
+                            <h2>{data.product.productName}</h2>
                             <p>2 Reviews</p>
                             <p class="rating">
                                 <FontAwesomeIcon icon={ fasStar }/>
@@ -38,8 +33,8 @@ const Product = ({data}) => {
                             </p>
                         </div>
                         <div id="product-price-description">
-                            <h3>${post.field_price}</h3>
-                            <div dangerouslySetInnerHTML={{__html: post.body.processed}}/>
+                            <h3>${data.product.price}</h3>
+                            <div dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
                         </div>
                         <div class="flex space_between" id="product-customisation">
                             <div class="customisation">
@@ -60,7 +55,7 @@ const Product = ({data}) => {
                                             </dd>
                                         </dl>
                                     </Link>
-
+        
                                     <Link to="">
                                         <dl class="swatch-dl">
                                             <dt class="swatch-dt">
@@ -87,7 +82,7 @@ const Product = ({data}) => {
                                 <tbody>
                                     <tr>
                                         <th>Size:</th>
-                                        <td>{post.field_size[0]}cm x {post.field_size[1]}cm</td>
+                                        <td>{data.product.sizing}</td>
                                     </tr>
                                     <tr>
                                         <th>Strap Size:</th>
@@ -95,11 +90,11 @@ const Product = ({data}) => {
                                     </tr>
                                     <tr>
                                         <th>Colours:</th>
-                                        <td>{post.relationships.field_colour[0].name}</td>
+                                        <td>{data.product.colours.map(colour => <p>{colour}</p>)}</td>
                                     </tr>
                                     <tr>
                                         <th>Material</th>
-                                        <td>{post.field_material}</td>
+                                        <td>{data.product.material}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -133,31 +128,28 @@ Product.propTypes = {
 };
 
 export const data = graphql`
-    query($ProductID: String!){
-        nodeProduct(id: {eq: $ProductID }){
+    query($path: String!){
+        product: contentfulProduct(path: {eq: $path }){
+            category
+            collection
+            colours
+            customisable
+            productName
+            productType
+            size
+            sizing
             id
-            title
-            body {
-                processed
-                summary
+            material
+            price
+            description {
+              description
             }
-            field_size
-            field_price
-            field_material
-            field_product_image {
-                alt
+            productImages {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
             }
-            relationships {
-                field_product_image {
-                    localFile {
-                        publicURL
-                    }
-                    filename
-                }
-                field_colour {
-                    name
-                }
-            }
+
         }
     }
 `;
