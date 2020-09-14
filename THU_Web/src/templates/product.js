@@ -14,7 +14,7 @@ const Product = ({ data }) => {
 
     return(
         <Layout>
-            <SEO title="testing"/> 
+            <SEO title={data.product.productName}/> 
             <div class="product-header"></div>
             <div class="container">
                 <div class="flex space_between" id="product">

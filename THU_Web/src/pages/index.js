@@ -28,7 +28,7 @@ const IndexPage = ({data}) => {
         <SEO title="Home" />
         <div class="flex space_between" id="carousel">
             {data.info.carouselImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
-      </div>
+        </div>
         <div class="container center" id="home-intro">
             <h2>{data.info.heading}</h2>
             <div dangerouslySetInnerHTML={{__html: data.info.homePara.internal.content}}/>

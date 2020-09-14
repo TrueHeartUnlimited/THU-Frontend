@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -23,30 +24,24 @@ const SecondPage = ({data}) => {
                 <div class="container">
                     <div class="flex">
                         <div class="feature">
-                            <h3>{data.info.keyPoint1.content[0].content.value}</h3>
-                            <p>{data.info.keyPoint1.content[1].content.value}</p>
+                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint1.html}}/>
                         </div>
                         <div class="feature">
-                            <h3>{data.info.keyPoint2.content[0].content.value}</h3>
-                            <p>{data.info.keyPoint2.content[1].content.value}</p>
+                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint2.html}}/>
                         </div>
                         <div class="feature">
-                            <h3>{data.info.keyPoint3.content[0].content.value}</h3>
-                            <p>{data.info.keyPoint3.content[1].content.value}</p>                        
+                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint3.html}}/>
                         </div>
                     </div>
                     <div class="flex">
                         <div class="feature">
-                            <h3>{data.info.keyPoint4.content[0].content.value}</h3>
-                            <p>{data.info.keyPoint4.content[1].content.value}</p>                        
+                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint4.html}}/>
                         </div>
                         <div class="feature">
-                            <h3>{data.info.keyPoint5.content[0].content.value}</h3>
-                            <p>{data.info.keyPoint5.content[1].content.value}</p>                        
+                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint5.html}}/>
                         </div>
                         <div class="feature">
-                            <h3>{data.info.keyPoint6.content[0].content.value}</h3>
-                            <p>{data.info.keyPoint6.content[1].content.value}</p>                        
+                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint6.html}}/>
                         </div>
                     </div>
                 </div>
@@ -80,46 +75,22 @@ export const query = graphql`
               }
             }
             keyPoint1 {
-              content {
-                content {
-                  value
-                }
-              }
+                ...html
             }
             keyPoint2 {
-              content {
-                content {
-                  value
-                }
-              }
+                ...html
             }
             keyPoint3 {
-              content {
-                content {
-                  value
-                }
-              }
+                ...html
             }
             keyPoint6 {
-              content {
-                content {
-                  value
-                }
-              }
+                ...html
             }
             keyPoint5 {
-              content {
-                content {
-                  value
-                }
-              }
+                ...html
             }
             keyPoint4 {
-              content {
-                content {
-                  value
-                }
-              }
+                ...html
             }
         }
         
