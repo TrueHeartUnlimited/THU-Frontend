@@ -1,12 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+
 const SecondPage = ({data}) => {
-    //const info = data;
 
     return (
         <Layout>
@@ -16,12 +18,12 @@ const SecondPage = ({data}) => {
             </div>
             <div class="container">
                 <div class="body large-body">
-                    <div/>
+                    <div dangerouslySetInnerHTML= {{__html: data.info.preamble.internal.content}}/>
                 </div>
                 <div class="body flex separator">
                     <div class="about-body">
                         <h2>Who We Are</h2>
-                        <div/>
+                        <div dangerouslySetInnerHTML={{__html: data.info.abtBody.internal.content}}/>
                     </div>
                 </div>
                 <div class="body separator">
@@ -57,7 +59,7 @@ const SecondPage = ({data}) => {
                             <p>From this point forward Jim will be producing all of my handbags. From time to time, I make bespoke pieces.</p>
                         </div>
                     </div>
-                </div>
+            </div>
             </div>
         </Layout>
     );
@@ -67,11 +69,33 @@ SecondPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-/* export const query = graphql`
+export const query = graphql`
     {
-      
+      info: contentfulAboutUs {
+        preamble {
+          internal {
+            content
+          }
+        }
+        timeline {
+          content {
+            content {
+              value
+            }
+          }
+          internal {
+            content
+          }
+          timeline
+        }
+        abtBody {
+            internal{
+                content
+            }
+        }
+      }
     }
-`; */
+`;
 
 
 export default SecondPage

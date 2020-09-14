@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import PropTypes from "prop-types";
+import Img from "gatsby-image";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -21,19 +22,16 @@ const Product = props => (
 )
 
 const IndexPage = ({data}) => {
-    //const homeInfo = data;
 
     return(
     <Layout>
         <SEO title="Home" />
         <div class="flex space_between" id="carousel">
-            <FontAwesomeIcon icon={ faAngleLeft }/>
-            <h2>2020 Collection</h2>
-            <FontAwesomeIcon icon={ faAngleRight }/>
-        </div>
+            {data.info.carouselImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
+      </div>
         <div class="container center" id="home-intro">
-            <h2></h2>
-            <div/>
+            <h2>{data.info.heading}</h2>
+            <div dangerouslySetInnerHTML={{__html: data.info.homePara.internal.content}}/>
         </div>
         <div id="call-to-action">
             <div>
@@ -82,10 +80,23 @@ Products.propTypes = {
 }
 
 
-/* export const query = graphql`
+export const query = graphql`
     {
+        info: contentfulHome {
+            homePara {
+              internal {
+                content
+              }
+            }
+            heading
+            carouselImages {
+              fluid{
+                ...GatsbyContentfulFluid
+              }
+            }
+        }
         
     }
 `;
- */
+
 export default IndexPage
