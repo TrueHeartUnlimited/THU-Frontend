@@ -34,43 +34,6 @@ const SecondPage = () => (
                     <p>This handbag is fully lined in kangaroo leather with an internal zip pocket. It comes with two interchangeable straps in different length.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus.</p>
                 </div>
-                <div class="flex space_between" id="product-customisation">
-                    <div class="customisation">
-                        <p>Colour: Blue</p>
-                        <p><Link to="/">Custom Colour</Link></p>
-                        <div class="flex" id="swatches">
-                            <Link to="">
-                                <dl class="swatch-dl">
-                                    <dt class="swatch-dt selected">
-                                        <span class="swatch-color blue-swatch">
-                                            <span class="swatch-color"></span>
-                                        </span>
-                                    </dt>
-                                    <dd class="text-color">
-                                        <div class="color-alt">
-                                            <span class="text-color">Blue</span>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </Link>
-
-                            <Link to="">
-                                <dl class="swatch-dl">
-                                    <dt class="swatch-dt">
-                                        <span class="swatch-color orange-swatch">
-                                            <span class="swatch-color"></span>
-                                        </span>
-                                    </dt>
-                                    <dd class="text-color">
-                                        <div class="color-alt">
-                                            <span class="text-color">Orange</span>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div id="product-table">
@@ -129,7 +92,7 @@ const SecondPage = () => (
                     <p>Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
                 </div>
                 <div class="tab-pane active" label="Product Information">
-                    <table id="product-details">
+                    <table class="product-table">
                         <tbody>
                             <tr>
                                 <th>Size:</th>
