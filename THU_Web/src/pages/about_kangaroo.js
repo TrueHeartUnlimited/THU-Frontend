@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const SecondPage = ({data}) => {
-    const info = data.nodeAbtKgLeather;
+    //const info = data.;
 
     return(
         <Layout>
@@ -17,7 +17,7 @@ const SecondPage = ({data}) => {
             <div class="container">
                 <div id="kangaroo-video"></div>
                 <div class="body separator large-body">
-                    <div dangerouslySetInnerHTML={{__html: info.field_body_1.processed}}/>
+                    <div/>
                 </div>
             </div>
             <div class="body" id="features">
@@ -25,7 +25,7 @@ const SecondPage = ({data}) => {
                     <div class="flex">
                         <div class="feature">
                             <h3>Sustainable</h3>
-                            <p>{info.field_key_points[0].processed}</p>
+                            <p></p>
                         </div>
                         <div class="feature">
                             <h3>Renewable</h3>
@@ -55,7 +55,7 @@ const SecondPage = ({data}) => {
             <div class="container">
                 <div class="body flex">
                     <div class="about-body">
-                        <div dangerouslySetInnerHTML={{__html: info.field_body_2.processed}}/>
+                        <div/>
                         <p></p>
                     </div>
                 </div>
@@ -68,30 +68,10 @@ SecondPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export const query = graphql`
+/* export const query = graphql`
     {
-        nodeAbtKgLeather {
-            field_body_1 {
-              processed
-            }
-            field_body_2 {
-              processed
-            }
-            field_key_points {
-              processed
-            }
-            field_small_image {
-              alt
-            }
-            relationships {
-              field_small_image {
-                localFile {
-                  publicURL
-                }
-              }
-            }
-        }
+        
     }
-`;
+`; */
 
 export default SecondPage

@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 /*
-Conentful monochrome logo svg -> <a href=“https://www.contentful.com/” rel=“nofollow” target=“_blank”><img src=“https://images.ctfassets.net/fo9twyrwpveg/7Htleo27dKYua8gio8UEUy/0797152a2d2f8e41db49ecbf1ccffdaa/PoweredByContentful_DarkBackground_MonochromeLogo.svg” style=“max-width:100px;width:100%;” alt=“Powered by Contentful” /></a>
+Conentful monochrome logo svg -> 
 */
 
 import React from "react"
@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
                 </div>
             </div>
             <div id="copy">
-                © TRUE HEART UNLIMITED {new Date().getFullYear()} | ABN 27 459 675 260
+                © TRUE HEART UNLIMITED {new Date().getFullYear()} | ABN 27 459 675 260 <a href="https://www.contentful.com/" rel="nofollow" target="_blank"><img src="https://images.ctfassets.net/fo9twyrwpveg/44baP9Gtm8qE2Umm8CQwQk/c43325463d1cb5db2ef97fca0788ea55/PoweredByContentful_LightBackground.svg" alt="Powered by Contentful" /></a>
             </div>
         </footer>
     </>
