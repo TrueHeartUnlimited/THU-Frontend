@@ -5,70 +5,34 @@
  */
 
 // You can delete this file if you're not using it
-
 const path = require('path');
-const slash = require('slash');
 const { faMapPin } = require('@fortawesome/free-solid-svg-icons');
 const { any } = require('prop-types');
 
-exports.createPages = ({ actions, graphql}) => {
-    const { createPage } = actions
+exports.createPages = async({ actions, graphql}) => {
+    const { createPage } = actions;
 
-    return graphql(`
+    const products = await graphql(`
         {
-            allContentfulProduct {
-                edges {
-                    node {
-                      path
-                    }
-                  }
-            }
-        }
-    
-    `).then(result => {
-        if (result.errors){
-            console.log("Error with conetntful data", result.errors)
-        }
-
-        const productTemplate = path.resolve('./src/templates/product.js')
-
-        result.data.allContentfulProduct.edges.forEach(product => {
-            createPage({
-                path: `${product.node.path}`,
-                component: slash(productTemplate),
-                conetxt:{
-                    path: product.node.path,
-                },
-            })
-        })
-    }).catch(error => console.log("Error with contentful data", error))
-}
-
-
-
- /*    const products = await graphql(`
-        {
-            allContentfulProduct {
-                edges {
-                  node {
+            allNodeProduct {
+                nodes {
                     id
-                    productName
-                    path
-                  }
+                    title
+                    path {
+                        alias
+                    }
                 }
             }
         }
-    `) */
+    `)
 
-
-
-/*     products.data.allContentfulProduct.edges.forEach(({node}) => {
+    products.data.allNodeProduct.nodes.map(productData => 
         createPage({
-            path: node.path,
+            path: productData.path.alias,
             component: path.resolve('src/templates/product.js'),
             context: {
-                ProductID: node.id,
+                ProductID: productData.id,
             },
         })
-    }); */
-
+    );
+}

@@ -1,9 +1,3 @@
-const dotenv = require('dotenv')
-
-if(process.env.NODE_ENV !== 'production'){
-  dotenv.config()
-}
-
 module.exports = {
   siteMetadata: {
     title: `True Heart Unlimited`,
@@ -34,10 +28,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
-      options:{
-        spaceId:`uwyhswazjqkn`,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      resolve: `gatsby-source-drupal`,
+      options: {
+        preview: true,
+        baseUrl: `http://admin.trueheart.com.au/`,
+        apiBase: `jsonapi`,
+        //can add basic auth
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

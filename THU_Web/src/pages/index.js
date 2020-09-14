@@ -21,7 +21,7 @@ const Product = props => (
 )
 
 const IndexPage = ({data}) => {
-    //const homeInfo = data;
+    const homeInfo = data.nodeHomePage;
 
     return(
     <Layout>
@@ -32,8 +32,9 @@ const IndexPage = ({data}) => {
             <FontAwesomeIcon icon={ faAngleRight }/>
         </div>
         <div class="container center" id="home-intro">
-            <h2></h2>
-            <div/>
+            <h2>{homeInfo.title}</h2>
+            <div dangerouslySetInnerHTML={{__html: homeInfo.body.processed}}
+            />
         </div>
         <div id="call-to-action">
             <div>
@@ -82,10 +83,25 @@ Products.propTypes = {
 }
 
 
-/* export const query = graphql`
+export const query = graphql`
     {
-        
+        nodeHomePage {
+            body {
+              processed
+            }
+            title
+            field_main_images {
+              alt
+            }
+            relationships {
+              field_main_images {
+                localFile {
+                  publicURL
+                }
+              }
+            }
+        }
     }
 `;
- */
+
 export default IndexPage
