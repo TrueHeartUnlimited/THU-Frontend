@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const SecondPage = ({data}) => {
-    const info = data.nodeAboutUs;
+    //const info = data;
 
     return (
         <Layout>
@@ -16,12 +16,12 @@ const SecondPage = ({data}) => {
             </div>
             <div class="container">
                 <div class="body large-body">
-                    <div dangerouslySetInnerHTML={{__html: info.field_preamble.processed}}/>
+                    <div/>
                 </div>
                 <div class="body flex separator">
                     <div class="about-body">
                         <h2>Who We Are</h2>
-                        <div dangerouslySetInnerHTML={{__html: info.field_who_we_are.processed}}/>
+                        <div/>
                     </div>
                 </div>
                 <div class="body separator">
@@ -67,21 +67,11 @@ SecondPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export const query = graphql`
+/* export const query = graphql`
     {
-        nodeAboutUs {
-            field_preamble {
-              processed
-            }
-            field_who_we_are {
-              processed
-            }
-            field_timeline {
-              processed
-            }
-          }
+      
     }
-`;
+`; */
 
 
 export default SecondPage

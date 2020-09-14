@@ -40,6 +40,9 @@ template {
   display: none;
 }
 a {
+  max-width:50;
+  width:100%;
+  display: inline-block;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
