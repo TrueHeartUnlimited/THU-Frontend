@@ -1,3 +1,4 @@
+/* 
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
@@ -20,10 +21,10 @@ const Products = ({data}) => {
                     key={product.id}
                     title={product.title}
                     path={product.path.alias}
-                    coverimage={product.relationships.field_product_image[0].localFile.publicURL}
-                    previewimage={product.relationships.field_product_image[1].localFile.publicURL}
-                    coveralt={product.field_product_image[0].alt}
-                    previewalt={product.field_product_image[1].alt}
+                    coverimage={product.relationships.field_images[0].localFile.publicURL}
+                    previewimage={product.relationships.field_images[1].localFile.publicURL}
+                    coveralt={product.field_images[0].alt}
+                    previewalt={product.field_images[1].alt}
                     price={product.field_price}
                     colour={product.relationships.field_color}
                 />
@@ -45,11 +46,11 @@ export const data = graphql `
                 id
                 title
                 field_price
-                field_product_image {
+                field_images {
                     alt
                 }
                 relationships {
-                    field_product_image {
+                    field_images {
                         localFile {
                             publicURL
                         }
@@ -67,3 +68,5 @@ export const data = graphql `
 `;
 
 export default Products;
+
+ */
