@@ -387,10 +387,6 @@ figure.effect-chico:hover p {
     padding-left:20px;
 }
 
-.customisation {
-    width:40%;
-}
-
 #product-customisation p {
     display:inline-block;
 }
@@ -511,6 +507,10 @@ figure.effect-chico:hover p {
 
 .product-table tr:nth-child(even) {
     background-color:var(--lightgrey);
+}
+
+#customisation {
+    padding:10px;
 }
 
 .review {

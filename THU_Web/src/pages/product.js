@@ -89,7 +89,7 @@ const SecondPage = () => (
                             </tr>
                         </tbody>
                     </table>
-                    <p>Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
+                    <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
                 </div>
                 <div class="tab-pane active" label="Product Information">
                     <table class="product-table">
