@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import {BLOCKS} from "@contentful/rich-text-types"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 
 import Layout from "../components/layout"
@@ -9,6 +10,17 @@ import SEO from "../components/seo"
 
 
 const SecondPage = ({data}) => {
+    const options = {
+        renderNode:{
+          [BLOCKS.HEADING_2]: (node, children) => (
+            <h2 className="heading2">{children}</h2>
+          ),
+          [BLOCKS.PARAGRAPH]: (node, children) => (
+            <p className="copy">{children}</p>
+          ),
+        },
+        renderMark: {},
+    }
 
     return (
         <Layout>
@@ -27,7 +39,9 @@ const SecondPage = ({data}) => {
                     </div>
                 </div>
                 <div class="body separator">
-                    <div class="date flex space_between">
+                    <div>{documentToReactComponents(data.info.timeline.json, options)}</div>
+
+{/*                     <div class="date flex space_between">
                         <div class="thumb">
                         </div>
                         <div class="history-info">
@@ -59,7 +73,7 @@ const SecondPage = ({data}) => {
                             <p>From this point forward Jim will be producing all of my handbags. From time to time, I make bespoke pieces.</p>
                         </div>
                     </div>
-            </div>
+ */}            </div>
             </div>
         </Layout>
     );
@@ -78,15 +92,7 @@ export const query = graphql`
           }
         }
         timeline {
-          content {
-            content {
-              value
-            }
-          }
-          internal {
-            content
-          }
-          timeline
+          json
         }
         abtBody {
             internal{

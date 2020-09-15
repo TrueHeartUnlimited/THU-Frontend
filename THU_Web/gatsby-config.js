@@ -20,7 +20,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

@@ -1,12 +1,24 @@
-import React from "react"
+import React, { Children } from "react"
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
-
+import {BLOCKS} from "@contentful/rich-text-types"
+import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = ({data}) => {
+const AboutKangaroo = ({data}) => {
+  const options = {
+    renderNode:{
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <h3 className="heading3">{children}</h3>
+      ),
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="copy">{children}</p>
+      ),
+    },
+    renderMark: {},
+  }
 
     return(
         <Layout>
@@ -24,24 +36,24 @@ const SecondPage = ({data}) => {
                 <div class="container">
                     <div class="flex">
                         <div class="feature">
-                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint1.html}}/>
+                           <div>{documentToReactComponents(data.info.keyPoint1.json, options)}</div>
                         </div>
                         <div class="feature">
-                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint2.html}}/>
+                            <div>{documentToReactComponents(data.info.keyPoint2.json, options)}</div>
                         </div>
                         <div class="feature">
-                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint3.html}}/>
+                            <div>{documentToReactComponents(data.info.keyPoint3.json, options)}</div>
                         </div>
                     </div>
                     <div class="flex">
                         <div class="feature">
-                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint4.html}}/>
+                            <div>{documentToReactComponents(data.info.keyPoint4.json, options)}</div>
                         </div>
                         <div class="feature">
-                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint5.html}}/>
+                            <div>{documentToReactComponents(data.info.keyPoint5.json, options)}</div>
                         </div>
                         <div class="feature">
-                            <div dangerouslySetInnerHTML={{__html: data.info.keyPoint6.html}}/>
+                            <div>{documentToReactComponents(data.info.keyPoint6.json, options)}</div>
                         </div>
                     </div>
                 </div>
@@ -57,7 +69,7 @@ const SecondPage = ({data}) => {
     )
 }
 
-SecondPage.propTypes = {
+AboutKangaroo.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
@@ -75,26 +87,26 @@ export const query = graphql`
               }
             }
             keyPoint1 {
-                ...html
+              json
             }
             keyPoint2 {
-                ...html
+              json
             }
             keyPoint3 {
-                ...html
+              json
             }
             keyPoint6 {
-                ...html
+              json
             }
             keyPoint5 {
-                ...html
+              json
             }
             keyPoint4 {
-                ...html
+              json
             }
         }
         
     }
 `;
 
-export default SecondPage
+export default AboutKangaroo
