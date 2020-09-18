@@ -9,7 +9,12 @@ export function Search() {
     return(
         <div id="header-icons">
             <Link to="/invoice/"><FontAwesomeIcon icon={ faFileInvoiceDollar } id="invoice-icon"/></Link>
-            <FontAwesomeIcon icon={ faSearch } id="search-icon"/>
+            <form>
+                <input type="text" name="search"/>
+                <button type="submit">
+                    <FontAwesomeIcon icon={ faSearch } id="search-icon"/>
+                </button>
+            </form>
         </div>
     )
 }

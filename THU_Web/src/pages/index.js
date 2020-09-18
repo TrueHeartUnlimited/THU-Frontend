@@ -1,7 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 
@@ -95,7 +93,7 @@ export const query = graphql`
               }
             }
         }
-        
+
     }
 `;
 

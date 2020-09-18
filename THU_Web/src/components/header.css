@@ -63,11 +63,22 @@ header h1 a {
     color:var(--grey);
 }
 
-#search-icon {
-    border:1px solid var(--grey);
-    border-radius:100%;
+#header-icons form {
+    display:inline-block;
+}
+#header-icons input, #header-icons button {
     padding:8px;
     color:var(--grey);
+}
+
+#header-icons input {
+    border:1px solid var(--grey);
+    border-radius:20px;
+    transition:width 0.2s ease-in 0.2s;
+}
+
+#header-icons button {
+    background-color:white;
 }
 
 /* ---------------------------------------------- /*
