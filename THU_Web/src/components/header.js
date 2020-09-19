@@ -1,19 +1,33 @@
 import { Link } from "gatsby"
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown, faFileInvoiceDollar } from "@fortawesome/free-solid-svg-icons"
+import { faChevronDown, faFileInvoiceDollar, faSearch } from "@fortawesome/free-solid-svg-icons"
 
 import "./header.css"
 
+export function Search() {
+    return(
+        <div id="header-icons">
+            <Link to="/invoice/"><FontAwesomeIcon icon={ faFileInvoiceDollar } id="invoice-icon"/></Link>
+            <form>
+                <input type="text" name="search"/>
+                <button type="submit">
+                    <FontAwesomeIcon icon={ faSearch } id="search-icon"/>
+                </button>
+            </form>
+        </div>
+    )
+}
+
 export function Header() {
     return(
-      <header>
-          <h1 style={{ margin: 0 }}>
-            <Link  to="/">
-              T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span> U<span class="lower_case">NLIMITED</span>
-            </Link>
-          </h1>
-      </header>
+        <header>
+            <h1>
+                <Link  to="/">
+                  T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span> U<span class="lower_case">NLIMITED</span>
+                </Link>
+            </h1>
+        </header>
   )
 }
 
@@ -30,7 +44,6 @@ export function Navigation() {
                 </li>
                 <li><Link to="/shop/">Shop</Link></li>
                 <li><Link to="/contact/">Contact</Link></li>
-                <li><Link to="/invoice/"><FontAwesomeIcon icon={ faFileInvoiceDollar } id="invoice-icon"/> Invoice</Link></li>
             </ul>
         </nav>
     )

@@ -28,6 +28,10 @@ header, nav {
     justify-content: center;
 }
 
+/* ---------------------------------------------- /*
+ * Header
+/* ---------------------------------------------- */
+
 header {
     padding:20px;
 }
@@ -41,6 +45,40 @@ header h1 a {
 
 .lower_case {
     font-size:24px;
+}
+
+/* ---------------------------------------------- /*
+ * Search
+/* ---------------------------------------------- */
+
+#header-icons {
+    position:absolute;
+    margin-top:10px;
+    margin-right:10px;
+    right:0;
+}
+
+#header-icon a, #invoice-icon {
+    padding:8px;
+    color:var(--grey);
+}
+
+#header-icons form {
+    display:inline-block;
+}
+#header-icons input, #header-icons button {
+    padding:8px;
+    color:var(--grey);
+}
+
+#header-icons input {
+    border:1px solid var(--grey);
+    border-radius:20px;
+    transition:width 0.2s ease-in 0.2s;
+}
+
+#header-icons button {
+    background-color:white;
 }
 
 /* ---------------------------------------------- /*

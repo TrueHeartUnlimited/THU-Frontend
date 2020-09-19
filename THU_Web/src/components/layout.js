@@ -12,12 +12,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCaretRight, faPhoneAlt, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 import { faFacebookSquare, faInstagramSquare, faPinterestSquare } from "@fortawesome/free-brands-svg-icons"
 
-import { Header, Navigation } from "./header"
+import { Search, Header, Navigation } from "./header"
 //import "./layout.css"
 
 const Layout = ({ children }) => {
   return (
     <>
+      <Search/>
       <Header/>
       <Navigation/>
         <main>{children}</main>
