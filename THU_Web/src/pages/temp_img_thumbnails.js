@@ -1,7 +1,8 @@
-/* 
+
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+
 
 //So I think this needs to be integrated into the home page and the shop
 import layout from "../components/layout"
@@ -10,23 +11,18 @@ import ProductPreview from "../components/productPreview"
 
 //This is the part where stuff is made pretty
 const Products = ({data}) => {
-    const products = data.allNodeProduct.nodes;
 
     return (
         <layout>
             <SEO title="Products" />
-            <h1> Products</h1>
-            {products.map(product => (
+            {data.products.map(product => (
                 <ProductPreview
-                    key={product.id}
-                    title={product.title}
-                    path={product.path.alias}
-                    coverimage={product.relationships.field_images[0].localFile.publicURL}
-                    previewimage={product.relationships.field_images[1].localFile.publicURL}
-                    coveralt={product.field_images[0].alt}
-                    previewalt={product.field_images[1].alt}
-                    price={product.field_price}
-                    colour={product.relationships.field_color}
+                    title={product.productName}
+                    path={product.path}
+                    imagefuild={product.productImages[0].fluid}
+                    imagesrc={product.productImages[0].fluid.src}
+                    imagealt={product.productImages[0]}
+                    price={product.price}
                 />
             ))}
         </layout>
@@ -39,34 +35,24 @@ Products.propTypes = {
 };
 
 export const data = graphql `
-
     {
-        allNodeProduct(sort: {fields: created, order: DESC}) {
-            nodes {
-                id
-                title
-                field_price
-                field_images {
-                    alt
+        products: allContentfulProduct {
+            edges {
+              node {
+                productName
+                price
+                path
+                productImages {
+                  fluid{
+                      ...GatsbyContentfulFluid
+                  }
                 }
-                relationships {
-                    field_images {
-                        localFile {
-                            publicURL
-                        }
-                    }
-                    field_colour {
-                        name
-                    }
-                }
-                path {
-                    alias
-                }
+              }
             }
         }
+
     }
 `;
 
 export default Products;
 
- */
