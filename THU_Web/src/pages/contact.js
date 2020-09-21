@@ -1,7 +1,18 @@
 import React from "react"
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const containerStyle = {
+  width: '100%',
+  height: '100%'
+};
+
+const center = {
+  lat: -27.464320,
+  lng: 153.011270
+};
 
 const SecondPage = () => (
   <Layout>
@@ -35,6 +46,12 @@ const SecondPage = () => (
                 <div class="location-info">
                     <h2>Our Location</h2>
                     <div id="map">
+                        <LoadScript googleMapsApiKey="AIzaSyBaLBI6hzrNKKCL5wFZbYj1LN13PJK7RV4">
+                            <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+                                { /* Child components, such as markers, info windows, etc. */ }
+                                <Marker position={center}/>
+                            </GoogleMap>
+                        </LoadScript>
                     </div>
                 </div>
                 <div class="separator location-info">
