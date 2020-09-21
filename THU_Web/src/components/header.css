@@ -58,6 +58,13 @@ header h1 a {
     right:0;
 }
 
+#search-icon {
+    padding:8px;
+    color:var(--grey);
+    border:1px solid var(--grey);
+    border-radius:20px;
+}
+
 #header-icon a, #invoice-icon {
     padding:8px;
     color:var(--grey);
