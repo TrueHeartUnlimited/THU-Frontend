@@ -21,8 +21,8 @@ const SecondPage = () => (
         <h1>Large Custom Piece Orders</h1>
     </div>
     <div class="container" id="contact-us">
-        <div class="center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt vel sem in placerat. Fusce consectetur ultricies tempus. In et purus felis. Curabitur pellentesque mollis porttitor. Nulla sed elit eu quam porttitor porta. Nam dignissim, urna semper rhoncus facilisis, ipsum turpis ornare lacus, aliquam egestas sem nibh vel dolor.</p>
+        <div>
+            <p>We cater to large orders of items or even large orders of custom items. If you are interested in getting pouches for your company or bags for your organisation we are happy to work with you to make something tailored for you.</p>
         </div>
         <div class="flex separator space_between">
             <div class="half-width" id="message">

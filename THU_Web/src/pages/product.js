@@ -89,7 +89,10 @@ const SecondPage = () => (
                             </tr>
                         </tbody>
                     </table>
-                    <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
+                    <div class="flex space_between">
+                        <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
+                        <p style={{marginTop:"10px"}}><Link to="/custom" class="btn" id="custom-btn">Get Custom</Link></p>
+                    </div>
                 </div>
                 <div class="tab-pane active" label="Product Information">
                     <table class="product-table">

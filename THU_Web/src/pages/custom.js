@@ -21,8 +21,8 @@ const SecondPage = () => (
         <h1>Custom Pieces</h1>
     </div>
     <div class="container" id="contact-us">
-        <div class="center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt vel sem in placerat. Fusce consectetur ultricies tempus. In et purus felis. Curabitur pellentesque mollis porttitor. Nulla sed elit eu quam porttitor porta. Nam dignissim, urna semper rhoncus facilisis, ipsum turpis ornare lacus, aliquam egestas sem nibh vel dolor.</p>
+        <div>
+            <p>Nothing fits you perfectly? We are happy to make special alterations to products to meet your needs and make it personal for you. Still not happy? We make custom bespoke pieces that are tailor made for you and your needs. Get in touch with us to begin the process.</p>
         </div>
         <div class="flex separator space_between">
             <div class="half-width" id="message">
