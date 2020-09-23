@@ -15,11 +15,11 @@ const Products = ({data}) => {
     return (
         <layout>
             <SEO title="Products" />
-            {data.products.map(product => (
+            {data.allContentfulProduct.edges.map(product => (
                 <ProductPreview
                     title={product.productName}
                     path={product.path}
-                    imagefuild={product.productImages[0].fluid}
+                    image={product.productImages[0].fluid}
                     imagesrc={product.productImages[0].fluid.src}
                     imagealt={product.productImages[0]}
                     price={product.price}
@@ -36,7 +36,7 @@ Products.propTypes = {
 
 export const data = graphql `
     {
-        products: allContentfulProduct {
+        allContentfulProduct {
             edges {
               node {
                 productName

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Img from "gatsby-image"
 
-//colour doesnt need to be displayed but will be needed for sort options
 const ProductPreview =({ title, path, imagefluid, imagesrc, imagealt, price }) => (
     <figure class="effect-chico">
 		<Img fuild={imagefluid} src={imagesrc} alt={imagealt}/>

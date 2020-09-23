@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./main.css"
 import Products from "./temp_img_thumbnails";
+import ProductDisplay from "../components/productDisplay"
 
 const Product = props => (
     <figure class="effect-chico">
@@ -41,18 +42,7 @@ const IndexPage = ({data}) => {
         </div>
         <div class="container" id="featured">
             <div class="flex space_between grid">
-                <Product
-                    name="Adelina Handbag"
-                    price="250"
-                />
-                <Product
-                    name="Anais Belt"
-                    price="100"
-                />
-                <Product
-                    name="Leila Handbag"
-                    price="320"
-                />
+              <ProductDisplay items={data.products}/>
             </div>
             <div class="flex space_between grid">
                 <Product
@@ -93,7 +83,28 @@ export const query = graphql`
               }
             }
         }
-
+ 
+        products: allContentfulProduct {
+          edges {
+            node {
+              path
+              price
+              price2
+              size
+              collection
+              colours
+              customisable
+              category
+              productType
+              productName
+              productImages {
+                fixed {
+                  ...GatsbyContentfulFixed_tracedSVG
+                }
+              }
+            }
+          }
+        }
     }
 `;
 
