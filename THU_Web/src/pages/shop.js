@@ -1,32 +1,34 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import product from "../components/productPreview";
+import Display from "../components/shopDisplay"
 
 
-const Product = props => (
-    <figure class="effect-chico">
-		<img src="https://tympanus.net/Development/HoverEffectIdeas/img/15.jpg" alt="img15"/>
-		<figcaption>
-			<h3>{props.name}</h3>
-            <p class="price">${props.price}</p>
-			<Link to="/product/">View Details</Link>
-		</figcaption>
-	</figure>
-)
+const shop = ({data}) => {
+  return(
+    <Layout>
+          <SEO title="Shop" />
+    <div class="header">
+        <h1>Shop</h1>
+    </div>
+    <div class="container">
+      <Display items={data.products}/>
+    </div>
+    </Layout>
 
-
-const SecondPage = () => (
-  <Layout>
+  )
+}
+/*   <Layout>
     <SEO title="Shop" />
     <div class="header">
         <h1>Shop</h1>
     </div>
     <div class="container">
+
         <div id="filter">
             <ul>
                 <li>Bags <FontAwesomeIcon icon={ faChevronDown }/>
@@ -110,6 +112,30 @@ const SecondPage = () => (
         </div>
     </div>
   </Layout>
-)
-
-export default SecondPage
+ */
+export const query = graphql `
+  {
+    products: allContentfulProduct {
+      edges {
+        node {
+          path
+          price
+          price2
+          size
+          collection
+          colours
+          customisable
+          category
+          style
+          productName
+          productImages {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`
+export default shop

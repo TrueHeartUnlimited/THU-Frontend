@@ -24,23 +24,19 @@ const Product = ({ data }) => {
                     <div id="product-info">
                         <div id="product-name-rating">
                             <h2>{data.product.productName}</h2>
-                            <p>2 Reviews</p>
-                            <p class="rating">
-                                <FontAwesomeIcon icon={ fasStar }/>
-                                <FontAwesomeIcon icon={ fasStar }/>
-                                <FontAwesomeIcon icon={ fasStar }/>
-                                <FontAwesomeIcon icon={ faStarHalfAlt }/>
-                                <FontAwesomeIcon icon={ farStar }/>
-                            </p>
                         </div>
                         <div id="product-price-description">
-                            <h3>${data.product.price}</h3>
+                            {data.product.price2 != null
+                              ? <h3>${data.product.price}-{data.product.price2}</h3>
+                              : <h3>${data.product.price}</h3>
+                            }
                             <div dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
                         </div>
                         <div class="flex space_between" id="product-customisation">
                             <div class="customisation">
-                                <p>Colour: Blue</p>
+                              {data.product.customisable == true &&
                                 <p><Link to="/">Custom Colour</Link></p>
+                              }
                                 <div class="flex" id="swatches">
                                     <Link to="">
                                         <dl class="swatch-dl">
@@ -136,12 +132,13 @@ export const data = graphql`
             colours
             customisable
             productName
-            productType
+            style
             size
             sizing
             id
             material
             price
+            price2
             description {
               description
             }

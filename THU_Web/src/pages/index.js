@@ -6,19 +6,7 @@ import Img from "gatsby-image";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./main.css"
-import Products from "./temp_img_thumbnails";
 import ProductDisplay from "../components/productDisplay"
-
-const Product = props => (
-    <figure class="effect-chico">
-		<img src="https://tympanus.net/Development/HoverEffectIdeas/img/15.jpg" alt="img15"/>
-		<figcaption>
-			<h3>{props.name}</h3>
-            <p class="price">${props.price}</p>
-			<Link to="/product/">View Details</Link>
-		</figcaption>
-	</figure>
-)
 
 const IndexPage = ({data}) => {
 
@@ -44,29 +32,10 @@ const IndexPage = ({data}) => {
             <div class="flex space_between grid">
               <ProductDisplay items={data.products}/>
             </div>
-            <div class="flex space_between grid">
-                <Product
-                    name="Adele Clutch"
-                    price="120"
-                />
-                <Product
-                    name="Alaia Clutch"
-                    price="120"
-                />
-                <Product
-                    name="Petra Handbag"
-                    price="600"
-                />
-            </div>
         </div>
     </Layout>
     )
 }
-
-Products.propTypes = {
-    data: PropTypes.object.isRequired,
-}
-
 
 export const query = graphql`
     {
@@ -90,16 +59,10 @@ export const query = graphql`
               path
               price
               price2
-              size
-              collection
-              colours
-              customisable
-              category
-              productType
               productName
               productImages {
-                fixed {
-                  ...GatsbyContentfulFixed_tracedSVG
+                fluid {
+                  ...GatsbyContentfulFluid_tracedSVG
                 }
               }
             }
