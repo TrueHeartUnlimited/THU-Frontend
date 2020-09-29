@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+/*import React, {Component} from 'react';
 import {Link} from 'gatsby';
 import Img from 'gatsby-image';
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
@@ -115,7 +115,7 @@ export default class productDisplay extends Component{
             return(
                 <section>
                   <div className="container">
-                    {/*changes ststas based on the selected filters*/}
+                    {/*changes ststas based on the selected filters*//*}
                         <div id="filter">
                           <ul>
                             <li>Collection <FontAwesomeIcon icon={faChevronDown}/>
@@ -144,7 +144,7 @@ export default class productDisplay extends Component{
                               <ul class='shop-dropdown'>
                                 {this.state.categories.map((colour, index)=>{
                                   <li><checkbox onChange={()=>{
-                                    this.handleToggle(colour) 
+                                    this.handleToggle(colour)
                                   }}/> </li>
                                 })}
                               </ul>
@@ -159,7 +159,7 @@ export default class productDisplay extends Component{
                           </ul>
                         </div>
                       </div>
-                    {/*renders the item thumbnails*/}
+                    {/*renders the item thumbnails*//*}
                       {this.state.sortItems.map(({node})=>{
                         return (
                           <div class="flew space_between grid">
@@ -167,7 +167,7 @@ export default class productDisplay extends Component{
                               <Img fluid={node.productImages[0].fluid}/>
                               <figcaption>
                                 <h3>{node.productName}</h3>
-                                    {node.price2 != null 
+                                    {node.price2 != null
                                       ? <p class="price">${node.price}-${node.price2}</p>
                                       : <p class="price">${node.price}</p>
                                     }
@@ -192,4 +192,4 @@ export default class productDisplay extends Component{
             </section>)
         }
     }
-}
+}*/
