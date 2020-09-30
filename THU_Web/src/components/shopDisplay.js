@@ -21,28 +21,43 @@ const getStyles = items=>{
   });
   let tempStyles = new Set(tempItems);
   let styles = Array.from(tempStyles);
-  styles = ['All', ...styles];
   return styles;
 }
 
 const getColours = items=>{
-  let tempItems = items.map(items =>{
-    return items.node.colours.toString();
+  var tempItems = [];
+  items.map(items =>{
+    if(items.node.colours.length > 1){
+      for(var i = 0; i < items.node.colours.length; i++){
+        console.log(items.node.colours[i]);
+        tempItems.push(items.node.colours[i].toString());
+      };
+      return;
+    }else{
+      return tempItems.push(items.node.colours.toString());
+    }
   });
   let tempColours = new Set(tempItems);
   let colours = Array.from(tempColours);
-  colours=['All', ...colours];
   return colours;
 }
 
 const getSize = items=>{
-  let tempItems = items.map(items =>{
-    return items.node.size.toString();
+  var tempItems = [];
+  items.map(items =>{
+    if(items.node.size.length > 1){
+      for(var i = 0; i < items.node.size.length; i++){
+        console.log(items.node.size[i]);
+        tempItems.push(items.node.size[i].toString());
+      };
+      return;
+    }else{
+      return tempItems.push(items.node.size.toString());
+    }
   });
   let tempSize = new Set(tempItems);
-  let size = Array.from(tempSize);
-  size = ['All', ...size];
-  return size;
+  let sizes = Array.from(tempSize);
+  return sizes;
 }
 
 const getCollection= items =>{
@@ -87,6 +102,37 @@ export default class productDisplay extends Component{
               return{sortItems:items}
             })
           }
+          else if(this.state.styles.includes(option) === true){
+            let items = tempItems.filter(({node})=>node.style.toString() === option);
+            this.setState(()=>{
+              return{sortItems:items}
+            })
+          }
+          else if(this.state.colours.includes(option) === true){
+            var items = [];
+              for(var i=0; i<tempItems.length; i++){
+                for(var j=0; j<tempItems[i].node.colours.length; j++){
+                  if(tempItems[i].node.colours[j].toString() === option){
+                    items.push(tempItems[i]);
+                  }
+                }
+              }
+            this.setState(()=>{
+              return{sortItems:items}
+            })
+          }
+          else if(this.state.size.includes(option) === true){
+            var items = [];
+              for(var i=0; i<tempItems.length; i++){
+                for(var j=0; j<tempItems[i].node.size.length; j++){
+                  if(tempItems[i].node.size[j].toString() === option){
+                    items.push(tempItems[i]);
+                  }
+                }
+              }            this.setState(()=>{
+              return{sortItems:items}
+            })
+          }
           else{
             let items = tempItems.filter(({node})=>node.collection.toString() === option);
             this.setState(()=>{
@@ -96,7 +142,7 @@ export default class productDisplay extends Component{
         }
     };
 
-    handleToggle = option =>{
+/*     handleToggle = option =>{
       const currentIndex = Checked.indexOf(option);
       const newChecked = [...Checked];
       if (currentIndex === -1){
@@ -107,10 +153,10 @@ export default class productDisplay extends Component{
       }
       setChecked(newChecked)
       this.props.handleFilters(newChecked)
-    }
-
+    } */
     //renders the HTML and javascript of teh component
     render(){
+        console.log(this.state.colours)
         if(this.state.items.length>0){
             return(
                 <section>
@@ -129,6 +175,7 @@ export default class productDisplay extends Component{
                                   })}
                                 </ul>
                               </li>
+                              <div class="seperator"></div>
                             <li>Category <FontAwesomeIcon icon={faChevronDown}/>
                               <ul class="shop-dropdown">
                                 {this.state.categories.map((category, index)=>{
@@ -140,22 +187,42 @@ export default class productDisplay extends Component{
                                 })}
                               </ul>
                             </li>
-                            <li>Colour <FontAwesomeIcon icon={faChevronDown}/>
-                              <ul class='shop-dropdown'>
-                                {this.state.categories.map((colour, index)=>{
-                                  <li><checkbox onChange={()=>{
-                                    this.handleToggle(colour) 
-                                  }}/> </li>
-                                })}
-                              </ul>
-
-                            </li>
-                            <li>
-
-                            </li>
-                            <li>
-
-                            </li>
+                            <div class="seperator"></div>
+                              <li>Colours <FontAwesomeIcon icon={ faChevronDown }/>
+                                  <ul class="shop-dropdown">
+                                    {this.state.colours.map((colour, index)=>{
+                                      return (
+                                        <li><button type='button' key={index} class="I'm sorry" onClick={()=>{
+                                          this.handleItems(colour)
+                                        }}>{colour}</button></li>
+                                      )
+                                    })}
+                                  </ul>
+                              </li>
+                              <div class="seperator"></div>
+                              <li>Styles <FontAwesomeIcon icon={ faChevronDown }/>
+                                  <ul class="shop-dropdown">
+                                    {this.state.styles.map((style, index)=>{
+                                      return (
+                                        <li><button type='button' key={index} class="I'm sorry" onClick={()=>{
+                                          this.handleItems(style)
+                                        }}>{style}</button></li>
+                                      )
+                                    })}
+                                  </ul>
+                              </li>
+                              <div class="seperator"></div>
+                              <li>Size <FontAwesomeIcon icon={ faChevronDown }/>
+                                  <ul class="shop-dropdown">
+                                    {this.state.size.map((size, index)=>{
+                                      return (
+                                        <li><button type='button' key={index} class="I'm sorry" onClick={()=>{
+                                          this.handleItems(size)
+                                        }}>{size}</button></li>
+                                      )
+                                    })}
+                                  </ul>
+                              </li>
                           </ul>
                         </div>
                       </div>
