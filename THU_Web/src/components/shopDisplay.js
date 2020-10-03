@@ -3,6 +3,7 @@ import {Link} from 'gatsby';
 import Img from 'gatsby-image';
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { node } from 'prop-types';
 
 //creates arrays for each sort functionality
 const getCategories = items =>{
@@ -29,9 +30,8 @@ const getColours = items=>{
   items.map(items =>{
     if(items.node.colours.length > 1){
       for(var i = 0; i < items.node.colours.length; i++){
-        console.log(items.node.colours[i]);
         tempItems.push(items.node.colours[i].toString());
-      };
+      }
       return;
     }else{
       return tempItems.push(items.node.colours.toString());
@@ -47,7 +47,6 @@ const getSize = items=>{
   items.map(items =>{
     if(items.node.size.length > 1){
       for(var i = 0; i < items.node.size.length; i++){
-        console.log(items.node.size[i]);
         tempItems.push(items.node.size[i].toString());
       };
       return;
@@ -69,7 +68,18 @@ const getCollection= items =>{
   collections=['All', ...collections];
   return collections;
 }
+
+const initialiseArray = varLength =>{
+  var array = [];
+  for(var i=0; i < varLength; i++){
+    array[i]= 0;
+  }
+  return array;
+}
 //
+const Checkbox = ({checked, ...props}) =>(
+  <input type="checkbox" {...props}/>
+)
 
 //creates, displays and filters products as thumbnails
 export default class productDisplay extends Component{
@@ -84,142 +94,267 @@ export default class productDisplay extends Component{
             colours: getColours(props.items.edges),
             size: getSize(props.items.edges),
             collection: getCollection(props.items.edges),
+            checked: !!this.props.initialState,
+            binArCol: initialiseArray(getCollection(props.items.edges).length),
+            binArCat: initialiseArray(getCategories(props.items.edges).length),
+            binArSiz: initialiseArray(getSize(props.items.edges).length),
+            binArSty: initialiseArray(getStyles(props.items.edges).length),
+            binArClr: initialiseArray(getColours(props.items.edges).length),
+
         };
+
     }
 
-    //handles displaying the items for buttons
-    handleItems = option =>{
-        let tempItems = [...this.state.items];
-        if(option ==='All'){
-          this.setState(()=>{
-          return{sortItems:tempItems}
-          })
+    filterOptions = (binOptions, options) =>{
+      var output =[]
+      for(var i =0; i < binOptions.length; i++){
+        if(binOptions[i] === 1){
+          output.push(options[i]);
         }
-        else{
-          if(this.state.categories.includes(option) === true){
-            let items = tempItems.filter(({node})=>node.category.toString() === option);
-            this.setState(()=>{
-              return{sortItems:items}
-            })
-          }
-          else if(this.state.styles.includes(option) === true){
-            let items = tempItems.filter(({node})=>node.style.toString() === option);
-            this.setState(()=>{
-              return{sortItems:items}
-            })
-          }
-          else if(this.state.colours.includes(option) === true){
-            var items = [];
-              for(var i=0; i<tempItems.length; i++){
-                for(var j=0; j<tempItems[i].node.colours.length; j++){
-                  if(tempItems[i].node.colours[j].toString() === option){
-                    items.push(tempItems[i]);
+      }
+      return output;
+    }
+
+    eventHandler = () =>{
+      console.log(this.state.binArSiz);
+      let tempItems = [...this.state.items];
+      //Collection
+      var colBinOptions = [...this.state.binArCol];
+      var collection = [...this.state.collection];
+      if(colBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var colOption = this.filterOptions(colBinOptions, collection);
+        if(colOption[0] !== 'All'){
+          let items = tempItems.filter(({node})=>node.collection.toString() === colOption[0]);
+          tempItems = [...items];
+        }
+      }
+      //Category
+      var catBinOptions = [...this.state.binArCat];
+      var category = [...this.state.categories];
+      if(catBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var catOption = this.filterOptions(catBinOptions, category);
+        if(catOption[0] !== 'All'){
+          let items = tempItems.filter(({node})=>node.category.toString() === catOption[0]);
+          tempItems = [...items];
+        }
+      }
+      //Size
+      var sizBinOptions = [...this.state.binArSiz];
+      var size = [...this.state.size];
+      if(sizBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var sizOption = this.filterOptions(sizBinOptions, size);
+        var sizItems =[];
+        for(var i = 0; i < sizOption.length; i++){
+          //how to return if multiples exist????
+          let items = tempItems.filter(({node})=>node.size.toString() === sizOption[i]);
+          sizItems.push(...items);
+          for(var j = 0; j<tempItems.length; j++){
+            if(tempItems[j].node.size.length > 1){
+              for(var k = 0; k<tempItems[j].node.size.length; k++){
+                if(tempItems[j].node.size[k] === sizOption[i]){
+                  if(sizItems.includes(tempItems[j]) === false){
+                    sizItems.push(tempItems[j]);
                   }
                 }
               }
-            this.setState(()=>{
-              return{sortItems:items}
-            })
-          }
-          else if(this.state.size.includes(option) === true){
-            var items = [];
-              for(var i=0; i<tempItems.length; i++){
-                for(var j=0; j<tempItems[i].node.size.length; j++){
-                  if(tempItems[i].node.size[j].toString() === option){
-                    items.push(tempItems[i]);
-                  }
-                }
-              }            this.setState(()=>{
-              return{sortItems:items}
-            })
-          }
-          else{
-            let items = tempItems.filter(({node})=>node.collection.toString() === option);
-            this.setState(()=>{
-              return{sortItems:items}
-            })
+            }
           }
         }
-    };
+        tempItems = [...sizItems];
+      }
+      //Style
+      var styBinOptions = [...this.state.binArSty];
+      var style = [...this.state.styles];
+      if(styBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var styOption = this.filterOptions(styBinOptions, style);
+        var styItems =[];
+        for(var i = 0; i < styOption.length; i++){
+          let items = tempItems.filter(({node})=>node.style.toString() === styOption[i]);
+          styItems.push(...items);
+          for(var j = 0; j<tempItems.length; j++){
+            if(tempItems[j].node.style.length > 1){
+              for(var k = 0; k<tempItems[j].node.style.length; k++){
+                if(tempItems[j].node.style[k] === styOption[i]){
+                  if(styItems.includes(tempItems[j]) === false){
+                    styItems.push(tempItems[j]);
+                  }
+                }
+              }
+            }
+          }
+        }
+        tempItems = [...styItems];
+      }
+      //Colour
+      var clrBinOptions = [...this.state.binArClr];
+      var colour = [...this.state.colours];
+      if(clrBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var clrOption = this.filterOptions(clrBinOptions, colour);
+        var clrItems =[];
+        for(var i = 0; i < clrOption.length; i++){
+          let items = tempItems.filter(({node})=>node.colours.toString() === clrOption[i]);
+          clrItems.push(...items);
+          for(var j = 0; j<tempItems.length; j++){
+            if(tempItems[j].node.colours.length > 1){
+              for(var k = 0; k<tempItems[j].node.colours.length; k++){
+                if(tempItems[j].node.colours[k] === clrOption[i]){
+                  if(clrItems.includes(tempItems[j]) === false){
+                    clrItems.push(tempItems[j]);
+                  }
+                }
+              }
+            }
+          }
+        }
+        tempItems = [...clrItems];
+      }
+      //Return Items
+      this.setState(()=>{
+        return{sortItems:tempItems}
+      })
+    }
 
-/*     handleToggle = option =>{
-      const currentIndex = Checked.indexOf(option);
-      const newChecked = [...Checked];
-      if (currentIndex === -1){
-        newChecked.push(option)
+    //make bit invert function
+    invertBits = (array, index) =>{
+      if(array[index] === 1){
+        array[index] = 0;
       }
       else{
-        newChecked.splice(currentIndex, 1)
+        array[index] = 1;
       }
-      setChecked(newChecked)
-      this.props.handleFilters(newChecked)
-    } */
-    //renders the HTML and javascript of teh component
+      return array;
+    }
+    
+    //handles buttons
+    handleItems = (option, filter) =>{
+      //finds state and makes all bits 0 before making one 1
+      if(filter === "Cat"){
+        let index = this.state.categories.indexOf(option);
+        let array = [...this.state.binArCat];
+        for(var i=0; i < array.length; i++){
+          if(array[i] === 1){
+            array = this.invertBits(array, i);
+          }
+        }
+        array = this.invertBits(array, index);
+        this.setState(()=>{
+          return{binArCat:array}
+        })
+      }
+      else{
+        let index = this.state.collection.indexOf(option);
+        let array = [...this.state.binArCol];
+        for(var i=0; i < array.length; i++){
+          if(array[i] === 1){
+            array = this.invertBits(array, i);
+          }
+        }
+        array = this.invertBits(array, index);
+        this.setState(()=>{
+          return{binArCol:array}
+        })
+      }
+    };
+
+    //Handles checkbox
+    handleFilterItems = option =>{
+      //needs to identify state and change bit to inverse
+      if(this.state.colours.includes(option) === true ){
+        let index = this.state.colours.indexOf(option);
+        let array = [...this.state.binArClr];
+        array = this.invertBits(array, index);
+        this.setState(()=>{
+          return{binArClr:array}
+        })
+      }else if(this.state.size.includes(option) == true){
+        let index = this.state.size.indexOf(option);
+        let array = [...this.state.binArSiz];
+        array = this.invertBits(array, index);
+        this.setState(()=>{
+          return{binArSiz:array}
+        })
+      }else{
+        let index = this.state.styles.indexOf(option);
+        let array = [...this.state.binArSty];
+        array = this.invertBits(array, index);
+        this.setState(()=>{
+          return{binArSty:array}
+        })
+      }
+    };
+
+  handleCheckboxChange = event =>{
+    this.setState({checked: event.target.checked})
+  };
+
+    //renders the HTML and javascript of the component
     render(){
-        console.log(this.state.colours)
         if(this.state.items.length>0){
             return(
                 <section>
                   <div className="container">
                     {/*changes ststas based on the selected filters*/}
-                        <div id="filter">
+                        <div id="filter" onMouseUp={()=>{this.eventHandler()}}>
                           <ul>
+                            {/*Collections*/}
                             <li>Collection <FontAwesomeIcon icon={faChevronDown}/>
                                 <ul class="shop-dropdown">
                                   {this.state.collection.map((collection, index)=>{
                                     return(
-                                      <li><button type="button" key={index} class="I'm sorry" onClick={()=>{
-                                        this.handleItems(collection)
+                                      <li><button type="button" key={index} class="button" onMouseDown={()=>{
+                                        this.handleItems(collection, "Col")
                                       }} >{collection}</button></li>
                                     )
                                   })}
                                 </ul>
                               </li>
                               <div class="seperator"></div>
+                              {/*Category*/}
                             <li>Category <FontAwesomeIcon icon={faChevronDown}/>
                               <ul class="shop-dropdown">
                                 {this.state.categories.map((category, index)=>{
                                   return(
-                                    <li><button type="button" key={index} class="I'm sorry" onClick={()=>{
-                                      this.handleItems(category)
+                                    <li><button type="button" key={index} class="button" onMouseDown={()=>{
+                                      this.handleItems(category, "Cat")
                                     }} >{category}</button></li>
                                   )
                                 })}
                               </ul>
                             </li>
                             <div class="seperator"></div>
+                            {/*Colours*/}
                               <li>Colours <FontAwesomeIcon icon={ faChevronDown }/>
                                   <ul class="shop-dropdown">
                                     {this.state.colours.map((colour, index)=>{
-                                      return (
-                                        <li><button type='button' key={index} class="I'm sorry" onClick={()=>{
-                                          this.handleItems(colour)
-                                        }}>{colour}</button></li>
-                                      )
-                                    })}
+                                      return(
+                                      <li>
+                                        <label onMouseDown={()=>this.handleFilterItems(colour)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange}/><span>{colour}</span> </label>
+                                        </li>
+                                    )})}
                                   </ul>
                               </li>
                               <div class="seperator"></div>
+                              {/*Styles*/}
                               <li>Styles <FontAwesomeIcon icon={ faChevronDown }/>
                                   <ul class="shop-dropdown">
                                     {this.state.styles.map((style, index)=>{
                                       return (
-                                        <li><button type='button' key={index} class="I'm sorry" onClick={()=>{
-                                          this.handleItems(style)
-                                        }}>{style}</button></li>
+                                        <li>
+                                        <label onMouseDown={()=>this.handleFilterItems(style)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange}/><span>{style}</span> </label>
+                                        </li>
                                       )
                                     })}
                                   </ul>
                               </li>
                               <div class="seperator"></div>
+                              {/*Size*/}
                               <li>Size <FontAwesomeIcon icon={ faChevronDown }/>
                                   <ul class="shop-dropdown">
                                     {this.state.size.map((size, index)=>{
                                       return (
-                                        <li><button type='button' key={index} class="I'm sorry" onClick={()=>{
-                                          this.handleItems(size)
-                                        }}>{size}</button></li>
-                                      )
+                                        <li>
+                                        <label onMouseDown={()=>this.handleFilterItems(size)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange}/><span>{size}</span> </label>
+                                        </li>                                      )
                                     })}
                                   </ul>
                               </li>
@@ -252,7 +387,7 @@ export default class productDisplay extends Component{
                 <div className="contianer">
                     <div className="row">
                         <div className="col-10 col-sm-6 mx-auto text-center text-captialize">
-                            <h1>there are no items to display</h1>
+                            <h1>Oh no! There's no items that match your filters :(</h1>
                         </div>
                     </div>
                 </div>

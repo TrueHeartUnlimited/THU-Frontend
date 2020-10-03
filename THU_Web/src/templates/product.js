@@ -34,7 +34,7 @@ const Product = ({ data }) => {
                         </div>
                         <div class="flex space_between" id="product-customisation">
                             <div class="customisation">
-                              {data.product.customisable == true &&
+                              {data.product.customisable === true &&
                                 <p><Link to="/">Custom Colour</Link></p>
                               }
                                 <div class="flex" id="swatches">
