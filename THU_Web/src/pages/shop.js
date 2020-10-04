@@ -130,7 +130,7 @@ export const query = graphql `
           productName
           productImages {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
