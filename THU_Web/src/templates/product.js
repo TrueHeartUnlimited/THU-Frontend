@@ -3,23 +3,24 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons"
-import { faStar as fasStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons" 
+import { faStar as fasStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons"
 import Img from "gatsby-image"
 
 import Tabs from "../components/tabs.js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Product = ({ data }) => {
+//{data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
 
+const Product = ({ data }) => {
     return(
         <Layout>
-            <SEO title={data.product.productName}/> 
+            <SEO title={data.product.productName}/>
             <div class="product-header"></div>
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">
-                    {data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
+
                     </div>
                     <div id="product-info">
                         <div id="product-name-rating">
@@ -32,42 +33,19 @@ const Product = ({ data }) => {
                             }
                             <div dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
                         </div>
+                        <div id="add-invoice">
+                            <form>
+                                <input type="button" class="quantity-change" value="-"/>
+                                <input type="text" class="qty" value="1"/>
+                                <input type="button" class="quantity-change" value="+"/>
+                                <input type="submit" value="Update Invoice" class="btn submit table-submit"/>
+                            </form>
+                        </div>
                         <div class="flex space_between" id="product-customisation">
                             <div class="customisation">
                               {data.product.customisable === true &&
                                 <p><Link to="/">Custom Colour</Link></p>
                               }
-                                <div class="flex" id="swatches">
-                                    <Link to="">
-                                        <dl class="swatch-dl">
-                                            <dt class="swatch-dt selected">
-                                                <span class="swatch-color blue-swatch">
-                                                    <span class="swatch-color"></span>
-                                                </span>
-                                            </dt>
-                                            <dd class="text-color">
-                                                <div class="color-alt">
-                                                    <span class="text-color">Blue</span>
-                                                </div>
-                                            </dd>
-                                        </dl>
-                                    </Link>
-        
-                                    <Link to="">
-                                        <dl class="swatch-dl">
-                                            <dt class="swatch-dt">
-                                                <span class="swatch-color orange-swatch">
-                                                    <span class="swatch-color"></span>
-                                                </span>
-                                            </dt>
-                                            <dd class="text-color">
-                                                <div class="color-alt">
-                                                    <span class="text-color">Orange</span>
-                                                </div>
-                                            </dd>
-                                        </dl>
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +53,7 @@ const Product = ({ data }) => {
                 <div id="product-table">
                     <Tabs class="tab-content">
                         <div class="tab-pane active" label="Product Information">
-                            <table>
+                            <table class="product-table">
                                 <tbody>
                                     <tr>
                                         <th>Size:</th>
@@ -95,6 +73,57 @@ const Product = ({ data }) => {
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="tab-pane" label="Customisation">
+                            <table class="product-table">
+                                <tr>
+                                    <th>Colour</th>
+                                    <td class="flex" id="swatches">
+                                        <Link to="">
+                                            <dl class="swatch-dl">
+                                                <dt class="swatch-dt selected">
+                                                    <span class="swatch-color blue-swatch">
+                                                        <span class="swatch-color"></span>
+                                                    </span>
+                                                </dt>
+                                                <dd class="text-color">
+                                                    <div class="color-alt">
+                                                        <span class="text-color">Blue</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </Link>
+
+                                        <Link to="">
+                                            <dl class="swatch-dl">
+                                                <dt class="swatch-dt">
+                                                    <span class="swatch-color orange-swatch">
+                                                        <span class="swatch-color"></span>
+                                                    </span>
+                                                </dt>
+                                                <dd class="text-color">
+                                                    <div class="color-alt">
+                                                        <span class="text-color">Orange</span>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </Link>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Strap Length</th>
+                                    <td>
+                                        <ul>
+                                            <li>Strap Length 1</li>
+                                            <li>Strap Length 2</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="flex space_between">
+                                <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
+                                <p style={{marginTop:"10px"}}><Link to="/custom" class="btn" id="custom-btn">Get Custom</Link></p>
+                            </div>
                         </div>
                         <div class="tab-pane" label="Reviews" id="reviews">
                             <div class="review flex space_between">
