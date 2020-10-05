@@ -63,7 +63,8 @@ const AboutKangaroo = ({data}) => {
                     <div class="about-body">
                         <div dangerouslySetInnerHTML={{__html: data.info.krooBody.internal.content}}/>
                     </div>
-                    <div class="image">
+                    <div class="kangaroo-image">
+                        <img src={'/kangaroo.png'} alt="Kangaroo" id="kangaroo"/>
                     </div>
                 </div>
             </div>

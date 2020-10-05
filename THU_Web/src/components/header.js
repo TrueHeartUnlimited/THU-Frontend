@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faFileInvoiceDollar, faSearch } from "@fortawesome/free-solid-svg-icons"
 
@@ -14,16 +14,22 @@ export function Search() {
     )
 }
 
-export function Header() {
+export function Header({ data }) {
     return(
         <header>
             <h1>
-                <Link  to="/">
-                    T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span> U<span class="lower_case">NLIMITED</span>
+                <Link to="/">
+                    T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span>
+                </Link>
+                <Link to="/">
+                    <img src={'/final-logo.png'} alt="Logo" id="logo-img" />
+                </Link>
+                <Link to="/">
+                    U<span class="lower_case">NLIMITED</span>
                 </Link>
             </h1>
         </header>
-  )
+    )
 }
 
 export function Navigation() {
