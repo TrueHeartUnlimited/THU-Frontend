@@ -19,9 +19,7 @@ export function Header() {
         <header>
             <h1>
                 <Link  to="/">
-                    T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span>
-                    <img src={"../images/final-logo.png"} alt="logo"/>
-                    U<span class="lower_case">NLIMITED</span>
+                    T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span> U<span class="lower_case">NLIMITED</span>
                 </Link>
             </h1>
         </header>

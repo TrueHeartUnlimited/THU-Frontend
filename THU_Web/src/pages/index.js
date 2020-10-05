@@ -28,9 +28,7 @@ const IndexPage = ({data}) => {
             </div>
         </div>
         <div class="container" id="featured">
-            <div class="flex space_between grid">
-              <ProductDisplay items={data.products}/>
-            </div>
+            <ProductDisplay items={data.products}/>
         </div>
     </Layout>
     )

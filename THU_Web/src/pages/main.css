@@ -107,6 +107,11 @@
     padding-top:3em;
 }
 
+.product-container {
+    flex-wrap:wrap;
+    align-content:space-between;
+}
+
 /* ---------------------------------------------- /*
  * About
 /* ---------------------------------------------- */
@@ -221,7 +226,6 @@
 .grid {
 	overflow: hidden;
 	margin: 0;
-	padding-bottom: 3em;
 	width: 100%;
 	list-style: none;
 	text-align: center;
@@ -239,6 +243,7 @@
 	background: #d1582b;
 	text-align: center;
 	cursor: pointer;
+	margin-bottom: 3em;
 }
 
 .grid figure img {

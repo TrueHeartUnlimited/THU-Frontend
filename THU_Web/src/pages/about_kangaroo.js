@@ -59,9 +59,11 @@ const AboutKangaroo = ({data}) => {
                 </div>
             </div>
             <div class="container">
-                <div class="body flex">
+                <div class="body flex space_between">
                     <div class="about-body">
                         <div dangerouslySetInnerHTML={{__html: data.info.krooBody.internal.content}}/>
+                    </div>
+                    <div class="image">
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@ export const query = graphql`
               json
             }
         }
-        
+
     }
 `;
 

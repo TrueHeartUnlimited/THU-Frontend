@@ -224,7 +224,7 @@ export default class productDisplay extends Component{
       }
       return array;
     }
-    
+
     //handles buttons
     handleItems = (option, filter) =>{
       //finds state and makes all bits 0 before making one 1
@@ -362,23 +362,23 @@ export default class productDisplay extends Component{
                         </div>
                       </div>
                     {/*renders the item thumbnails*/}
+                  <div class="flex space_between grid product-container">
                       {this.state.sortItems.map(({node})=>{
                         return (
-                          <div class="flew space_between grid">
                             <figure class="effect-chico">
                               <Img fluid={node.productImages[0].fluid}/>
                               <figcaption>
                                 <h3>{node.productName}</h3>
-                                    {node.price2 != null 
+                                    {node.price2 != null
                                       ? <p class="price">${node.price}-${node.price2}</p>
                                       : <p class="price">${node.price}</p>
                                     }
                                 <Link to={node.path}>View Details</Link>
                               </figcaption>
                             </figure>
-                          </div>
                         )
                       })}
+                    </div>
                 </section>
             )
         }
