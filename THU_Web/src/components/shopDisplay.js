@@ -328,7 +328,7 @@ export default class productDisplay extends Component{
                                     {this.state.colours.map((colour, index)=>{
                                       return(
                                       <li>
-                                        <label onMouseDown={()=>this.handleFilterItems(colour)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange}/><span>{colour}</span> </label>
+                                        <label onMouseDown={()=>this.handleFilterItems(colour)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange} class="checkbox"/><span>{colour}</span> </label>
                                         </li>
                                     )})}
                                   </ul>
@@ -340,7 +340,7 @@ export default class productDisplay extends Component{
                                     {this.state.styles.map((style, index)=>{
                                       return (
                                         <li>
-                                        <label onMouseDown={()=>this.handleFilterItems(style)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange}/><span>{style}</span> </label>
+                                        <label onMouseDown={()=>this.handleFilterItems(style)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange} class="checkbox"/><span>{style}</span> </label>
                                         </li>
                                       )
                                     })}
@@ -353,7 +353,7 @@ export default class productDisplay extends Component{
                                     {this.state.size.map((size, index)=>{
                                       return (
                                         <li>
-                                        <label onMouseDown={()=>this.handleFilterItems(size)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange}/><span>{size}</span> </label>
+                                        <label onMouseDown={()=>this.handleFilterItems(size)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange} class="checkbox"/><span>{size}</span> </label>
                                         </li>                                      )
                                     })}
                                   </ul>
