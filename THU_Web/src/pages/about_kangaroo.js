@@ -61,7 +61,7 @@ const AboutKangaroo = ({data}) => {
             <div class="container">
                 <div class="body flex space_between">
                     <div class="about-body">
-                        <div dangerouslySetInnerHTML={{__html: data.info.krooBody.internal.content}}/>
+                        <p dangerouslySetInnerHTML={{__html: data.info.krooBody.internal.content}}/>
                     </div>
                     <div class="kangaroo-image">
                         <img src={'/kangaroo.png'} alt="Kangaroo" id="kangaroo"/>

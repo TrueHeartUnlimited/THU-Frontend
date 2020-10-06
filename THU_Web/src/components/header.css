@@ -2,7 +2,7 @@
  * Global
 /* ---------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Exo');
+@import url('https://fonts.googleapis.com/css2?family=Exo&family=Roboto');
 
 :root {
     --orange:#d1582b;
@@ -23,6 +23,7 @@ h1, h2, h3 {
 
 p {
     font-size:14px;
+    font-family: "Roboto", sans-serif;
 }
 
 header, nav {
