@@ -17,14 +17,12 @@ const IndexPage = ({data}) => {
         </div>
         <div class="container center" id="home-intro">
             <h2>{data.info.heading}</h2>
-            <div dangerouslySetInnerHTML={{__html: data.info.homePara.internal.content}}/>
+            <p dangerouslySetInnerHTML={{__html: data.info.homePara.internal.content}}/>
         </div>
         <div id="call-to-action">
             <div>
-                <p>
-                    Like what you see
-                    <Link to="/shop/" class="btn">Shop Now</Link>
-                </p>
+                Like what you see
+                <Link to="/shop/" class="btn">Shop Now</Link>
             </div>
         </div>
         <div class="container" id="featured">

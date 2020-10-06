@@ -35,7 +35,7 @@ const SecondPage = ({data}) => {
                 <div class="body flex separator">
                     <div class="about-body">
                         <h2>Who We Are</h2>
-                        <div dangerouslySetInnerHTML={{__html: data.info.abtBody.internal.content}}/>
+                        <p dangerouslySetInnerHTML={{__html: data.info.abtBody.internal.content}}/>
                     </div>
                 </div>
                 <div class="body separator">
