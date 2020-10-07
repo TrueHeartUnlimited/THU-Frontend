@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons"
 import { faStar as fasStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons"
 import Img from "gatsby-image"
+import {connect} from "react-redux"
 
 import Tabs from "../components/tabs.js"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import {addToCartMessage} from "../store/actions"
+
+const mapDispatchToProps = {
+  addToCart: product => addToCartMessage(product, 1)
+};
 
 //{data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
 
-const Product = ({ data }) => {
+const Product = ({ addToCart, data }) => {
     return(
         <Layout>
             <SEO title={data.product.productName}/>
@@ -34,12 +40,13 @@ const Product = ({ data }) => {
                             <div dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
                         </div>
                         <div id="add-invoice">
-                            <form>
+                          <button onClick={()=> addToCart(data.product)}>Add to cart</button>
+{/*                             <form>
                                 <input type="button" class="quantity-change" value="-"/>
                                 <input type="text" class="qty" value="1"/>
                                 <input type="button" class="quantity-change" value="+"/>
                                 <input type="submit" value="Update Invoice" class="btn submit table-submit"/>
-                            </form>
+                            </form> */}
                         </div>
                         <div class="flex space_between" id="product-customisation">
                             <div class="customisation">
@@ -181,4 +188,4 @@ export const data = graphql`
     }
 `;
 
-export default Product;
+export default connect(null, mapDispatchToProps)(Product)
