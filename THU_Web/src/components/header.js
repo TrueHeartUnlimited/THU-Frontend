@@ -9,7 +9,7 @@ export function Search() {
     return(
         <div id="header-icons">
             <Link to="/invoice/"><FontAwesomeIcon icon={ faFileInvoiceDollar } id="invoice-icon"/></Link>
-            <FontAwesomeIcon icon={ faSearch } id="search-icon"/>
+            {/*<FontAwesomeIcon icon={ faSearch } id="search-icon"/>*/}
         </div>
     )
 }
@@ -20,11 +20,7 @@ export function Header({ data }) {
             <h1>
                 <Link to="/">
                     T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span>
-                </Link>
-                <Link to="/">
                     <img src={'/final-logo.png'} alt="Logo" id="logo-img" />
-                </Link>
-                <Link to="/">
                     U<span class="lower_case">NLIMITED</span>
                 </Link>
             </h1>
@@ -43,7 +39,12 @@ export function Navigation() {
                         <li><Link to="/about_kangaroo/">About Kangaroo Leather</Link></li>
                     </ul>
                 </li>
-                <li><Link to="/shop/">Shop</Link></li>
+                <li><Link to="/shop/">Shop <FontAwesomeIcon icon={ faChevronDown }/></Link>
+                    <ul class="dropdown">
+                        <li><Link to="/shop/">Products</Link></li>
+                        <li><Link to="/testimonials/">Testimonials</Link></li>
+                    </ul>
+                </li>
                 <li><Link to="/contact/">Contact</Link></li>
             </ul>
         </nav>

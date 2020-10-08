@@ -112,6 +112,13 @@
     align-content:space-between;
 }
 
+#testimonials {
+    background-color:var(--orange);
+    color:white;
+    padding:50px;
+    opacity:0.8;
+}
+
 /* ---------------------------------------------- /*
  * About
 /* ---------------------------------------------- */
@@ -274,7 +281,7 @@
 
 .grid figure figcaption {
 	padding: 1.5em;
-	color: var(--orange);
+	color: #572E57;
 	text-transform: uppercase;
 	font-size: 1.25em;
 	-webkit-backface-visibility: hidden;
@@ -341,7 +348,7 @@ figure.effect-chico figcaption::before {
 	right: 30px;
 	bottom: 30px;
 	left: 30px;
-	border: 1px solid var(--orange);
+	border: 1px solid #572E57;
 	content: '';
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
@@ -571,6 +578,28 @@ figure.effect-chico:hover p {
 .review-message {
     background-color: var(--lightgrey);
     padding:1em;
+}
+
+/* ---------------------------------------------- /*
+ * Testimonials
+/* ---------------------------------------------- */
+
+.testimonial {
+    padding-top:25px;
+    margin-bottom:25px;
+}
+
+.testimonial-text {
+    width:70%;
+}
+
+.testimonial-image {
+    width:20%;
+}
+
+.client {
+    color:var(--orange);
+    font-size:16px;
 }
 
 /* ---------------------------------------------- /*

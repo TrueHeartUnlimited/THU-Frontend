@@ -59,29 +59,7 @@ const Product = ({ addToCart, data }) => {
                 </div>
                 <div id="product-table">
                     <Tabs class="tab-content">
-                        <div class="tab-pane active" label="Product Information">
-                            <table class="product-table">
-                                <tbody>
-                                    <tr>
-                                        <th>Size:</th>
-                                        <td>{data.product.sizing}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Strap Size:</th>
-                                        <td>61cm/121cm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Colours:</th>
-                                        <td>{data.product.colours.map(colour => <p>{colour}</p>)}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Material</th>
-                                        <td>{data.product.material}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="tab-pane" label="Customisation">
+                        <div class="tab-pane active" label="Customisation">
                             <table class="product-table">
                                 <tr>
                                     <th>Colour</th>
@@ -131,6 +109,28 @@ const Product = ({ addToCart, data }) => {
                                 <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
                                 <p style={{marginTop:"10px"}}><Link to="/custom" class="btn" id="custom-btn">Get Custom</Link></p>
                             </div>
+                        </div>
+                        <div class="tab-pane" label="Product Information">
+                            <table class="product-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Size:</th>
+                                        <td>{data.product.sizing}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Strap Size:</th>
+                                        <td>61cm/121cm</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Colours:</th>
+                                        <td>{data.product.colours.map(colour => <p>{colour}</p>)}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Material</th>
+                                        <td>{data.product.material}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="tab-pane" label="Reviews" id="reviews">
                             <div class="review flex space_between">

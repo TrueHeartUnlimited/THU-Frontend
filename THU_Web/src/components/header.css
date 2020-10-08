@@ -18,7 +18,7 @@
 }
 
 h1, h2, h3 {
-    font-weight:300;
+    font-weight:400;
 }
 
 p {
@@ -43,7 +43,8 @@ header h1 a {
     text-decoration: none;
     color: var(--grey);
     letter-spacing:0.2em;
-    font-weight:500;
+    font-weight:bold;
+    letter-spacing: 10px;
 }
 
 .lower_case {
@@ -94,6 +95,10 @@ header h1 a {
 
 #header-icons button {
     background-color:white;
+}
+
+#invoice-icon {
+    font-size:24px !important;
 }
 
 /* ---------------------------------------------- /*
@@ -148,10 +153,6 @@ nav ul li:hover > ul,
 	clear: both;
     width: 100%;
     padding:10px 0;
-}
-
-#invoice-icon {
-    font-size:18px !important;
 }
 
 /* ---------------------------------------------- /*
