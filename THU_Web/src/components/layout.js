@@ -24,10 +24,10 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <div class="flex" id="social">
             <div>
-                <Link to=""><FontAwesomeIcon icon={ faFacebookSquare }/></Link>
+                <Link to="https://www.facebook.com/True-Heart-Unlimited-128173950686532"><FontAwesomeIcon icon={ faFacebookSquare }/></Link>
             </div>
             <div>
-                <Link to=""><FontAwesomeIcon icon={ faInstagramSquare }/></Link>
+                <Link to="https://www.instagram.com/explore/locations/128173950686532/true-heart-unlimited/?hl=en"><FontAwesomeIcon icon={ faInstagramSquare }/></Link>
             </div>
             <div>
                 <Link to=""><FontAwesomeIcon icon={ faPinterestSquare }/></Link>
