@@ -4,9 +4,9 @@ import {graphql} from "gatsby";
 import {BLOCKS} from "@contentful/rich-text-types"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 
 const SecondPage = ({data}) => {
@@ -25,9 +25,9 @@ const SecondPage = ({data}) => {
     return (
         <Layout>
             <SEO title="About Us" />
-            <div class="header">
+            <StyledBackgroundSection>
                 <h1>About Us</h1>
-            </div>
+            </StyledBackgroundSection>
             <div class="container">
                 <div class="body large-body">
                     <div dangerouslySetInnerHTML= {{__html: data.info.preamble.internal.content}}/>

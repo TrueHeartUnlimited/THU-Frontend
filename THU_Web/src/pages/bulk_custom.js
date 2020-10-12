@@ -4,6 +4,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Form from "../components/contact"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 const containerStyle = {
   width: '100%',
@@ -18,9 +19,9 @@ const center = {
 const SecondPage = () => (
   <Layout>
     <SEO title="Contact Us" />
-    <div class="header">
+    <StyledBackgroundSection>
         <h1>Large Custom Piece Orders</h1>
-    </div>
+    </StyledBackgroundSection>
     <div class="container" id="contact-us">
         <div>
             <p>We cater to large orders of items or even large orders of custom items. If you are interested in getting pouches for your company or bags for your organisation we are happy to work with you to make something tailored for you.</p>

@@ -6,15 +6,16 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Display from "../components/shopDisplay"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 
 const shop = ({data}) => {
   return(
     <Layout>
           <SEO title="Shop" />
-    <div class="header">
+    <StyledBackgroundSection>
         <h1>Shop</h1>
-    </div>
+    </StyledBackgroundSection>
     <div class="container">
       <Display items={data.products}/>
     </div>

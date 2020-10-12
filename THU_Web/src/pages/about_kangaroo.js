@@ -6,6 +6,7 @@ import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 const AboutKangaroo = ({data}) => {
   const options = {
@@ -23,9 +24,9 @@ const AboutKangaroo = ({data}) => {
     return(
         <Layout>
             <SEO title="About Kangaroo Leather" />
-            <div class="header">
+            <StyledBackgroundSection>
                 <h1>About Kangaroo Leather</h1>
-            </div>
+            </StyledBackgroundSection>
             <div class="container">
                 <div id="kangaroo-video"></div>
                 <div class="body separator large-body">
