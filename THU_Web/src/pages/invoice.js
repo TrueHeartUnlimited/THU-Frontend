@@ -1,8 +1,5 @@
-import React from "react"
+import React, {useState} from "react"
 import {connect} from 'react-redux'
-import sgMail from '@sendgrid/mail'
-
-
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,31 +7,44 @@ import Cart from "../components/cart/popCart"
 
 import {getAllProducts} from "../store/selectors";
 
-
-const msg ={
-  to: 'test@example.com', // Change to your recipient
-  from: 'test@example.com', // Change to your verified sender
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-}
-
-
 function mapStateToProps({ cartReducer }){
   return{
     products: getAllProducts(cartReducer)
   };
 }
-function test (){
-  sgMail
-  .send(msg)
-  .then(() => {console.log('Email sent')})
-  .catch((error) => {console.error(error)})
-}
+
 
 const CartPage = ({products}) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-  test();
+  const formState = {
+    name: "1",
+    email: "testingthuweb@gmail.com",
+    subject: "1",
+    message: "we are testing",
+  }
+
+  const submitForm = async (e) => {
+  
+    try{
+      console.log("try");
+      const response = await fetch("/.netlify/functions/invoiceemail", {
+        method: "POST",
+        body: JSON.stringify(formState),
+      })
+  
+      if (!response.ok) {
+        console.log("in if")
+        //not 200 response
+        return
+      }
+  
+      //all OK
+      
+    } catch(e){
+      console.log("error")
+      //error
+    }
+  }
+
   return(
     <Layout>
       <SEO title="Shop" />
@@ -44,6 +54,7 @@ const CartPage = ({products}) => {
       <div class="container">
           <div class="invoice-box" id="calc-table">
             <Cart products={products}/>
+            <button onClick={()=>submitForm()}>test</button>
           </div>
           <div class="flex space_between">
               <div class="invoice-box invoice-half" id="calc-ship">
