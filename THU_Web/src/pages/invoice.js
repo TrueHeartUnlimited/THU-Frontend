@@ -1,5 +1,7 @@
 import React from "react"
 import {connect} from 'react-redux'
+import sgMail from '@sendgrid/mail'
+
 
 
 import Layout from "../components/layout"
@@ -8,7 +10,6 @@ import Cart from "../components/cart/popCart"
 
 import {getAllProducts} from "../store/selectors";
 
-import sgMail from '@sendgrid/mail'
 
 const msg ={
   to: 'test@example.com', // Change to your recipient
