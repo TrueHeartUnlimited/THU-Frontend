@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./main.css"
 import ProductDisplay from "../components/productDisplay"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 const IndexPage = ({data}) => {
 

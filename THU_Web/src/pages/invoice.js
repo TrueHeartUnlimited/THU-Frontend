@@ -10,6 +10,7 @@ import Cart from "../components/cart/popCart"
 
 import {getAllProducts} from "../store/selectors";
 
+import sgMail from '@sendgrid/mail'
 
 const msg ={
   to: 'test@example.com', // Change to your recipient

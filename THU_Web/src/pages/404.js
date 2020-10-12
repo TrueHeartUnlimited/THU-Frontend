@@ -5,13 +5,14 @@ import { faFile } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <div class="header">
+    <StyledBackgroundSection>
         <h1>404: Page Not Found</h1>
-    </div>
+    </StyledBackgroundSection>
     <div class="container">
         <div id="missing">
             <p id="missing-icon">404 <FontAwesomeIcon icon={ faFile }/></p>

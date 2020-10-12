@@ -2,13 +2,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 const SecondPage = () => (
   <Layout>
     <SEO title="About Us" />
-    <div class="header">
+    <StyledBackgroundSection>
         <h1>Testimonials</h1>
-    </div>
+    </StyledBackgroundSection>
     <div class="container">
         <div class="testimonial flex space_between">
             <div class="testimonial-text">

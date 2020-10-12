@@ -2,13 +2,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 const SecondPage = () => (
   <Layout>
     <SEO title="About Us" />
-    <div class="header">
+    <StyledBackgroundSection>
         <h1>Policy</h1>
-    </div>
+    </StyledBackgroundSection>
     <div class="container">
         <div class="body">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a vestibulum mi. Curabitur nec blandit libero, ac tempus ex. Duis sed tortor elementum, ultrices est nec, consectetur felis. Morbi dignissim purus et sapien facilisis, a tempor nibh imperdiet. Quisque massa dolor, fermentum quis finibus et, varius eu sem. Etiam sit amet tortor eu dui rutrum rhoncus ac vitae mi. Phasellus justo ipsum, pharetra in dui ac, lacinia scelerisque augue. Maecenas nec nisl eget lectus facilisis suscipit. Suspendisse ultricies lectus purus, eu molestie urna rhoncus quis. Vestibulum elementum est leo, sed egestas sem faucibus sed. Nullam nec placerat orci, ut malesuada libero. In ornare libero ut vestibulum consectetur. Fusce quis quam quam. Cras convallis aliquam rutrum.</p>

@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
                     <h3>Contact</h3>
                     <ul>
                         <li><FontAwesomeIcon icon={ faPhoneAlt }/>0402 904 970</li>
-                        <li><FontAwesomeIcon icon={ faEnvelope }/>tpngueyn1312@gmail.com</li>
+                        <li><FontAwesomeIcon icon={ faEnvelope }/>thu@chooseaustralian.com.au</li>
                         <li><FontAwesomeIcon icon={ faMapMarkerAlt }/>37 Judge Street Petrie Terrace, QLD</li>
                     </ul>
                 </div>
