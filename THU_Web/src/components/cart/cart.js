@@ -35,7 +35,7 @@ function Table(props){
             </tr>
             {products.map(({product, count})=>(
               <tr>
-                  <td class="remove"><FontAwesomeIcon icon={ faTimes }/></td>
+                  <td class="remove"><button onClick={()=>removeFromCart(product)}><FontAwesomeIcon icon={ faTimes }/></button></td>
                   <td class="image"><div class="image-image"></div></td>
               <td class="product"><Link to={product.path}>{product.productName}</Link></td>
                   <td class="color">{product.colours.toString()}</td>
@@ -44,7 +44,6 @@ function Table(props){
                       <input type="text" class="qty" value="1"/>
                       <input type="button" class="quantity-change" value="+"/>
                   </td>
-                  <td><button onClick={()=>removeFromCart(product)}>Remove</button></td>
                   <td class="unit">${product.price}</td>
               <td class="total">${props.price}</td>
             </tr>

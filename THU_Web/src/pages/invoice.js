@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {connect} from 'react-redux'
 
 import Layout from "../components/layout"
@@ -55,6 +55,13 @@ const CartPage = ({products}) => {
           <div class="invoice-box" id="calc-table">
             <Cart products={products}/>
             <button onClick={()=>submitForm()}>test</button>
+          </div>
+          <div class="invoice-box">
+            <form>
+              <input id="name"></input>
+              <input id="email"></input>
+              <input id="phone number"></input>
+            </form>
           </div>
           <div class="flex space_between">
               <div class="invoice-box invoice-half" id="calc-ship">

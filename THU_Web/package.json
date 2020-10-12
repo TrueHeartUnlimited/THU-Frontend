@@ -36,7 +36,8 @@
     "react-native-checkbox": "^2.0.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "prettier": "2.0.5"
@@ -55,7 +56,7 @@
     "test": "npm run develop ; npm run start:lambda",
     "start:lambda": "netlify-lambda serve functions",
     "build:lambda": "netlify-lambda build functions",
-    "prod":"npm run build; npm run build:lambda"
+    "prod": "npm run build; npm run build:lambda"
   },
   "repository": {
     "type": "git",
