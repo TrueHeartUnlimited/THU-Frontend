@@ -1,16 +1,15 @@
 import React from "react"
 import {connect} from 'react-redux'
-import sgMail from '@sendgrid/mail'
-
-
+//import sgMail from '@sendgrid/mail'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Cart from "../components/cart/popCart"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 import {getAllProducts} from "../store/selectors";
 
-import sgMail from '@sendgrid/mail'
+//import sgMail from '@sendgrid/mail'
 
 const msg ={
   to: 'test@example.com', // Change to your recipient
@@ -26,22 +25,24 @@ function mapStateToProps({ cartReducer }){
     products: getAllProducts(cartReducer)
   };
 }
-function test (){
+/*function test (){
   sgMail
   .send(msg)
   .then(() => {console.log('Email sent')})
   .catch((error) => {console.error(error)})
-}
+}*/
 
 const CartPage = ({products}) => {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+  //sgMail.setApiKey(process.env.SENDGRID_API_KEY)
   test();
   return(
     <Layout>
       <SEO title="Shop" />
-      <div class="header">
-          <h1>Calculator</h1>
-      </div>
+      <StyledBackgroundSection>
+            <div class="banner-color">
+                <h1>Calculator</h1>
+            </div>
+      </StyledBackgroundSection>
       <div class="container">
           <div class="invoice-box" id="calc-table">
             <Cart products={products}/>
