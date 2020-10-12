@@ -9,7 +9,6 @@ import Cart from "../components/cart/popCart"
 import {getAllProducts} from "../store/selectors";
 
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const msg ={
   to: 'test@example.com', // Change to your recipient
@@ -33,6 +32,7 @@ function test (){
 }
 
 const CartPage = ({products}) => {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
   test();
   return(
     <Layout>
