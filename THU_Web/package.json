@@ -14,7 +14,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@react-google-maps/api": "^1.10.1",
-    "@sendgrid/mail": "^7.2.6",
     "axios": "^0.20.0",
     "contentful": "^7.14.6",
     "gatsby": "^2.24.57",
@@ -33,7 +32,6 @@
     "react-helmet": "^6.1.0",
     "react-native-checkbox": "^2.0.0",
     "react-redux": "^7.2.1",
-    "react-responsive-carousel": "^3.2.10",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0"
   },

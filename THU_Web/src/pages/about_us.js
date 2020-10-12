@@ -32,17 +32,20 @@ const SecondPage = ({data}) => {
                 <div class="body large-body">
                     <div dangerouslySetInnerHTML= {{__html: data.info.preamble.internal.content}}/>
                 </div>
-                <div class="body flex separator">
+                <div class="body flex space_between separator">
                     <div class="about-body">
                         <h2>Who We Are</h2>
                         <p dangerouslySetInnerHTML={{__html: data.info.abtBody.internal.content}}/>
                     </div>
+                    <div class="about-image">
+                        <img src={'/bags.png'} alt="Bags" id="bags"/>
+                    </div>
                 </div>
                 <div class="body separator">
-                    <div>{documentToReactComponents(data.info.timeline.json, options)}</div>
-
-{/*                     <div class="date flex space_between">
+                    {/*<div>{documentToReactComponents(data.info.timeline.json, options)}</div>*/}
+                    <div class="date flex space_between">
                         <div class="thumb">
+                            <img src={'/final-logo.png'} alt="Logo" />
                         </div>
                         <div class="history-info">
                             <h2>November 2013</h2>
@@ -51,6 +54,7 @@ const SecondPage = ({data}) => {
                     </div>
                     <div class="date flex space_between">
                         <div class="thumb">
+                            <img src={'/history-2.png'} alt="History Image 2" />
                         </div>
                         <div class="history-info">
                             <h2>2012 - 2019</h2>
@@ -59,6 +63,7 @@ const SecondPage = ({data}) => {
                     </div>
                     <div class="date flex space_between">
                         <div class="thumb">
+                            <img src={'/history-3.png'} alt="History Image 3" />
                         </div>
                         <div class="history-info">
                             <h2>July 2019</h2>
@@ -67,13 +72,14 @@ const SecondPage = ({data}) => {
                     </div>
                     <div class="date flex space_between">
                         <div class="thumb">
+                            <img src={'/history-4.png'} alt="History Image 4" />
                         </div>
                         <div class="history-info">
                             <h2>The Future</h2>
                             <p>From this point forward Jim will be producing all of my handbags. From time to time, I make bespoke pieces.</p>
                         </div>
                     </div>
- */}            </div>
+                </div>
             </div>
         </Layout>
     );
