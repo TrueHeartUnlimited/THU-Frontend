@@ -15,20 +15,15 @@ function mapStateToProps({ cartReducer }){
 
 
 const CartPage = ({products}) => {
-  const formState = {
-    name: "1",
-    email: "testingthuweb@gmail.com",
-    subject: "1",
-    message: "we are testing",
-  }
 
   const submitForm = async (e) => {
+    var test = {email: "testingtruweb@gmail.com", message:"testing" }
   
     try{
       console.log("try");
       const response = await fetch("/.netlify/functions/invoiceemail", {
         method: "POST",
-        body: JSON.stringify(formState),
+        body: JSON.stringify(test),
       })
   
       if (!response.ok) {
