@@ -10,10 +10,10 @@ import StyledBackgroundSection from '../components/BackgroundSection'
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <StyledBackgroundSection>
-        <h1>404: Page Not Found</h1>
-    </StyledBackgroundSection>
-    <div class="container">
+{/*     <StyledBackgroundSection>
+ */}        <h1>404: Page Not Found</h1>
+{/*     </StyledBackgroundSection>
+ */}    <div class="container">
         <div id="missing">
             <p id="missing-icon">404 <FontAwesomeIcon icon={ faFile }/></p>
             <p>Sorry, but the page you are looking for doesn't exist.</p>

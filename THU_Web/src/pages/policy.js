@@ -7,10 +7,10 @@ import StyledBackgroundSection from '../components/BackgroundSection'
 const SecondPage = () => (
   <Layout>
     <SEO title="About Us" />
-    <StyledBackgroundSection>
-        <h1>Policy</h1>
-    </StyledBackgroundSection>
-    <div class="container">
+{/*     <StyledBackgroundSection>
+ */}        <h1>Policy</h1>
+{/*     </StyledBackgroundSection>
+ */}    <div class="container">
         <div class="body">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a vestibulum mi. Curabitur nec blandit libero, ac tempus ex. Duis sed tortor elementum, ultrices est nec, consectetur felis. Morbi dignissim purus et sapien facilisis, a tempor nibh imperdiet. Quisque massa dolor, fermentum quis finibus et, varius eu sem. Etiam sit amet tortor eu dui rutrum rhoncus ac vitae mi. Phasellus justo ipsum, pharetra in dui ac, lacinia scelerisque augue. Maecenas nec nisl eget lectus facilisis suscipit. Suspendisse ultricies lectus purus, eu molestie urna rhoncus quis. Vestibulum elementum est leo, sed egestas sem faucibus sed. Nullam nec placerat orci, ut malesuada libero. In ornare libero ut vestibulum consectetur. Fusce quis quam quam. Cras convallis aliquam rutrum.</p>
             <p>Vivamus pharetra leo euismod augue posuere tincidunt. Nullam malesuada molestie dolor, eu fringilla nunc mattis ut. Sed in purus lacinia, porttitor nisi nec, pharetra dui. Phasellus interdum augue nec magna tempus interdum. Nunc porttitor interdum tempus. Maecenas vel arcu nec arcu malesuada ullamcorper nec eu ligula. Maecenas commodo eget nisi interdum tristique. Donec maximus accumsan eros, et malesuada nisl laoreet vitae.</p>

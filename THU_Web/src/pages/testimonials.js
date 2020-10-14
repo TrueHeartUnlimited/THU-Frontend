@@ -1,17 +1,31 @@
-import React from "react"
+import React, {Component} from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import StyledBackgroundSection from '../components/BackgroundSection'
 
-const SecondPage = () => (
-  <Layout>
+
+const Testimonials = ({data}) => {
+  return(
+    <Layout>
     <SEO title="About Us" />
-    <StyledBackgroundSection>
+    {/* <StyledBackgroundSection> */}
         <h1>Testimonials</h1>
-    </StyledBackgroundSection>
+    {/* </StyledBackgroundSection> */}
     <div class="container">
-        <div class="testimonial flex space_between">
+       {data.info.edges.map(({node})=>{
+        return(
+          <div class="testimonial flex space_between">
+            <div class="testimonial-text">
+                <div dangerouslySetInnerHTML={{__html: node.testimonial.internal.content}}/>
+                <p class="client">&#9866; {node.person}</p>
+            </div>
+            <div class="testimonial-image">
+            </div>
+          </div>
+        )
+      })} 
+{/*         <div class="testimonial flex space_between">
             <div class="testimonial-text">
                 <p>I decided to look into True Heart, after seeing a customer where I worked with, this incredibly beautiful bag, and I knew right then I had to have one.</p>
                 <p>Being made in Australia, of exceptional quality kangaroo leather, and meaning I would be supporting a local small business, ticked all the boxes for me.</p>
@@ -59,9 +73,28 @@ const SecondPage = () => (
             </div>
             <div class="testimonial-image">
             </div>
-        </div>
+        </div> */}
     </div>
   </Layout>
-)
 
-export default SecondPage
+  )
+}
+
+export const query = graphql`
+  {
+    info: allContentfulTestimonials {
+      edges {
+        node {
+          person
+          testimonial {
+            internal {
+              content
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default Testimonials
