@@ -5,14 +5,14 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
-import {removeFromCartMessage} from "../../store/actions";
+import {removeFromCartMessage, increaseCountMessage, decreaseCountMessage} from "../../store/actions";
 
 function ccyFormat(num){
   return `$${num/100}`;
 }
 
 function Table(props){
-  const {products, removeFromCart} = props;
+  const {products, removeFromCart, increaseCount, decreaseCount} = props;
 
   if(products.length < 1) return "Your cart is empty";
 
@@ -29,7 +29,6 @@ function Table(props){
                 <th class="product" colspan="2">Product</th>
                 <th class="color">Colour</th>
                 <th class="quantity">Quantity</th>
-                <th></th>
                 <th class="unit">Unit Price</th>
                 <th class="total">Total</th>
             </tr>
@@ -40,9 +39,9 @@ function Table(props){
               <td class="product"><Link to={product.path}>{product.productName}</Link></td>
                   <td class="color">{product.colours.toString()}</td>
                   <td class="quantity">
-                      <input type="button" class="quantity-change" value="-"/>
-                      <input type="text" class="qty" value="1"/>
-                      <input type="button" class="quantity-change" value="+"/>
+                      <button type="button" class="quantity-change" onClick={()=>decreaseCount(product)}>-</button>
+                      <p>{count}</p>
+                      <button type="button" class="quantity-change" onClick={()=>increaseCount(product)}>+</button>
                   </td>
                   <td class="unit">${product.price}</td>
               <td class="total">${props.price}</td>
@@ -50,7 +49,6 @@ function Table(props){
             ))}
             <tr>
                 <td colspan="7">
-                    <input type="submit" value="Update Invoice" class="btn submit table-submit"/>
                 </td>
             </tr>
           </table>
@@ -62,10 +60,14 @@ function Table(props){
 Table.propTypes = {
   products: PropTypes.array.isRequired,
   removeFromCart: PropTypes.func.isRequired,
+  decreaseCount: PropTypes.func.isRequired,
+  increaseCount: PropTypes.func.isRequired
 }
 
 const mapDispatchToProps ={
-  removeFromCart: product => removeFromCartMessage(product.id)
+  removeFromCart: product => removeFromCartMessage(product.id),
+  decreaseCount: product => decreaseCountMessage(product.id),
+  increaseCount: product => increaseCountMessage(product.id)
 }
 
 export default connect(null, mapDispatchToProps)(Table);

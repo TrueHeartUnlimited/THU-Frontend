@@ -14,11 +14,10 @@ function CartPage({ products }) {
 CartPage.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-      // count: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired,
       product: PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        // description: PropTypes.string.isRequired,
         // imageUrl: PropTypes.string.isRequired
       })
     })
