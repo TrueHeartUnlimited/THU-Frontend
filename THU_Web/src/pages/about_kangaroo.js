@@ -12,10 +12,10 @@ const AboutKangaroo = ({data}) => {
   const options = {
     renderNode:{
       [BLOCKS.HEADING_3]: (node, children) => (
-        <h3 className="heading3">{children}</h3>
+        <h3>{children}</h3>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className="copy">{children}</p>
+        <p>{children}</p>
       ),
     },
     renderMark: {},

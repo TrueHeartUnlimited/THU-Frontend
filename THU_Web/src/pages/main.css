@@ -182,6 +182,7 @@
 
 #features h3 {
     padding:10px 0;
+    color:var(--orange);
 }
 
 .kangaroo-image {
@@ -429,6 +430,11 @@ figure.effect-chico:hover p {
 .rating {
     color:var(--orange);
     padding-left:20px;
+}
+
+.product-price {
+    color:var(--orange);
+    font-weight:bold;
 }
 
 #product-customisation p {

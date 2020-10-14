@@ -1,16 +1,9 @@
-/* import React from 'react'
+import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 import BackgroundImage from 'gatsby-background-image'
 
-
- * In this functional component a <BackgroundImage />  is compared to an <Img />.
- * @param className   string    className(s) from styled-components.
- * @param children    nodes     Child-components from index.js
- * @return {*}
- * @constructor
- 
 const BackgroundSection = ({ className, children }) => {
   const { desktop } = useStaticQuery(
     graphql`
@@ -29,7 +22,7 @@ const BackgroundSection = ({ className, children }) => {
   const imageData = desktop.childImageSharp.fluid
   return (
         <BackgroundImage
-          className={"header"}
+          class={'header'}
           fluid={imageData}
         >
           {children}
@@ -41,4 +34,3 @@ const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100vw;
 `
 export default StyledBackgroundSection
- */
