@@ -16,8 +16,6 @@ const mapDispatchToProps = {
   addToCart: product => addToCartMessage(product, 1)
 };
 
-//{data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}
-
 const Product = ({ addToCart, data }) => {
     return(
         <Layout>
@@ -26,7 +24,7 @@ const Product = ({ addToCart, data }) => {
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">
-
+                        {/*{data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}*/}
                     </div>
                     <div id="product-info">
                         <div id="product-name-rating">
@@ -35,12 +33,12 @@ const Product = ({ addToCart, data }) => {
                         <div id="product-price-description">
                             {data.product.price2 != null
                               ? <h3>${data.product.price}-{data.product.price2}</h3>
-                              : <h3>${data.product.price}</h3>
+                              : <h3 class="product-price">${data.product.price}</h3>
                             }
-                            <div dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
+                            <p dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
                         </div>
                         <div id="add-invoice">
-                          <button onClick={()=> addToCart(data.product)}>Add to cart</button>
+                          <button class="btn" onClick={()=> addToCart(data.product)}>Add to cart</button>
 {/*                             <form>
                                 <input type="button" class="quantity-change" value="-"/>
                                 <input type="text" class="qty" value="1"/>
@@ -132,7 +130,7 @@ const Product = ({ addToCart, data }) => {
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane" label="Reviews" id="reviews">
+                        {/*<div class="tab-pane" label="Reviews" id="reviews">
                             <div class="review flex space_between">
                                 <div class="name-rating">
                                     <p>Jane Doe</p>
@@ -148,7 +146,7 @@ const Product = ({ addToCart, data }) => {
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>*/}
                     </Tabs>
                 </div>
             </div>

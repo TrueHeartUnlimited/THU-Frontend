@@ -12,12 +12,12 @@ import StyledBackgroundSection from '../components/BackgroundSection'
 const SecondPage = ({data}) => {
     const options = {
         renderNode:{
-          [BLOCKS.HEADING_2]: (node, children) => (
-            <h2 className="heading2">{children}</h2>
-          ),
-          [BLOCKS.PARAGRAPH]: (node, children) => (
-            <p className="copy">{children}</p>
-          ),
+            [BLOCKS.HEADING_2]: (node, children) => (
+            <h2>{children}</h2>
+            ),
+            [BLOCKS.PARAGRAPH]: (node, children) => (
+            <p>{children}</p>
+            ),
         },
         renderMark: {},
     }
@@ -45,7 +45,7 @@ const SecondPage = ({data}) => {
                     {/*<div>{documentToReactComponents(data.info.timeline.json, options)}</div>*/}
                     <div class="date flex space_between">
                         <div class="thumb">
-                            <img src={'/final-logo.png'} alt="Logo" />
+                            <img src={'/history-1.png'} alt="History Image 1" />
                         </div>
                         <div class="history-info">
                             <h2>November 2013</h2>
