@@ -27,7 +27,7 @@ const SecondPage = () => (
             <p>If you have any queries relating to our products, processes or any concerns please feel free to contact us. Send us a message below or come visit us at our base of operations. Otherwise feel free to call or send an email, our details are listed at the bottom of the page.</p>
         </div>
         <div class="flex separator space_between">
-          <Form name="Contact" />
+          <Form />
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
