@@ -39,6 +39,8 @@ function handleMessage(state, { type, payload }) {
 }
 
 function addToCart(state, { product, count }) {
+  console.log(product);
+  console.log(count)
    const products = {
     ...state.products,
     [product.id]: { product, count }

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 import {BLOCKS} from "@contentful/rich-text-types"
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -65,7 +66,7 @@ const AboutKangaroo = ({data}) => {
                         <p dangerouslySetInnerHTML={{__html: data.info.krooBody.internal.content}}/>
                     </div>
                     <div class="kangaroo-image">
-                        <img src={'/kangaroo.png'} alt="Kangaroo" id="kangaroo"/>
+                      <Img fluid = {data.info.kangarooImage.fluid} key={data.info.kangarooImage.fluid.src} alt={data.info.kangarooImage.title}/>
                     </div>
                 </div>
             </div>
@@ -88,6 +89,11 @@ export const query = graphql`
             krooBody {
               internal {
                 content
+              }
+            }
+            kangarooImage{
+              fluid{
+                ...GatsbyContentfulFluid
               }
             }
             keyPoint1 {

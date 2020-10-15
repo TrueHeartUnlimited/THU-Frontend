@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types";
 import {graphql} from "gatsby";
-import {BLOCKS} from "@contentful/rich-text-types"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,17 +9,6 @@ import StyledBackgroundSection from '../components/BackgroundSection'
 
 
 const SecondPage = ({data}) => {
-    const options = {
-        renderNode:{
-            [BLOCKS.HEADING_2]: (node, children) => (
-            <h2>{children}</h2>
-            ),
-            [BLOCKS.PARAGRAPH]: (node, children) => (
-            <p>{children}</p>
-            ),
-        },
-        renderMark: {},
-    }
 
     return (
         <Layout>
@@ -38,12 +26,25 @@ const SecondPage = ({data}) => {
                         <p dangerouslySetInnerHTML={{__html: data.info.abtBody.internal.content}}/>
                     </div>
                     <div class="about-image">
-                        <img src={'/bags.png'} alt="Bags" id="bags"/>
+                      <Img fluid={data.info.abtUsImage.fluid} key={data.info.abtUsImage.fluid.src} alt={data.info.abtUsImage.title}/>
                     </div>
                 </div>
                 <div class="body separator">
-                    {/*<div>{documentToReactComponents(data.info.timeline.json, options)}</div>*/}
-                    <div class="date flex space_between">
+                    {data.timeline.edges.map(({node})=>{
+                      return(
+                        <div class="date flex space_between">
+                        <div class="thumb">
+                            <Img fluid={node.timelineImage.fluid} key={node.timelineImage.fluid.src} alt={node.timelineImage.title}/>
+                        </div>
+                        <div class="history-info">
+                            <h2>{node.header}</h2>
+                            <p>{node.timePoint.internal.content}</p>
+                        </div>
+                    </div>
+
+                      )
+                    })}
+{/*                     <div class="date flex space_between">
                         <div class="thumb">
                             <img src={'/history-1.png'} alt="History Image 1" />
                         </div>
@@ -79,7 +80,7 @@ const SecondPage = ({data}) => {
                             <p>From this point forward Jim will be producing all of my handbags. From time to time, I make bespoke pieces.</p>
                         </div>
                     </div>
-                </div>
+ */}                </div>
             </div>
         </Layout>
     );
@@ -97,13 +98,33 @@ export const query = graphql`
             content
           }
         }
-        timeline {
-          json
-        }
         abtBody {
             internal{
                 content
             }
+        }
+        abtUsImage{
+          fluid{
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+
+      timeline: allContentfulTimeline {
+        edges{
+          node{
+            header
+            timePoint{
+              internal{
+                content
+              }
+            }
+            timelineImage{
+              fluid{
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
         }
       }
     }

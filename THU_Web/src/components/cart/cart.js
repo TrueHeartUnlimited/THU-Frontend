@@ -43,12 +43,17 @@ function Table(props){
                       <p>{count}</p>
                       <button type="button" class="quantity-change" onClick={()=>increaseCount(product)}>+</button>
                   </td>
-                  <td class="unit">${product.price}</td>
-              <td class="total">${props.price}</td>
+                  {product.price2 != null ? <td class="unit">${product.price}-${product.price2}</td>
+                  :<td class="unit">${product.price}</td>
+                  }
+                  {product.price2 != null ? <td class="total">${product.price * count}-${product.price2 * count}</td>
+                  :<td class="total">${product.price * count}</td>
+                  }
+
             </tr>
             ))}
             <tr>
-                <td colspan="7">
+                <td colspan="7">total
                 </td>
             </tr>
           </table>

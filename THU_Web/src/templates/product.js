@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link, StaticQuery } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -13,10 +13,12 @@ import SEO from "../components/seo"
 import {addToCartMessage} from "../store/actions"
 
 const mapDispatchToProps = {
-  addToCart: product => addToCartMessage(product, 1)
+  addToCart: (product, count) => addToCartMessage(product, count)
 };
 
-const Product = ({ addToCart, data }) => {
+const Product = ({ addToCart, data }) => {  
+  const [count, setCount] = useState(1)
+  console.log(count);
     return(
         <Layout>
             <SEO title={data.product.productName}/>
@@ -38,20 +40,12 @@ const Product = ({ addToCart, data }) => {
                             <p dangerouslySetInnerHTML={{__html: data.product.description.description}}/>
                         </div>
                         <div id="add-invoice">
-                          <button class="btn" onClick={()=> addToCart(data.product)}>Add to cart</button>
-{/*                             <form>
-                                <input type="button" class="quantity-change" value="-"/>
-                                <input type="text" class="qty" value="1"/>
-                                <input type="button" class="quantity-change" value="+"/>
-                                <input type="submit" value="Update Invoice" class="btn submit table-submit"/>
-                            </form> */}
-                        </div>
-                        <div class="flex space_between" id="product-customisation">
-                            <div class="customisation">
-                              {data.product.customisable === true &&
-                                <p><Link to="/">Custom Colour</Link></p>
-                              }
-                            </div>
+                          <form  onSubmit="return false">
+                          <input type="button" class="quantity-change" value="-" onClick={()=> setCount(count - 1)}/>
+                          <input type="text" class="qty" value={count}/>
+                          <input type="button" class="quantity-change" value="+" onClick={()=> setCount(count + 1)}/>
+                          <input type="submit" value="Update Invoice" class="btn submit table-submit" onClick={()=>addToCart(data.product, count)}/>
+                          </form>
                         </div>
                     </div>
                 </div>
@@ -103,10 +97,12 @@ const Product = ({ addToCart, data }) => {
                                     </td>
                                 </tr>
                             </table>
+                            {data.product.customisable === true &&
                             <div class="flex space_between">
                                 <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
                                 <p style={{marginTop:"10px"}}><Link to="/custom" class="btn" id="custom-btn">Get Custom</Link></p>
                             </div>
+                            }
                         </div>
                         <div class="tab-pane" label="Product Information">
                             <table class="product-table">
@@ -186,4 +182,4 @@ export const data = graphql`
     }
 `;
 
-export default connect(null, mapDispatchToProps)(Product)
+export default connect(null,mapDispatchToProps)(Product)
