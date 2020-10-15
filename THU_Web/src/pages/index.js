@@ -8,13 +8,15 @@ import SEO from "../components/seo"
 import "./main.css"
 import ProductDisplay from "../components/productDisplay"
 import StyledBackgroundSection from '../components/BackgroundSection'
+import Carousel from '../components/carousel.js'
 
 const IndexPage = ({data}) => {
 
     return(
     <Layout>
         <SEO title="Home" />
-        <div class="flex space_between" id="carousel">
+        <div id="carousel">
+            <Carousel></Carousel>
         </div>
         <div class="container center" id="home-intro">
             <h2>{data.info.heading}</h2>
