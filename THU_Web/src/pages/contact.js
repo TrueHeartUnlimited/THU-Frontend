@@ -27,7 +27,22 @@ const SecondPage = () => (
             <p>If you have any queries relating to our products, processes or any concerns please feel free to contact us. Send us a message below or come visit us at our base of operations. Otherwise feel free to call or send an email, our details are listed at the bottom of the page.</p>
         </div>
         <div class="flex separator space_between">
-          <Form />
+        <h2>Send Us a Message</h2>
+          <form method="POST" data-netlify="true">
+              <div class="flex space_between">
+                  <div class="form-half-width">
+                      <p>Your Name<span class="red">*</span></p>
+                      <input type="text" name="name" class="half-width" required/>
+                  </div>
+                  <div class="form-half-width">
+                      <p>Your Email<span class="red">*</span></p>
+                      <input type="text" name="email" class="half-width" required/>
+                  </div>
+              </div>
+              <p>Message<span class="red">*</span></p>
+              <textarea name="message" required></textarea>
+              <input value="Submit" type="submit"/>
+          </form>
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
