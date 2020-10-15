@@ -13,12 +13,81 @@ import SEO from "../components/seo"
 import {addToCartMessage} from "../store/actions"
 
 const mapDispatchToProps = {
-  addToCart: (product, count) => addToCartMessage(product, count)
+  addToCart: (product, count, colour) => addToCartMessage(product, count, colour)
 };
 
 const Product = ({ addToCart, data }) => {  
   const [count, setCount] = useState(1)
-  console.log(count);
+  const [imageIndex, setIndex] = useState(0)
+  var currentColour = ""
+
+  function updateimage(direction){
+    var totalImages = data.product.productImages.length;
+    if(imageIndex === totalImages-1){
+      setIndex(0)
+    } else{
+      if(direction === "forward"){
+        setIndex(imageIndex + 1)
+      }else{
+        if(imageIndex === 0){
+          setIndex(totalImages-1)
+        }
+        else{
+          setIndex(imageIndex -1)
+        }
+      }
+    }
+  }
+
+  function checkValid(){
+    if(currentColour != "" ){
+      addToCart(data.product, count, currentColour)
+    }
+    else{
+      alert("Please Select Colour")
+    }
+  }
+
+  function updateSwatch(index){
+    currentColour = data.product.productImages[index].description
+    setIndex(index)
+  }
+
+  function colorClass(description){
+    var colString = "";
+
+    if(description.match(/^red/gi)){
+      colString="swatch-color red-swatch"
+    }else if(description.match(/^orange/gi)){
+      colString="swatch-color orange-swatch"
+    }else if(description.match(/^yellow/gi)){
+      colString="swatch-color yellow-swatch"
+    }else if(description.match(/^green/gi)){
+      colString="swatch-color green-swatch"
+    }else if(description.match(/^blue/gi)){
+      colString="swatch-color blue-swatch"
+    }else if(description.match(/^dark blue/gi)){
+      colString="swatch-color dark-blue-swatch"
+    }else if(description.match(/^purple/gi)){
+      colString="swatch-color purple-swatch"
+    }else if(description.match(/^pink/gi)){
+      colString="swatch-color pink-swatch"
+    }else if(description.match(/^tan/gi)){
+      colString="swatch-color tan-swatch"
+    }else if(description.match(/^brown/gi)){
+      colString="swatch-color brown-swatch"
+    }else if(description.match(/^black/gi)){
+      colString="swatch-color black-swatch"
+    }else if(description.match(/^white/gi)){
+      colString="swatch-color white-swatch"
+    }else if(description.match(/^grey/gi)){
+      colString="swatch-color grey-swatch"
+    } else{
+      colString = "not valid"
+    }
+    return(colString)
+  }
+
     return(
         <Layout>
             <SEO title={data.product.productName}/>
@@ -26,7 +95,10 @@ const Product = ({ addToCart, data }) => {
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">
+                      {/* <button onClick={() => updateimage("back")}>-</button> */}
+                      <Img fluid = {data.product.productImages[imageIndex].fluid} key = {data.product.productImages[imageIndex].fluid.src} alt={data.product.productImages.title}/>
                         {/*{data.product.productImages.map(image => <Img fluid = {image.fluid} key = {image.fluid.src} alt={image.title}></Img>)}*/}
+                      {/* <button onClick={()=>updateimage("forward")}>+</button> */}
                     </div>
                     <div id="product-info">
                         <div id="product-name-rating">
@@ -44,7 +116,7 @@ const Product = ({ addToCart, data }) => {
                           <input type="button" class="quantity-change" value="-" onClick={()=> setCount(count - 1)}/>
                           <input type="text" class="qty" value={count}/>
                           <input type="button" class="quantity-change" value="+" onClick={()=> setCount(count + 1)}/>
-                          <input type="submit" value="Update Invoice" class="btn submit table-submit" onClick={()=>addToCart(data.product, count)}/>
+                          <input type="submit" value="Update Invoice" class="btn submit table-submit" onClick={()=> checkValid()}/>
                           </form>
                         </div>
                     </div>
@@ -56,35 +128,23 @@ const Product = ({ addToCart, data }) => {
                                 <tr>
                                     <th>Colour</th>
                                     <td class="flex" id="swatches">
-                                        <Link to="">
-                                            <dl class="swatch-dl">
-                                                <dt class="swatch-dt selected">
-                                                    <span class="swatch-color blue-swatch">
-                                                        <span class="swatch-color"></span>
-                                                    </span>
-                                                </dt>
-                                                <dd class="text-color">
-                                                    <div class="color-alt">
-                                                        <span class="text-color">Blue</span>
-                                                    </div>
-                                                </dd>
+                                      {data.product.productImages.map((image, index) =>{
+                                          if(colorClass(image.description) != "not valid"){
+                                            return(
+                                            <dl class="swatch-dl" onClick={()=>updateSwatch(index)}>
+                                              <dt class="swatch-dt">
+                                                  <span class={colorClass(image.description)}>
+                                                      <span class="swatch-color"></span>
+                                                  </span>
+                                              </dt>
+                                              <dd class="text-color">
+                                                  <div class="color-alt">
+                                                      <span class="text-color">{image.description}</span>
+                                                  </div>
+                                              </dd>
                                             </dl>
-                                        </Link>
-
-                                        <Link to="">
-                                            <dl class="swatch-dl">
-                                                <dt class="swatch-dt">
-                                                    <span class="swatch-color orange-swatch">
-                                                        <span class="swatch-color"></span>
-                                                    </span>
-                                                </dt>
-                                                <dd class="text-color">
-                                                    <div class="color-alt">
-                                                        <span class="text-color">Orange</span>
-                                                    </div>
-                                                </dd>
-                                            </dl>
-                                        </Link>
+                                          )}
+                                      })}
                                     </td>
                                 </tr>
                                 <tr>
@@ -173,6 +233,7 @@ export const data = graphql`
               description
             }
             productImages {
+              description
               fluid {
                 ...GatsbyContentfulFluid
               }

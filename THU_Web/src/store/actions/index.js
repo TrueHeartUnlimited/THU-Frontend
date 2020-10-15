@@ -3,8 +3,8 @@ const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 const INCREASE_COUNT = 'INCREASE_COUNT';
 const DECREASE_COUNT = 'DECREASE_COUNT';
 
-export function addToCartMessage(product, count) {
-  return buildMessage(ADD_TO_CART, { product, count });
+export function addToCartMessage(product, count, colour) {
+  return buildMessage(ADD_TO_CART, { product, count, colour });
 }
 
 export function removeFromCartMessage(productId) {
@@ -38,12 +38,10 @@ function handleMessage(state, { type, payload }) {
   return handler(state, payload);
 }
 
-function addToCart(state, { product, count }) {
-  console.log(product);
-  console.log(count)
+function addToCart(state, { product, count, colour }) {
    const products = {
     ...state.products,
-    [product.id]: { product, count }
+    [product.id]: { product, count, colour }
   };
 
   return {

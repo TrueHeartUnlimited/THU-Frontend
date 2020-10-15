@@ -4,6 +4,7 @@ import {connect} from "react-redux"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import Img from "gatsby-image"
 
 import {removeFromCartMessage, increaseCountMessage, decreaseCountMessage} from "../../store/actions";
 
@@ -32,12 +33,12 @@ function Table(props){
                 <th class="unit">Unit Price</th>
                 <th class="total">Total</th>
             </tr>
-            {products.map(({product, count})=>(
+            {products.map(({product, count, colour})=>(
               <tr>
                   <td class="remove"><button onClick={()=>removeFromCart(product)}><FontAwesomeIcon icon={ faTimes }/></button></td>
-                  <td class="image"><div class="image-image"></div></td>
+                  <td class="image"><div class="image-image"><Img fluid ={product.productImages[0].fluid} src={product.productImages[0].fluid.src} alt={product.productImages[0].title}/></div></td>
               <td class="product"><Link to={product.path}>{product.productName}</Link></td>
-                  <td class="color">{product.colours.toString()}</td>
+                  <td class="color">{colour}</td>
                   <td class="quantity">
                       <button type="button" class="quantity-change" onClick={()=>decreaseCount(product)}>-</button>
                       <p>{count}</p>

@@ -15,6 +15,7 @@ CartPage.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number.isRequired,
+      colour: PropTypes.string.isRequired,
       product: PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,

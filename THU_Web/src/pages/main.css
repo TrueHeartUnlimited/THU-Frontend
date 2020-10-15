@@ -483,13 +483,59 @@ figure.effect-chico:hover p {
     border-radius:50%;
 }
 
-.blue-swatch {
-    background-color:blue;
+.red-swatch {
+  background-color: red;
 }
 
 .orange-swatch {
-    background-color:orangered;
+  background-color:orangered;
 }
+
+.yellow-swatch {
+  background-color:gold;
+}
+
+.green-swatch {
+  background-color:green;
+}
+
+.blue-swatch {
+    background-color:#0064ec;
+}
+
+.dark-blue-swatch {
+  background-color:blue;
+}
+
+.purple-swatch {
+  background-color:blueviolet;
+}
+
+.pink-swatch {
+  background-color:#ff6ef3;
+}
+
+.tan-swatch {
+  background-color:#c69357;
+}
+
+.brown-swatch {
+  background-color:#653a08;
+}
+
+.black-swatch {
+  background-color:black;
+}
+
+.white-swatch {
+  background-color:white;
+}
+
+.grey-swatch {
+  background-color:grey;
+}
+
+
 
 #swatches dd {
     display:none;

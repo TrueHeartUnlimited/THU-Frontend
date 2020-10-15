@@ -110,7 +110,7 @@ export const query = graphql`
         }
       }
 
-      timeline: allContentfulTimeline {
+      timeline: allContentfulTimeline(sort:{fields: order, order: ASC}) {
         edges{
           node{
             header
