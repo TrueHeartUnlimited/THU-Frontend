@@ -13,10 +13,10 @@ const SecondPage = ({data}) => {
     return (
         <Layout>
             <SEO title="About Us" />
-{/*             <StyledBackgroundSection>
- */}                <h1>About Us</h1>
-{/*             </StyledBackgroundSection>
- */}            <div class="container">
+            <StyledBackgroundSection class="header">
+                <h1>About Us</h1>
+            </StyledBackgroundSection>
+            <div class="container">
                 <div class="body large-body">
                     <div dangerouslySetInnerHTML= {{__html: data.info.preamble.internal.content}}/>
                 </div>

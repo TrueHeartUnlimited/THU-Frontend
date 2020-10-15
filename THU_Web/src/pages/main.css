@@ -20,7 +20,7 @@
     padding:30px 200px !important;
 }
 
-.header, #call-to-action, .product-header {
+.background-image {
     color:white;
     padding:50px;
 }
@@ -83,7 +83,7 @@
     line-height: 1.5rem;
 }
 
-#call-to-action div {
+#call-to-action {
     margin:0 auto;
     width:390px;
     font-size:22px;
@@ -741,6 +741,10 @@ form p {
 
 #message {
     margin-right:50px;
+}
+
+.form-half-width {
+    width:47%;
 }
 
 #contact-us input, textarea {

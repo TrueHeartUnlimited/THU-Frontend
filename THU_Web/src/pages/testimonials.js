@@ -9,9 +9,9 @@ const Testimonials = ({data}) => {
   return(
     <Layout>
     <SEO title="About Us" />
-    {/* <StyledBackgroundSection> */}
+    <StyledBackgroundSection class="header">
         <h1>Testimonials</h1>
-    {/* </StyledBackgroundSection> */}
+    </StyledBackgroundSection>
     <div class="container">
        {data.info.edges.map(({node})=>{
         return(
@@ -24,7 +24,7 @@ const Testimonials = ({data}) => {
             </div>
           </div>
         )
-      })} 
+      })}
 {/*         <div class="testimonial flex space_between">
             <div class="testimonial-text">
                 <p>I decided to look into True Heart, after seeing a customer where I worked with, this incredibly beautiful bag, and I knew right then I had to have one.</p>

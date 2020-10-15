@@ -20,12 +20,12 @@ const IndexPage = ({data}) => {
             <h2>{data.info.heading}</h2>
             <p dangerouslySetInnerHTML={{__html: data.info.homePara.internal.content}}/>
         </div>
-        <div id="call-to-action">
-            <div>
+        <StyledBackgroundSection>
+            <div id="call-to-action">
                 Like what you see
                 <Link to="/shop/" class="btn">Shop Now</Link>
             </div>
-        </div>
+        </StyledBackgroundSection>
         <div class="container" id="featured">
             <ProductDisplay items={data.products}/>
         </div>
