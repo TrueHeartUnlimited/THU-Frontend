@@ -6,6 +6,7 @@ import { faStar as farStar } from "@fortawesome/free-regular-svg-icons"
 import { faStar as fasStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons"
 import Img from "gatsby-image"
 import {connect} from "react-redux"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 import Tabs from "../components/tabs.js"
 import Layout from "../components/layout"
@@ -16,7 +17,7 @@ const mapDispatchToProps = {
   addToCart: (product, count, colour) => addToCartMessage(product, count, colour)
 };
 
-const Product = ({ addToCart, data }) => {  
+const Product = ({ addToCart, data }) => {
   const [count, setCount] = useState(1)
   const [imageIndex, setIndex] = useState(0)
   var currentColour = ""
@@ -91,7 +92,7 @@ const Product = ({ addToCart, data }) => {
     return(
         <Layout>
             <SEO title={data.product.productName}/>
-            <div class="product-header"></div>
+            <StyledBackgroundSection class="product-header"></StyledBackgroundSection>
             <div class="container">
                 <div class="flex space_between" id="product">
                     <div id="product-image">

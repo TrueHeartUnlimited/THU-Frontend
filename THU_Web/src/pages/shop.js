@@ -13,10 +13,10 @@ const shop = ({data}) => {
   return(
     <Layout>
           <SEO title="Shop" />
-{/*     <StyledBackgroundSection>
- */}        <h1>Shop</h1>
-{/*     </StyledBackgroundSection>
- */}    <div class="container">
+    <StyledBackgroundSection class="header">
+        <h1>Shop</h1>
+    </StyledBackgroundSection>
+    <div class="container">
       <Display items={data.products}/>
     </div>
     </Layout>

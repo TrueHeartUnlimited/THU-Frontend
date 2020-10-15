@@ -19,10 +19,10 @@ const center = {
 const SecondPage = () => (
   <Layout>
     <SEO title="Contact Us" />
-{/*     <StyledBackgroundSection>
- */}        <h1>Large Custom Piece Orders</h1>
-{/*     </StyledBackgroundSection>
- */}    <div class="container" id="contact-us">
+    <StyledBackgroundSection class="header">
+        <h1>Large Custom Piece Orders</h1>
+    </StyledBackgroundSection>
+    <div class="container" id="contact-us">
         <div>
             <p>We cater to large orders of items or even large orders of custom items. If you are interested in getting pouches for your company or bags for your organisation we are happy to work with you to make something tailored for you.</p>
         </div>

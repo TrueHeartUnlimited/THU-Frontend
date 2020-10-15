@@ -22,7 +22,7 @@ const BackgroundSection = ({ className, children }) => {
   const imageData = desktop.childImageSharp.fluid
   return (
         <BackgroundImage
-          class={'header'}
+          className={"background-image"}
           fluid={imageData}
         >
           {children}

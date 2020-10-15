@@ -25,10 +25,10 @@ const AboutKangaroo = ({data}) => {
     return(
         <Layout>
             <SEO title="About Kangaroo Leather" />
-{/*             <StyledBackgroundSection>
- */}                <h1>About Kangaroo Leather</h1>
-{/*             </StyledBackgroundSection>
- */}            <div class="container">
+            <StyledBackgroundSection class="header">
+                <h1>About Kangaroo Leather</h1>
+            </StyledBackgroundSection>
+            <div class="container">
                 <div id="kangaroo-video"></div>
                 <div class="body separator large-body">
                     <div dangerouslySetInnerHTML={{__html: data.info.krooPreamble.internal.content}}/>

@@ -1,16 +1,18 @@
 import React from "react";
 
+import '../pages/main.css';
+
 export default function Contact(){
   return (
     <div class="half-width" id="message">
         <h2>Send Us a Message</h2>
         <form id="contactform" action="https://formsubmit.co/testingtruweb@gmail.com" method="POST">
             <div class="flex space_between">
-                <div>
+                <div class="form-half-width">
                     <p>Your Name<span class="red">*</span></p>
                     <input type="text" name="name" class="half-width" required/>
                 </div>
-                <div>
+                <div class="form-half-width">
                     <p>Your Email<span class="red">*</span></p>
                     <input type="text" name="email" class="half-width" required/>
                 </div>

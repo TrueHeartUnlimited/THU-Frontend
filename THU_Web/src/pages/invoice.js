@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Cart from "../components/cart/popCart"
+import StyledBackgroundSection from '../components/BackgroundSection'
 
 import {getAllProducts} from "../store/selectors";
 
@@ -18,22 +19,22 @@ const CartPage = ({products}) => {
 
   const submitForm = async (e) => {
     var test = {email: "testingtruweb@gmail.com", message:"testing" }
-  
+
     try{
       console.log("try");
       const response = await fetch("/.netlify/functions/invoiceemail", {
         method: "POST",
         body: JSON.stringify(test),
       })
-  
+
       if (!response.ok) {
         console.log("in if")
         //not 200 response
         return
       }
-  
+
       //all OK
-      
+
     } catch(e){
       console.log("error")
       //error
@@ -43,9 +44,9 @@ const CartPage = ({products}) => {
   return(
     <Layout>
       <SEO title="Shop" />
-      <div class="header">
+      <StyledBackgroundSection class="header">
           <h1>Calculator</h1>
-      </div>
+      </StyledBackgroundSection>
       <div class="container">
           <div class="invoice-box" id="calc-table">
             <Cart products={products}/>

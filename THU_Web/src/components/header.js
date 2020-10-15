@@ -17,13 +17,13 @@ export function Search() {
 export function Header({ data }) {
     return(
         <header>
-            <h1>
-                <Link to="/">
-                    T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span>
+            <Link to="/">
+                <div class="flex">
+                    <h1>T<span class="lower_case">RUE</span> H<span class="lower_case">EART</span></h1>
                     <img src={'/final-logo.png'} alt="Logo" id="logo-img" />
-                    U<span class="lower_case">NLIMITED</span>
-                </Link>
-            </h1>
+                    <h1>U<span class="lower_case">NLIMITED</span></h1>
+                </div>
+            </Link>
         </header>
     )
 }
