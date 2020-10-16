@@ -27,22 +27,7 @@ const SecondPage = () => (
             <p>We cater to large orders of items or even large orders of custom items. If you are interested in getting pouches for your company or bags for your organisation we are happy to work with you to make something tailored for you.</p>
         </div>
         <div class="flex separator space_between">
-        <h2>Send Us a Message</h2>
-          <form method="POST" data-netlify="true">
-              <div class="flex space_between">
-                  <div class="form-half-width">
-                      <p>Your Name<span class="red">*</span></p>
-                      <input type="text" name="name" class="half-width" required/>
-                  </div>
-                  <div class="form-half-width">
-                      <p>Your Email<span class="red">*</span></p>
-                      <input type="text" name="email" class="half-width" required/>
-                  </div>
-              </div>
-              <p>Message<span class="red">*</span></p>
-              <textarea name="message" required></textarea>
-              <input value="Submit" type="submit"/>
-          </form>
+        <Form />
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>

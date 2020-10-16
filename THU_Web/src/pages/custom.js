@@ -27,22 +27,7 @@ const SecondPage = () => (
             <p>Nothing fits you perfectly? We are happy to make special alterations to products to meet your needs and make it personal for you. Still not happy? We make custom bespoke pieces that are tailor made for you and your needs. Get in touch with us to begin the process.</p>
         </div>
         <div class="flex separator space_between">
-        <h2>Send Us a Message</h2>
-          <form name="Custom" method="post" netlify>
-              <div class="flex space_between">
-                  <div class="form-half-width">
-                      <p>Your Name<span class="red">*</span></p>
-                      <input type="text" name="name" class="half-width" required/>
-                  </div>
-                  <div class="form-half-width">
-                      <p>Your Email<span class="red">*</span></p>
-                      <input type="text" name="email" class="half-width" required/>
-                  </div>
-              </div>
-              <p>Message<span class="red">*</span></p>
-              <textarea name="message" required></textarea>
-              <button type="submit">Submit</button>
-          </form>
+          <Form />
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
