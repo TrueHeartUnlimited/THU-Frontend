@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ContactForm from "../components/contact"
+import Form from "../components/contact"
 import StyledBackgroundSection from '../components/BackgroundSection'
 
 const containerStyle = {
@@ -27,10 +27,7 @@ const SecondPage = () => (
             <p>We cater to large orders of items or even large orders of custom items. If you are interested in getting pouches for your company or bags for your organisation we are happy to work with you to make something tailored for you.</p>
         </div>
         <div class="flex separator space_between">
-        <div class="half-width" id="message">
-          <h2>Send Us a Message</h2>
-          <ContactForm />
-        </div>
+        <Form />
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
