@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Form from "../components/contact"
+import ContactForm from "../components/contact"
 import StyledBackgroundSection from '../components/BackgroundSection'
 
 const containerStyle = {
@@ -27,7 +27,10 @@ const SecondPage = () => (
             <p>If you have any queries relating to our products, processes or any concerns please feel free to contact us. Send us a message below or come visit us at our base of operations. Otherwise feel free to call or send an email, our details are listed at the bottom of the page.</p>
         </div>
         <div class="flex separator space_between">
-        <Form />
+        <div class="half-width" id="message">
+          <h2>Send Us a Message</h2>
+          <ContactForm />
+        </div>
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
