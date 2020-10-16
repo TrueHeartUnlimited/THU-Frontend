@@ -28,7 +28,7 @@ const SecondPage = () => (
         </div>
         <div class="flex separator space_between">
         <h2>Send Us a Message</h2>
-          <form name="Custom" method="post" netlify>
+          <form name="Contact" method="post" data-netlify="true">
               <div class="flex space_between">
                   <div class="form-half-width">
                       <p>Your Name<span class="red">*</span></p>
@@ -41,7 +41,7 @@ const SecondPage = () => (
               </div>
               <p>Message<span class="red">*</span></p>
               <textarea name="message" required></textarea>
-              <button type="submit">Submit</button>
+              <input value="Submit" type="submit"/>
           </form>
             <div class="half-width">
                 <div class="location-info">
