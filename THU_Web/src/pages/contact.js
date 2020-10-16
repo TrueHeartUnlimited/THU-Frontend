@@ -30,6 +30,7 @@ const SecondPage = () =>{
   }
 
   const handleSubmit = e => {
+    e.preventDefault()
 
     fetch("/", {
       method: "POST",
@@ -40,7 +41,12 @@ const SecondPage = () =>{
       .then(() => alert("Success!"))
       .catch(error => alert(error));
 
-      e.preventDefault();
+      setFormState({
+        name:"",
+        email:"",
+        message:""
+      })
+
   };
 
   const handleChange = e => {
@@ -66,17 +72,17 @@ const SecondPage = () =>{
             <h2>Send Us a Message</h2>
             <form name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
               <input type="hidden" name="form-name" value="contact"/>
-                <div >
-                    <div >
-                        <label htmlFor="name">Your Name<span >*</span>
-                        <input type="text" name="name"  value={formState.name} onChange={handleChange}/></label>
+                <div class="flex space_between">
+                    <div class="form-half-width">
+                        <label htmlFor="name">Your Name<span class="red">*</span>
+                        <input type="text" name="name" class="half-width" value={formState.name} onChange={handleChange}/></label>
                     </div>
-                    <div >
-                        <label htmlFor="email">Your Email<span >*</span>
-                        <input type="email" name="email"  value={formState.email} onChange={handleChange}/></label>
+                    <div class="form-half-width">
+                        <label htmlFor="email">Your Email<span class="red">*</span>
+                        <input type="email" name="email" class="half-width" value={formState.email} onChange={handleChange}/></label>
                     </div>
                 </div>
-                <label htmlFor="message">Message<span >*</span>
+                <label htmlFor="message">Message<span class="red">*</span>
                 <textarea name="message" value={formState.message} onChange={handleChange}></textarea></label>
                 <button type="submit">Submit</button>
               </form>          
