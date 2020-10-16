@@ -11,28 +11,19 @@ const encode = (data) => {
 export default class ContactForm extends React.Component {
   constructor(props) {
     super(props);
-    this.ContactForm = React.createRef()
     this.state = { name: "", email: "", message: "" };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    const form = this.ContactForm.current
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": form.getAttribute("name"), ...this.state })
+      body: encode({ "form-name": "contact", ...this.state })
     })
-    // this will become navigate
       .then(() => alert("Success!"))
       .catch(error => alert(error));
-
-      this.setState({
-        name:"",
-        email:"",
-        message:""
-      })
 
   };
 
