@@ -6,7 +6,7 @@ export default function Contact(name){
   return (
     <div class="half-width" id="message">
         <h2>Send Us a Message</h2>
-        <form name={name} action="POST" data-netlify="true">
+        <form name={name} netlify>
             <div class="flex space_between">
                 <div class="form-half-width">
                     <p>Your Name<span class="red">*</span></p>
