@@ -2,11 +2,11 @@ import React from "react";
 
 import '../pages/main.css';
 
-export default function Contact(){
+export default function Contact(name){
   return (
     <div class="half-width" id="message">
         <h2>Send Us a Message</h2>
-        <form action="POST" data-netlify="true">
+        <form name={name} action="POST" data-netlify="true">
             <div class="flex space_between">
                 <div class="form-half-width">
                     <p>Your Name<span class="red">*</span></p>

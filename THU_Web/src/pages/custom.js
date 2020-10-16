@@ -27,7 +27,7 @@ const SecondPage = () => (
             <p>Nothing fits you perfectly? We are happy to make special alterations to products to meet your needs and make it personal for you. Still not happy? We make custom bespoke pieces that are tailor made for you and your needs. Get in touch with us to begin the process.</p>
         </div>
         <div class="flex separator space_between">
-            <Form />
+            <Form name="Custom"/>
             <div class="half-width">
                 <div class="location-info">
                     <h2>Our Location</h2>
