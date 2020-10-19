@@ -52,20 +52,23 @@ const CartPage = ({products}) => {
             <Cart products={products}/>
           </div>
           <div class="invoice-box">
-            <form action={()=>submitForm()}>
-              <div>
-                <p>Name<span class="red">*</span></p>
-                <input type="text" id="name" placeholder="John Doe" required/>
-              </div>
-              <div>
-                <p>Email<span class="red">*</span></p>
-                <input type="email" id="email" placeholder="email@email.com" required/>
-              </div>
-              <div>
-                <p>Phone Number<span class="red">*</span></p>
-                <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" placeholder="0123456789" required/>
-              </div>
-              <input type="submit" value="Submit"/>
+            <p>Like what you have saved? Get in contact and we can begin the process of making your order.</p>
+            <form action={()=>submitForm()} class="separator" id="invoice-form">
+                <div class="flex space_between">
+                    <div class="form-half-width">
+                        <p>Name<span class="red">*</span></p>
+                        <input type="text" id="name" required/>
+                    </div>
+                    <div class="form-half-width">
+                        <p>Email<span class="red">*</span></p>
+                        <input type="email" id="email" required/>
+                    </div>
+                </div>
+                <div>
+                    <p>Phone Number<span class="red">*</span></p>
+                    <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" required/>
+                </div>
+                <input type="submit" value="Submit"/>
             </form>
           </div>
 {/*           <div class="flex space_between">

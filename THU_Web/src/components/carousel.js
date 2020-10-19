@@ -9,8 +9,8 @@ export default class Carousel extends React.Component {
     return (
       <CarouselProvider
         naturalSlideWidth={1024}
-        naturalSlideHeight={500}
-        totalSlides={3}
+        naturalSlideHeight={240}
+        totalSlides={5}
         infinite={true}
         isPlaying={true}
         interval={5000}
@@ -19,6 +19,8 @@ export default class Carousel extends React.Component {
           <Slide index={0}>I am the first Slide.</Slide>
           <Slide index={1}>I am the second Slide.</Slide>
           <Slide index={2}>I am the third Slide.</Slide>
+          <Slide index={1}>I am the fourth Slide.</Slide>
+          <Slide index={2}>I am the fifth Slide.</Slide>
         </Slider>
         <ButtonBack><FontAwesomeIcon icon={ faChevronCircleLeft }/></ButtonBack>
         <ButtonNext><FontAwesomeIcon icon={ faChevronCircleRight }/></ButtonNext>

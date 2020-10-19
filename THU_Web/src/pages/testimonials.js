@@ -17,8 +17,8 @@ const Testimonials = ({data}) => {
         return(
           <div class="testimonial flex space_between">
             <div class="testimonial-text">
-                <div dangerouslySetInnerHTML={{__html: node.testimonial.internal.content}}/>
-                <p class="client">&#9866; {node.person}</p>
+                <p dangerouslySetInnerHTML={{__html: node.testimonial.internal.content}}/>
+                <p class="client">{node.person}</p>
             </div>
             <div class="testimonial-image">
             </div>

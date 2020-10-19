@@ -107,7 +107,7 @@ const Product = ({ addToCart, data }) => {
                         </div>
                         <div id="product-price-description">
                             {data.product.price2 != null
-                              ? <h3>${data.product.price}-{data.product.price2}</h3>
+                              ? <h3 class="product-price">${data.product.price}-{data.product.price2}</h3>
                               : <h3 class="product-price">${data.product.price}</h3>
                             }
                             <p dangerouslySetInnerHTML={{__html: data.product.description.description}}/>

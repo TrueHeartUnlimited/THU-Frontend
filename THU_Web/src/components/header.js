@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faFileInvoiceDollar, faSearch } from "@fortawesome/free-solid-svg-icons"
 
 import "./header.css";
+import "../pages/phone.css";
 
 export function Search() {
     return(

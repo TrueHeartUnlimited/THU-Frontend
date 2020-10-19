@@ -22,7 +22,12 @@
 
 .background-image {
     color:white;
-    padding:50px;
+    padding:55px;
+}
+
+.background-image h1 {
+    font-family:"Allura", cursive;
+    font-size:50px;
 }
 
 .body {
@@ -31,7 +36,7 @@
     font-size:14px;
 }
 
-.large-body {
+.large-body p {
     font-size:18px;
 }
 
@@ -125,6 +130,8 @@
 .about-body h2 {
     color:var(--orange);
     padding-bottom:10px;
+    font-family:"Allura", cursive;
+    font-size:2.25em;
 }
 
 .about-image {
@@ -154,6 +161,8 @@
 
 .history-info h2 {
     color:var(--orange);
+    font-family:"Allura", cursive;
+    font-size:2.25em;
 }
 
 /* ---------------------------------------------- /*
@@ -179,6 +188,8 @@
 #features h3 {
     padding:10px 0;
     color:var(--orange);
+    font-family:"Allura", cursive;
+    font-size:2em;
 }
 
 .kangaroo-image {
@@ -412,7 +423,8 @@ figure.effect-chico:hover p {
 
 #product-info h2 {
     font-size:30px;
-    font-weight:bold;
+    font-family:"Allura", cursive;
+    font-size:3em;
 }
 
 #product-info div {
@@ -431,6 +443,8 @@ figure.effect-chico:hover p {
 .product-price {
     color:var(--orange);
     font-weight:bold;
+    font-family:"Allura", cursive;
+    font-size:1.5em;
 }
 
 #product-customisation p {
@@ -656,7 +670,8 @@ figure.effect-chico:hover p {
 
 .client {
     color:var(--orange);
-    font-size:16px;
+    font-size:2em;
+    font-family:"Allura", cursive;
 }
 
 /* ---------------------------------------------- /*
@@ -763,6 +778,19 @@ figure.effect-chico:hover p {
 #total-table th, #total-table td {
     text-align:left;
     border-top:1px solid var(--grey);
+}
+
+#invoice-form {
+    margin:25px;
+    margin-top:0;
+}
+
+#invoice-form input {
+    border:1px solid lightgray;
+    padding:5px;
+    width:100%;
+    margin:5px 0;
+    border-radius: 4px;
 }
 
 /* ---------------------------------------------- /*
