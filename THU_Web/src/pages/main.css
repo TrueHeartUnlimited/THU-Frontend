@@ -70,19 +70,13 @@
     font-size:50px;
 }
 
-.carousel__inner-slide {
-    font-family:"Allura", cursive;
-    margin:0 auto;
-    color:white;
+.carousel-wrapper {
+    height:100%;
+    width:100%;
 }
 
-#carousel-buttons {
-    justify-content:center;
-}
-
-#carousel-buttons button {
-    background-color:transparent;
-    margin:0 20px;
+.carousel-slide img {
+    height:500px;
 }
 
 #carousel svg {
@@ -429,7 +423,7 @@ figure.effect-chico:hover p {
 
 #product-image {
     width:410px;
-    height:310px;
+    min-height:310px;
     border:1px solid var(--grey);
     text-align:center;
     font-size:100px;
