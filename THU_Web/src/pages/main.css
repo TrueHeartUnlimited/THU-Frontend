@@ -70,6 +70,25 @@
     font-size:50px;
 }
 
+.carousel__inner-slide {
+    font-family:"Allura", cursive;
+    margin:0 auto;
+    color:white;
+}
+
+#carousel-buttons {
+    justify-content:center;
+}
+
+#carousel-buttons button {
+    background-color:transparent;
+    margin:0 20px;
+}
+
+#carousel svg {
+    font-size:40px;
+}
+
 #home-intro {
     padding:50px 0;
 }
@@ -749,6 +768,14 @@ figure.effect-chico:hover p {
     text-align:center;
 }
 
+.quantity button, .quantity p {
+    display:inline-block;
+}
+
+.quantity p {
+    padding:5px 15px;
+}
+
 .quantity-change {
     background-color:#f4f4f4;
     border:1px solid #c8bfc6;
@@ -780,17 +807,37 @@ figure.effect-chico:hover p {
     border-top:1px solid var(--grey);
 }
 
-#invoice-form {
-    margin:25px;
-    margin-top:0;
-}
-
 #invoice-form input {
     border:1px solid lightgray;
     padding:5px;
     width:100%;
     margin:5px 0;
     border-radius: 4px;
+}
+
+.stockist {
+    margin:10px 0;
+}
+
+.stockist-name {
+    color:var(--orange);
+    font-family:"Exo", sans-serif;
+    font-size:16px;
+}
+
+.stockist svg {
+    color:var(--orange);
+}
+
+.stockist-website {
+    color:var(--orange);
+    text-decoration:none;
+    font-size:14px;
+}
+
+.stockist-website:hover {
+    text-decoration:underline;
+    font-size:
 }
 
 /* ---------------------------------------------- /*

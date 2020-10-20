@@ -2,7 +2,7 @@ import React from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 export default class Carousel extends React.Component {
   render() {
@@ -22,8 +22,10 @@ export default class Carousel extends React.Component {
           <Slide index={1}>I am the fourth Slide.</Slide>
           <Slide index={2}>I am the fifth Slide.</Slide>
         </Slider>
-        <ButtonBack><FontAwesomeIcon icon={ faChevronCircleLeft }/></ButtonBack>
-        <ButtonNext><FontAwesomeIcon icon={ faChevronCircleRight }/></ButtonNext>
+        <div class="flex" id="carousel-buttons">
+            <ButtonBack><FontAwesomeIcon icon={ faArrowLeft }/></ButtonBack>
+            <ButtonNext><FontAwesomeIcon icon={ faArrowRight }/></ButtonNext>
+        </div>
       </CarouselProvider>
     );
   }

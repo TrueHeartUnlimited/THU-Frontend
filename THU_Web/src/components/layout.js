@@ -51,11 +51,11 @@ const Layout = ({ children }) => {
                     </ul>
                 </div>
                 <div class="list">
-                    <h3>Legal</h3>
+                    <h3>Stockists</h3>
                     <ul>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/policy/">Privacy Policy</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/policy/">Terms and Conditions</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/policy/">Return and Exchange Policy</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="https://adaverafootwear.com.au/">Adavera</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="https://artisan.org.au/">Artisan</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="https://www.vuiwithfriends.com/">Vui with Friends</Link></li>
                     </ul>
                 </div>
                 <div class="list">

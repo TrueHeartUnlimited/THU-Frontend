@@ -1,5 +1,8 @@
 import React from "react"
 import {connect} from 'react-redux'
+import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCaretRight, faPhoneAlt, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -43,34 +46,60 @@ const CartPage = ({products}) => {
 
   return(
     <Layout>
-      <SEO title="Shop" />
-      <StyledBackgroundSection class="header">
-          <h1>Calculator</h1>
-      </StyledBackgroundSection>
-      <div class="container">
-          <div class="invoice-box" id="calc-table">
+        <SEO title="Shop" />
+        <StyledBackgroundSection class="header">
+            <h1>Calculator</h1>
+        </StyledBackgroundSection>
+        <div class="container">
+        <div class="invoice-box" id="calc-table">
             <Cart products={products}/>
-          </div>
-          <div class="invoice-box">
-            <p>Like what you have saved? Get in contact and we can begin the process of making your order.</p>
-            <form action={()=>submitForm()} class="separator" id="invoice-form">
-                <div class="flex space_between">
-                    <div class="form-half-width">
-                        <p>Name<span class="red">*</span></p>
-                        <input type="text" id="name" required/>
+        </div>
+        <div class="flex space_between">
+            <div class="invoice-box invoice-half">
+                <div class="invoice-container">
+                    <p>Like what you have saved? Get in contact and we can begin the process of making your order.</p>
+                    <form action={()=>submitForm()} class="separator" id="invoice-form">
+                        <div class="flex space_between">
+                            <div class="form-half-width">
+                                <p>Name<span class="red">*</span></p>
+                                <input type="text" id="name" required/>
+                            </div>
+                            <div class="form-half-width">
+                                <p>Email<span class="red">*</span></p>
+                                <input type="email" id="email" required/>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Phone Number<span class="red">*</span></p>
+                            <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" required/>
+                        </div>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </div>
+            </div>
+            <div class="invoice-box invoice-half">
+                <div class="invoice-container" id="stockists">
+                    <h3>Stockists</h3>
+                    <div class="stockist">
+                        <p class="stockist-name">Adavera</p>
+                        <p><FontAwesomeIcon icon={ faMapMarkerAlt }/> Shop 1/237 Given Terrace, Brisbane QLD</p>
+                        <p><FontAwesomeIcon icon={ faPhoneAlt }/> (07) 3148 3958</p>
+                        <Link to="https://adaverafootwear.com.au/" class="stockist-website">adaverafootwear.com.au</Link>
                     </div>
-                    <div class="form-half-width">
-                        <p>Email<span class="red">*</span></p>
-                        <input type="email" id="email" required/>
+                    <div class="stockist separator">
+                        <p class="stockist-name">Artisan</p>
+                        <p><FontAwesomeIcon icon={ faMapMarkerAlt }/> 45 King Street, Bowen Hills QLD</p>
+                        <p><FontAwesomeIcon icon={ faPhoneAlt }/> (07) 3215 0800</p>
+                        <Link to="https://artisan.org.au/" class="stockist-website">artisan.org.au</Link>
+                    </div>
+                    <div class="stockist separator">
+                        <p class="stockist-name">Vui with Friends</p>
+                        <p><FontAwesomeIcon icon={ faMapMarkerAlt }/> 233 Johnston Street, Abbotsford VIC</p>
+                        <Link to="https://www.vuiwithfriends.com/" class="stockist-website">www.vuiwithfriends.com</Link>
                     </div>
                 </div>
-                <div>
-                    <p>Phone Number<span class="red">*</span></p>
-                    <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" required/>
-                </div>
-                <input type="submit" value="Submit"/>
-            </form>
-          </div>
+            </div>
+        </div>
 {/*           <div class="flex space_between">
               <div class="invoice-box invoice-half" id="calc-ship">
                   <div class="invoice-container" id="shipping">
