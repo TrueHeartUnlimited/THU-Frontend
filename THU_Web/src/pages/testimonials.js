@@ -15,8 +15,8 @@ const Testimonials = ({data}) => {
     <div class="container">
        {data.info.edges.map(({node})=>{
         return(
-          <div class="testimonial flex space_between">
-            <div class="testimonial-text">
+          <div class="testimonial flex space_between separator">
+            <div class="testimonial-text ">
                 <p dangerouslySetInnerHTML={{__html: node.testimonial.internal.content}}/>
                 <p class="client">{node.person}</p>
             </div>

@@ -76,7 +76,15 @@
 }
 
 .carousel-slide img {
-    height:500px;
+    max-height:500px;
+    object-fit:cover;
+}
+
+.carousel-text-left {
+    color:white;
+    font-family:"Allura", cursive;
+    position:absolute;
+    z-index: 4;
 }
 
 #carousel svg {
