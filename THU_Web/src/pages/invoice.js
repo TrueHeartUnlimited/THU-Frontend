@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {connect} from 'react-redux'
 
 import Layout from "../components/layout"
@@ -17,18 +17,36 @@ function mapStateToProps({ cartReducer }){
 
 const CartPage = ({products}) => {
 
-  const submitForm = async (e) => {
-    var test = {email: "testingtruweb@gmail.com", message:"testing" }
+  const [formState, setFromState] = useState({
+    name:"",
+    email: "",
+    number: "",
+  })
 
+  const handleChange = (e) =>{
+    setFromState({...formState, [e.target.name]: e.target.value});
+    console.log(formState)
+  }
+
+
+  const submitForm = async (e) => {
+/*     {products.map(({product, count, colour})=>{
+      const item = useState({
+        name: product.productName,
+        colour: colour,
+        quantity: count,
+        price: product.price
+      })
+      setFromState(...formState,)
+    })} */
     try{
-      console.log("try");
       const response = await fetch("/.netlify/functions/invoiceemail", {
         method: "POST",
-        body: JSON.stringify(test),
+        body: JSON.stringify(formState),
       })
 
       if (!response.ok) {
-        console.log("in if")
+        alert("success")
         //not 200 response
         return
       }
@@ -36,7 +54,7 @@ const CartPage = ({products}) => {
       //all OK
 
     } catch(e){
-      console.log("error")
+      alert("fail")
       //error
     }
   }
@@ -52,18 +70,18 @@ const CartPage = ({products}) => {
             <Cart products={products}/>
           </div>
           <div class="invoice-box">
-            <form action={()=>submitForm()}>
+            <form onSubmit={()=>submitForm()}>
               <div>
                 <p>Name<span class="red">*</span></p>
-                <input type="text" id="name" placeholder="John Doe" required/>
+                <input type="text" name="name" placeholder="John Doe" onChange={handleChange} required/>
               </div>
               <div>
                 <p>Email<span class="red">*</span></p>
-                <input type="email" id="email" placeholder="email@email.com" required/>
+                <input type="email" name="email" placeholder="email@email.com" onChange={handleChange} required/>
               </div>
               <div>
                 <p>Phone Number<span class="red">*</span></p>
-                <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" placeholder="0123456789" required/>
+                <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" name="number" placeholder="0123456789" onChange={handleChange} required/>
               </div>
               <input type="submit" value="Submit"/>
             </form>
