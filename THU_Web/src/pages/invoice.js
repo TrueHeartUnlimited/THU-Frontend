@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 import {connect} from 'react-redux'
+import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCaretRight, faPhoneAlt, faEnvelope, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,8 +19,9 @@ function mapStateToProps({ cartReducer }){
 
 
 const CartPage = ({products}) => {
+  //needs to be implemented properly
 
-  const [formState, setFromState] = useState({
+/*   const [formState, setFromState] = useState({
     name:"",
     email: "",
     number: "",
@@ -30,7 +34,7 @@ const CartPage = ({products}) => {
 
 
   const submitForm = async (e) => {
-/*     {products.map(({product, count, colour})=>{
+     {products.map(({product, count, colour})=>{
       const item = useState({
         name: product.productName,
         colour: colour,
@@ -38,7 +42,7 @@ const CartPage = ({products}) => {
         price: product.price
       })
       setFromState(...formState,)
-    })} */
+    })} 
     try{
       const response = await fetch("/.netlify/functions/invoiceemail", {
         method: "POST",
@@ -57,7 +61,7 @@ const CartPage = ({products}) => {
       alert("fail")
       //error
     }
-  }
+  } */
 
   return(
     <Layout>
@@ -69,23 +73,56 @@ const CartPage = ({products}) => {
           <div class="invoice-box" id="calc-table">
             <Cart products={products}/>
           </div>
-          <div class="invoice-box">
-            <form onSubmit={()=>submitForm()}>
-              <div>
-                <p>Name<span class="red">*</span></p>
-                <input type="text" name="name" placeholder="John Doe" onChange={handleChange} required/>
-              </div>
-              <div>
-                <p>Email<span class="red">*</span></p>
-                <input type="email" name="email" placeholder="email@email.com" onChange={handleChange} required/>
-              </div>
-              <div>
-                <p>Phone Number<span class="red">*</span></p>
-                <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" name="number" placeholder="0123456789" onChange={handleChange} required/>
-              </div>
-              <input type="submit" value="Submit"/>
-            </form>
-          </div>
+        <div class="flex space_between">
+            <div class="invoice-box invoice-half">
+                <div class="invoice-container">
+                    <p>Like what you have saved? Get in contact and we can begin the process of making your order.</p>
+                    <form id="invoiceForm" action="https://formsubmit.co/thu@chooseaustralia.com.au" method="POST">
+                        <div class="flex space_between">
+                            <div class="form-half-width">
+                                <p>Name<span class="red">*</span></p>
+                                <input type="text" id="name" required/>
+                            </div>
+                            <div class="form-half-width">
+                                <p>Email<span class="red">*</span></p>
+                                <input type="email" id="email" required/>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Phone Number<span class="red">*</span></p>
+                            <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" required/>
+                        </div>
+                        
+                          <p>Your Order<span class="red">*</span></p>
+                          <textarea name="order" placeholder="Add what you added to your cart! For example: Adele Blue x2"required/>
+                        
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </div>
+            </div>
+            <div class="invoice-box invoice-half">
+                <div class="invoice-container" id="stockists">
+                    <h3>Stockists</h3>
+                    <div class="stockist">
+                        <p class="stockist-name">Adavera</p>
+                        <p><FontAwesomeIcon icon={ faMapMarkerAlt }/> Shop 1/237 Given Terrace, Brisbane QLD</p>
+                        <p><FontAwesomeIcon icon={ faPhoneAlt }/> (07) 3148 3958</p>
+                        <Link to="https://adaverafootwear.com.au/" class="stockist-website">adaverafootwear.com.au</Link>
+                    </div>
+                    <div class="stockist separator">
+                        <p class="stockist-name">Artisan</p>
+                        <p><FontAwesomeIcon icon={ faMapMarkerAlt }/> 45 King Street, Bowen Hills QLD</p>
+                        <p><FontAwesomeIcon icon={ faPhoneAlt }/> (07) 3215 0800</p>
+                        <Link to="https://artisan.org.au/" class="stockist-website">artisan.org.au</Link>
+                    </div>
+                    <div class="stockist separator">
+                        <p class="stockist-name">Vui with Friends</p>
+                        <p><FontAwesomeIcon icon={ faMapMarkerAlt }/> 233 Johnston Street, Abbotsford VIC</p>
+                        <Link to="https://www.vuiwithfriends.com/" class="stockist-website">www.vuiwithfriends.com</Link>
+                    </div>
+                </div>
+            </div>
+        </div>
 {/*           <div class="flex space_between">
               <div class="invoice-box invoice-half" id="calc-ship">
                   <div class="invoice-container" id="shipping">

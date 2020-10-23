@@ -6,7 +6,7 @@ export default function Contact(){
   return (
     <div class="half-width" id="message">
         <h2>Send Us a Message</h2>
-        <form id="contactform" action="https://formsubmit.co/testingtruweb@gmail.com" method="POST">
+        <form id="contactform" action="https://formsubmit.co/thu@chooseaustralia.com.au" method="POST">
             <div class="flex space_between">
                 <div class="form-half-width">
                     <p>Your Name<span class="red">*</span></p>
