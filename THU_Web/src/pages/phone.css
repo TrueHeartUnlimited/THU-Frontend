@@ -1,0 +1,17 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 480px) {
+/* Styles */
+    /* ---------------------------------------------- /*
+     * Header
+    /* ---------------------------------------------- */
+    header h1, header img {
+        display: block;
+    }
+
+    /* ---------------------------------------------- /*
+     * Navigation
+    /* ---------------------------------------------- */
+    nav {
+        display:none;
+    }
+}

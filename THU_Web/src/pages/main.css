@@ -22,7 +22,12 @@
 
 .background-image {
     color:white;
-    padding:50px;
+    padding:55px;
+}
+
+.background-image h1 {
+    font-family:"Allura", cursive;
+    font-size:50px;
 }
 
 .body {
@@ -31,7 +36,7 @@
     font-size:14px;
 }
 
-.large-body {
+.large-body p {
     font-size:18px;
 }
 
@@ -63,6 +68,27 @@
     width:100%;
     align-items: center;
     font-size:50px;
+}
+
+.carousel-wrapper {
+    height:100%;
+    width:100%;
+}
+
+.carousel-slide img {
+    max-height:500px;
+    object-fit:cover;
+}
+
+.carousel-text-left {
+    color:white;
+    font-family:"Allura", cursive;
+    position:absolute;
+    z-index: 4;
+}
+
+#carousel svg {
+    font-size:40px;
 }
 
 #home-intro {
@@ -125,6 +151,8 @@
 .about-body h2 {
     color:var(--orange);
     padding-bottom:10px;
+    font-family:"Allura", cursive;
+    font-size:2.25em;
 }
 
 .about-image {
@@ -154,6 +182,8 @@
 
 .history-info h2 {
     color:var(--orange);
+    font-family:"Allura", cursive;
+    font-size:2.25em;
 }
 
 /* ---------------------------------------------- /*
@@ -179,6 +209,8 @@
 #features h3 {
     padding:10px 0;
     color:var(--orange);
+    font-family:"Allura", cursive;
+    font-size:2em;
 }
 
 .kangaroo-image {
@@ -399,7 +431,7 @@ figure.effect-chico:hover p {
 
 #product-image {
     width:410px;
-    height:310px;
+    min-height:310px;
     border:1px solid var(--grey);
     text-align:center;
     font-size:100px;
@@ -412,7 +444,8 @@ figure.effect-chico:hover p {
 
 #product-info h2 {
     font-size:30px;
-    font-weight:bold;
+    font-family:"Allura", cursive;
+    font-size:3em;
 }
 
 #product-info div {
@@ -431,6 +464,8 @@ figure.effect-chico:hover p {
 .product-price {
     color:var(--orange);
     font-weight:bold;
+    font-family:"Allura", cursive;
+    font-size:1.5em;
 }
 
 #product-customisation p {
@@ -656,7 +691,8 @@ figure.effect-chico:hover p {
 
 .client {
     color:var(--orange);
-    font-size:16px;
+    font-size:2em;
+    font-family:"Allura", cursive;
 }
 
 /* ---------------------------------------------- /*
@@ -734,6 +770,14 @@ figure.effect-chico:hover p {
     text-align:center;
 }
 
+.quantity button, .quantity p {
+    display:inline-block;
+}
+
+.quantity p {
+    padding:5px 15px;
+}
+
 .quantity-change {
     background-color:#f4f4f4;
     border:1px solid #c8bfc6;
@@ -763,6 +807,39 @@ figure.effect-chico:hover p {
 #total-table th, #total-table td {
     text-align:left;
     border-top:1px solid var(--grey);
+}
+
+#invoice-form input {
+    border:1px solid lightgray;
+    padding:5px;
+    width:100%;
+    margin:5px 0;
+    border-radius: 4px;
+}
+
+.stockist {
+    margin:10px 0;
+}
+
+.stockist-name {
+    color:var(--orange);
+    font-family:"Exo", sans-serif;
+    font-size:16px;
+}
+
+.stockist svg {
+    color:var(--orange);
+}
+
+.stockist-website {
+    color:var(--orange);
+    text-decoration:none;
+    font-size:14px;
+}
+
+.stockist-website:hover {
+    text-decoration:underline;
+    font-size:
 }
 
 /* ---------------------------------------------- /*

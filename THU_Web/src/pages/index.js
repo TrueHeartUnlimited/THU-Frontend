@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import "./main.css"
 import ProductDisplay from "../components/productDisplay"
 import StyledBackgroundSection from '../components/BackgroundSection'
-import Carousel from '../components/carousel.js'
+import CarouselComponent from "../components/carousel.component.js";
 
 const IndexPage = ({data}) => {
 
@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
     <Layout>
         <SEO title="Home" />
         <div id="carousel">
-            <Carousel></Carousel>
+            <CarouselComponent />
         </div>
         <div class="container center" id="home-intro">
             <h2>{data.info.heading}</h2>

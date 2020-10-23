@@ -31,7 +31,7 @@ const AboutKangaroo = ({data}) => {
             <div class="container">
                 <div id="kangaroo-video"></div>
                 <div class="body separator large-body">
-                    <div dangerouslySetInnerHTML={{__html: data.info.krooPreamble.internal.content}}/>
+                    <p dangerouslySetInnerHTML={{__html: data.info.krooPreamble.internal.content}}/>
                 </div>
             </div>
             <div class="body" id="features">
