@@ -7,7 +7,7 @@ export default function CarouselComponent() {
         <div class="carousel-wrapper">
             <Carousel infiniteLoop useKeyboardArrows autoPlay showArrows={true} showThumbs={false}>
                 <div class="carousel-slide">
-                    <img src="../Combined 1.png" />
+                    <img src="../Combined.jpg" />
                 </div>
                 <div class="carousel-slide">
                     <img src="../carousel-kangaroo.png" />
