@@ -41,7 +41,7 @@ const Product = ({ addToCart, data }) => {
   }
 
   function checkValid(){
-    if(currentColour !== "" ){
+    if(currentColour != "" ){
       addToCart(data.product, count, currentColour)
     }
     else{
@@ -130,7 +130,7 @@ const Product = ({ addToCart, data }) => {
                                     <th>Colour</th>
                                     <td class="flex" id="swatches">
                                       {data.product.productImages.map((image, index) =>{
-                                          if(colorClass(image.description) !== "not valid"){
+                                          if(colorClass(image.description) != "not valid"){
                                             return(
                                             <dl class="swatch-dl" onClick={()=>updateSwatch(index)}>
                                               <dt class="swatch-dt">

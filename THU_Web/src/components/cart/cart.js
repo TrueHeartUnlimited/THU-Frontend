@@ -54,7 +54,7 @@ function Table(props){
             </tr>
             ))}
             <tr>
-                <td colspan="7">
+                <td colspan="7">total
                 </td>
             </tr>
           </table>

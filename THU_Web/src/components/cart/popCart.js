@@ -19,6 +19,7 @@ CartPage.propTypes = {
       product: PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
+        // imageUrl: PropTypes.string.isRequired
       })
     })
   ).isRequired
