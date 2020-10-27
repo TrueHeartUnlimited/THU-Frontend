@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {connect} from 'react-redux'
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -19,19 +19,38 @@ function mapStateToProps({ cartReducer }){
 
 
 const CartPage = ({products}) => {
+  //needs to be implemented properly
+
+/*   const [formState, setFromState] = useState({
+    name:"",
+    email: "",
+    number: "",
+  })
+
+  const handleChange = (e) =>{
+    setFromState({...formState, [e.target.name]: e.target.value});
+    console.log(formState)
+  }
+
 
   const submitForm = async (e) => {
-    var test = {email: "testingtruweb@gmail.com", message:"testing" }
-
+     {products.map(({product, count, colour})=>{
+      const item = useState({
+        name: product.productName,
+        colour: colour,
+        quantity: count,
+        price: product.price
+      })
+      setFromState(...formState,)
+    })} 
     try{
-      console.log("try");
       const response = await fetch("/.netlify/functions/invoiceemail", {
         method: "POST",
-        body: JSON.stringify(test),
+        body: JSON.stringify(formState),
       })
 
       if (!response.ok) {
-        console.log("in if")
+        alert("success")
         //not 200 response
         return
       }
@@ -39,26 +58,26 @@ const CartPage = ({products}) => {
       //all OK
 
     } catch(e){
-      console.log("error")
+      alert("fail")
       //error
     }
-  }
+  } */
 
   return(
     <Layout>
-        <SEO title="Shop" />
-        <StyledBackgroundSection class="header">
-            <h1>Calculator</h1>
-        </StyledBackgroundSection>
-        <div class="container">
-        <div class="invoice-box" id="calc-table">
+      <SEO title="Shop" />
+      <StyledBackgroundSection class="header">
+          <h1>Calculator</h1>
+      </StyledBackgroundSection>
+      <div class="container">
+          <div class="invoice-box" id="calc-table">
             <Cart products={products}/>
-        </div>
+          </div>
         <div class="flex space_between">
             <div class="invoice-box invoice-half">
                 <div class="invoice-container">
                     <p>Like what you have saved? Get in contact and we can begin the process of making your order.</p>
-                    <form action={()=>submitForm()} class="separator" id="invoice-form">
+                    <form id="invoiceForm" action="https://formsubmit.co/thu@chooseaustralia.com.au" method="POST">
                         <div class="flex space_between">
                             <div class="form-half-width">
                                 <p>Name<span class="red">*</span></p>
@@ -73,6 +92,10 @@ const CartPage = ({products}) => {
                             <p>Phone Number<span class="red">*</span></p>
                             <input type="tel" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" id="phone number" required/>
                         </div>
+                        
+                          <p>Your Order<span class="red">*</span></p>
+                          <textarea name="order" placeholder="Add what you added to your cart! For example: Adele Blue x2"required/>
+                        
                         <input type="submit" value="Submit"/>
                     </form>
                 </div>

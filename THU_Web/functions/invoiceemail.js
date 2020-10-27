@@ -9,12 +9,16 @@ exports.handler =  async (event, context, callback) => {
 
     sgMail.setApiKey(SENDGRID_API_KEY)
 
+    const body = Object.keys(payload).map((k) => {
+      return `${k}: ${payload[k]}`
+    }).join("<br><br>");
+
     const msg = {
         to: email,
         bcc: "kingsleymadeline@gmail.com",
         from: SENDGRID_SENDER_EMAIL,
         subject: "Invoice Test",
-        text: message,
+        text:"test"
     };
 
     try{
@@ -26,7 +30,7 @@ exports.handler =  async (event, context, callback) => {
         }
     } catch(e){
         return {
-            statusCode: 500,
+            statusCode: e.code,
             body: e.message
         }
     }
