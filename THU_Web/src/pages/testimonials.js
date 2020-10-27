@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -21,6 +22,7 @@ const Testimonials = ({data}) => {
                 <p class="client">{node.person}</p>
             </div>
             <div class="testimonial-image">
+              <Img fluid={node.image.fluid} key={node.image.fluid.src} alt={node.image.title} />
             </div>
           </div>
         )
@@ -89,6 +91,11 @@ export const query = graphql`
           testimonial {
             internal {
               content
+            }
+          }
+          image {
+            fluid{
+              ...GatsbyContentfulFluid
             }
           }
         }
