@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
     <Layout>
         <SEO title="Home" />
         <div id="carousel">
-            <CarouselComponent />
+            <CarouselComponent image={data.info.carouselImages}/>
         </div>
         <div class="container center" id="home-intro">
             <h2>{data.info.heading}</h2>
