@@ -29,7 +29,7 @@ const AboutKangaroo = ({data}) => {
                 <h1>About Kangaroo Leather</h1>
             </StyledBackgroundSection>
             <div class="container">
-                <div id="kangaroo-video"></div>
+                {/*<div id="kangaroo-video"></div>*/}
                 <div class="body separator large-body">
                     <p dangerouslySetInnerHTML={{__html: data.info.krooPreamble.internal.content}}/>
                 </div>

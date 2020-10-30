@@ -148,22 +148,11 @@ const Product = ({ addToCart, data }) => {
                                       })}
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>Strap Length</th>
-                                    <td>
-                                        <ul>
-                                            <li>Strap Length 1</li>
-                                            <li>Strap Length 2</li>
-                                        </ul>
-                                    </td>
-                                </tr>
                             </table>
-                            {data.product.customisable === true &&
                             <div class="flex space_between">
                                 <p id="customisation">Bag not perfect? Get it customised further. Contact us to get exactly what you want</p>
                                 <p style={{marginTop:"10px"}}><Link to="/custom" class="btn" id="custom-btn">Get Custom</Link></p>
                             </div>
-                            }
                         </div>
                         <div class="tab-pane" label="Product Information">
                             <table class="product-table">
@@ -172,10 +161,10 @@ const Product = ({ addToCart, data }) => {
                                         <th>Size:</th>
                                         <td>{data.product.sizing}</td>
                                     </tr>
-                                    <tr>
+                                    {/*<tr>
                                         <th>Strap Size:</th>
                                         <td>61cm/121cm</td>
-                                    </tr>
+                                    </tr>*/}
                                     <tr>
                                         <th>Colours:</th>
                                         <td>{data.product.colours.map(colour => <p>{colour}</p>)}</td>
