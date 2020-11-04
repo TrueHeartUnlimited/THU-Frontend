@@ -38,9 +38,8 @@ const Layout = ({ children }) => {
                 <div class="list">
                     <h3>Product</h3>
                     <ul>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/about_us/">Our Company</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/custom/">Custom Pieces</Link></li>
-                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/bulk_custom/">Bulk Custom Items</Link></li>
+                        <li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/custom/">Bespoke Pieces</Link></li>
+                        {/*<li><FontAwesomeIcon icon={ faCaretRight }/><Link to="/bulk_custom/">Bulk Custom Items</Link></li>*/}
                     </ul>
                 </div>
                 <div class="list">

@@ -296,6 +296,13 @@ export default class productDisplay extends Component{
                     {/*changes ststas based on the selected filters*/}
                         <div id="filter" onMouseUp={()=>{this.eventHandler()}}>
                           <ul>
+                            {/*Type*/}
+                            <li>Type <FontAwesomeIcon icon={faChevronDown}/>
+                                <ul class="shop-dropdown">
+                                    <li>Bespoke Base Pieces</li>
+                                    <li>Purchase Pieces</li>
+                                </ul>
+                            </li>
                             {/*Collections*/}
                             <li>Collection <FontAwesomeIcon icon={faChevronDown}/>
                                 <ul class="shop-dropdown">

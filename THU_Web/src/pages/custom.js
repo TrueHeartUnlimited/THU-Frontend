@@ -20,7 +20,7 @@ const SecondPage = () => (
   <Layout>
     <SEO title="Contact Us" />
     <StyledBackgroundSection class="header">
-        <h1>Custom Pieces</h1>
+        <h1>Bespoke Pieces</h1>
     </StyledBackgroundSection>
     <div class="container" id="contact-us">
         <div>
