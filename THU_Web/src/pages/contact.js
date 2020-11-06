@@ -23,7 +23,7 @@ const SecondPage = () => (
             <h1>Contact Us</h1>
         </StyledBackgroundSection>
     <div class="container" id="contact-us">
-        <div>
+        <div class="large-body">
             <p>If you have any queries relating to our products, processes or any concerns please feel free to contact us. Send us a message below or come visit us at our base of operations. Otherwise feel free to call or send an email, our details are listed at the bottom of the page.</p>
         </div>
         <div class="flex separator space_between">

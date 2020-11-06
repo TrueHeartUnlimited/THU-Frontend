@@ -122,6 +122,7 @@ export const query = graphql `
           path
           price
           price2
+          type
           size
           collection
           colours

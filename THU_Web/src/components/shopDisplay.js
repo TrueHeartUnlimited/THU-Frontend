@@ -69,6 +69,16 @@ const getCollection= items =>{
   return collections;
 }
 
+const getType= items =>{
+  let tempItems = items.map(items =>{
+    return items.node.type.toString();
+  });
+  let tempTypes = new Set(tempItems);
+  let types = Array.from(tempTypes);
+  types=['All', ...types];
+  return types;
+}
+
 const initialiseArray = varLength =>{
   var array = [];
   for(var i=0; i < varLength; i++){
@@ -94,6 +104,7 @@ export default class productDisplay extends Component{
             colours: getColours(props.items.edges),
             size: getSize(props.items.edges),
             collection: getCollection(props.items.edges),
+            type: getType(props.items.edges),
             checked: !!this.props.initialState,
             binArCol: initialiseArray(getCollection(props.items.edges).length),
             binArCat: initialiseArray(getCategories(props.items.edges).length),
@@ -118,6 +129,16 @@ export default class productDisplay extends Component{
     eventHandler = () =>{
       console.log(this.state.binArSiz);
       let tempItems = [...this.state.items];
+      //Type
+      var typBinOptions = [...this.state.binArCol];
+      var type = [...this.state.type];
+      if(typBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var typOption = this.filterOptions(typBinOptions, type);
+        if(typOption[0] !== 'All'){
+          let items = tempItems.filter(({node})=>node.type.toString() === typOption[0]);
+          tempItems = [...items];
+        }
+    }
       //Collection
       var colBinOptions = [...this.state.binArCol];
       var collection = [...this.state.collection];
@@ -240,7 +261,19 @@ export default class productDisplay extends Component{
         this.setState(()=>{
           return{binArCat:array}
         })
-      }
+    }else if(filter === "Type"){
+        let index = this.state.type.indexOf(option);
+        let array = [...this.state.binArCat];
+        for(var i=0; i < array.length; i++){
+          if(array[i] === 1){
+            array = this.invertBits(array, i);
+          }
+        }
+        array = this.invertBits(array, index);
+        this.setState(()=>{
+          return{binArCat:array}
+        })
+    }
       else{
         let index = this.state.collection.indexOf(option);
         let array = [...this.state.binArCol];
@@ -299,8 +332,13 @@ export default class productDisplay extends Component{
                             {/*Type*/}
                             <li>Type <FontAwesomeIcon icon={faChevronDown}/>
                                 <ul class="shop-dropdown">
-                                    <li>Bespoke Base Pieces</li>
-                                    <li>Purchase Pieces</li>
+                                    {this.state.type.map((type, index)=>{
+                                      return(
+                                        <li><button type="button" key={index} class="button" onMouseDown={()=>{
+                                          this.handleItems(type, "Type")
+                                      }} >{type}</button></li>
+                                      )
+                                    })}
                                 </ul>
                             </li>
                             {/*Collections*/}
@@ -328,6 +366,18 @@ export default class productDisplay extends Component{
                                 })}
                               </ul>
                             </li>
+                            {/*Styles*/}
+                            <li>Styles <FontAwesomeIcon icon={ faChevronDown }/>
+                                <ul class="shop-dropdown">
+                                  {this.state.styles.map((style, index)=>{
+                                    return (
+                                      <li>
+                                      <label onMouseDown={()=>this.handleFilterItems(style)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange} class="checkbox"/><span>{style}</span> </label>
+                                      </li>
+                                    )
+                                  })}
+                                </ul>
+                            </li>
                             <div class="seperator"></div>
                             {/*Colours*/}
                               <li>Colours <FontAwesomeIcon icon={ faChevronDown }/>
@@ -340,20 +390,6 @@ export default class productDisplay extends Component{
                                     )})}
                                   </ul>
                               </li>
-                              <div class="seperator"></div>
-                              {/*Styles*/}
-                              <li>Styles <FontAwesomeIcon icon={ faChevronDown }/>
-                                  <ul class="shop-dropdown">
-                                    {this.state.styles.map((style, index)=>{
-                                      return (
-                                        <li>
-                                        <label onMouseDown={()=>this.handleFilterItems(style)}><Checkbox key={index} checked={this.state.checked} onChange={this.handleCheckboxChange} class="checkbox"/><span>{style}</span> </label>
-                                        </li>
-                                      )
-                                    })}
-                                  </ul>
-                              </li>
-                              <div class="seperator"></div>
                               {/*Size*/}
                               <li>Size <FontAwesomeIcon icon={ faChevronDown }/>
                                   <ul class="shop-dropdown">
