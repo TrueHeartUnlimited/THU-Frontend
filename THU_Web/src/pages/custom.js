@@ -50,39 +50,9 @@ const custom = ({data}) => {
                     </div>
                 </div>
             </div>
-            <div class="separator">
-              <Display items={data.products}/>
-            </div>
         </div>
       </Layout>
   )
 }
-
-export const query = graphql `
-  {
-    products: allContentfulProduct {
-      edges {
-        node {
-          path
-          price
-          price2
-          type
-          size
-          collection
-          colours
-          customisable
-          category
-          style
-          productName
-          productImages {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default custom

@@ -43,6 +43,7 @@ export function Navigation() {
                 <li><Link to="/shop/">Shop <FontAwesomeIcon icon={ faChevronDown }/></Link>
                     <ul class="dropdown">
                         <li><Link to="/shop/">Products</Link></li>
+                        <li><Link to="/bespoke/">Bespoke Base Pieces</Link></li>
                         <li><Link to="/testimonials/">Testimonials</Link></li>
                     </ul>
                 </li>
