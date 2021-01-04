@@ -158,6 +158,10 @@ const Product = ({ addToCart, data }) => {
                             <table class="product-table">
                                 <tbody>
                                     <tr>
+                                        <th>Type:</th>
+                                        <td>{data.product.type} Piece</td>
+                                    </tr>
+                                    <tr>
                                         <th>Size:</th>
                                         <td>{data.product.sizing}</td>
                                     </tr>
@@ -207,7 +211,7 @@ Product.propTypes = {
 export const data = graphql`
     query($path: String!){
         product: contentfulProduct(path: {eq: $path }){
-            category
+            type
             collection
             colours
             customisable

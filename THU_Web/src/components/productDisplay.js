@@ -35,7 +35,7 @@ export default class productDisplay extends Component{
         }
         else{
             return(
-                <h1>there are no items to display</h1>
+                <h1>There are no products currently</h1>
             )
         }
     }

@@ -106,6 +106,7 @@ export default class productDisplay extends Component{
             collection: getCollection(props.items.edges),
             type: getType(props.items.edges),
             checked: !!this.props.initialState,
+            binArTyp: initialiseArray(getType(props.items.edges).length),
             binArCol: initialiseArray(getCollection(props.items.edges).length),
             binArCat: initialiseArray(getCategories(props.items.edges).length),
             binArSiz: initialiseArray(getSize(props.items.edges).length),
@@ -130,12 +131,12 @@ export default class productDisplay extends Component{
       console.log(this.state.binArSiz);
       let tempItems = [...this.state.items];
       //Type
-      var typBinOptions = [...this.state.binArCol];
+      var typeBinOptions = [...this.state.binArTyp];
       var type = [...this.state.type];
-      if(typBinOptions.reduce((a, b) => a+b, 0) > 0){
-        var typOption = this.filterOptions(typBinOptions, type);
-        if(typOption[0] !== 'All'){
-          let items = tempItems.filter(({node})=>node.type.toString() === typOption[0]);
+      if(typeBinOptions.reduce((a, b) => a+b, 0) > 0){
+        var typeOption = this.filterOptions(typeBinOptions, type);
+        if(typeOption[0] !== 'All'){
+          let items = tempItems.filter(({node})=>node.type.toString() === typeOption[0]);
           tempItems = [...items];
         }
     }
@@ -263,7 +264,7 @@ export default class productDisplay extends Component{
         })
     }else if(filter === "Type"){
         let index = this.state.type.indexOf(option);
-        let array = [...this.state.binArCat];
+        let array = [...this.state.binArTyp];
         for(var i=0; i < array.length; i++){
           if(array[i] === 1){
             array = this.invertBits(array, i);
@@ -271,7 +272,7 @@ export default class productDisplay extends Component{
         }
         array = this.invertBits(array, index);
         this.setState(()=>{
-          return{binArCat:array}
+          return{binArTyp:array}
         })
     }
       else{
